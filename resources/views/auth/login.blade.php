@@ -33,8 +33,8 @@
                         <input type="checkbox" class="form-check-input" id="exampleCheck1" name="remember">
                         <label class="form-check-label" for="exampleCheck1" >Remember me</label>
                     </div>
-                    <button type="submit" class="btn btn-outline-danger">Log-In</button>
-                    <p> Non sei ancora registrato? <hr> <a class="text-dark" href="{{route('register')}}">Registrati</a></p>
+                    <button type="submit" class="btn bg-button ">Log-In</button>
+                    <p class="mt-3"> Non sei ancora registrato? <hr> <a class="text-dark" href="{{route('register')}}">Registrati</a></p>
                 </form>
             </div>
         </div>

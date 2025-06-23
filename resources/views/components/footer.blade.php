@@ -40,7 +40,7 @@
           <!--Grid column-->
           <div class="col-auto">
             <p class="pt-5">
-              <strong>Sign up for our newsletter</strong>
+              <strong >Sign up for our newsletter</strong>
             </p>
           </div>
           <!--Grid column-->

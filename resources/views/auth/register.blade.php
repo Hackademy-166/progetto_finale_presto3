@@ -1,9 +1,9 @@
 <x-layout>
     <x-slot name="title">Registrati</x-slot>
-    <header class="container vh-100">
+    <header class="container-fluid">
         <div class="row">
             <div class="col-12 col-md-12 col-lg-12">
-                <h1 class="text-dark text-center fw-bold display-1">Register Now</h1>
+                <h1 class="text-dark text-center pt-5 display-1 font-title">Register Now</h1>
             </div>
         </div>
     </header>
@@ -16,10 +16,10 @@
  <!-- Fine Alert per Form -->
      
  <!-- INIZIO FORM -->
-    <section class="container">
+    <section class="container  mt-5 mb-5">
         <div class="row justify-content-center">
             <div class="col-12 col-md-6">
-                <form class="shadow p-5 rounded" method="POST" action="{{route('register')}}">
+                <form class="shadow p-5 rounded  bg-form" method="POST" action="{{route('register')}}">
                     @csrf
                      <div class="mb-3">
                         <label for="name" class="form-label">Nome utente</label>
@@ -46,8 +46,8 @@
                         <label for="confirmation_password" class="form-label">Conferma Password</label>
                         <input type="password" class="form-control" id="confirmation_password" name="password_confirmation" required>
                     </div>
-                    <button type="submit" class="btn btn-outline-danger">Registrati</button>
-                    <p>Sei già registrato? <hr> <a class="text-dark" href="{{route('login')}}">Vai al login</a></p>
+                    <button type="submit" class="btn bg-button">Registrati</button>
+                    <p class="mt-3">Sei già registrato? <hr> <a class="text-dark" href="{{route('login')}}">Vai al login</a></p>
                 </form>
             </div>
         </div>
