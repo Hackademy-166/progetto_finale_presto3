@@ -1,5 +1,5 @@
 <div>
-    <form wire:submit="" class="shadow rounded p-5">
+    <form wire:submit="store" class="shadow rounded p-5">
        <div class="mb-3">
             <label for="title" class="form-label">Titolo</label>
             <input type="text" class="form-control " id="title" required wire:model.live="title">
@@ -23,8 +23,7 @@
         </div>
         <div class="mb-3">
             <label for="price" class="form-label">Categoria</label>
-            <select class="form-select" id="price" required wire:model="price">@foreach ($categories as $category){{$category->name}} @endforeach </select>
+            <select class="form-select" id="price" required wire:model="price"></select>
         </div>
-
     </form>
 </div>

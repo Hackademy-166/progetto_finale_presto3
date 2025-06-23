@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
@@ -10,6 +11,15 @@ class Article extends Model
         'title',
         'description',
         'price',
+        'category',
     ];
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+
+    public function category(){
+        return $this->belongsTo(Category::class);  // importare il modello
+    }
 
 }

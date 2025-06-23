@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\Article;
 use Livewire\Component;
 
 class CreateArticle extends Component
@@ -12,8 +13,41 @@ class CreateArticle extends Component
     public $description;
     #[Validate('required|string|min:3|max:100')]
     public $price;
+    #[Validate('required|string|min:3|max:100')]
+    public $category;
 
-    
+
+    public function rules(){
+        return [
+            'title' => 'required|string|min:3|max:100',
+            'description' => 'required|string|min:3|max:100',
+            'price' => 'required|string|min:3|max:100',
+        ];
+    }
+
+        public function messages(){
+            return [
+                'required' => 'Il campo :attribute è richiesto obbligatoriamente.',
+                'min' => 'Il campo :attribute deve contenere almeno :min caratteri.',
+                'max' => 'Il campo :attribute non può superare :max caratteri.',
+                'string' => 'Il campo :attribute deve essere un testo.',
+            ];
+    }
+
+    public function store(){
+        $this->validate();
+        Article::create([
+            'title' => $this->title,
+            'description' => $this->description,
+            'price' => $this->price,
+            'category_id' => $this->category, // ??
+        ]);
+        session()->flash('message', 'Articolo creato con successo!');
+        $this->reset();
+
+
+    }
+
     public function render()
     {
         return view('livewire.create-article');

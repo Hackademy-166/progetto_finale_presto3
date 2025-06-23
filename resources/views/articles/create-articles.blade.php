@@ -7,6 +7,13 @@
             </div>
         </div>
     </header>
+    <!-- MESSAGIO ARTICOLO INSERITO -->
+    @if(session('message'))
+        <div class="alert alert-success">
+            {{session('message')}}
+        </div>
+    @endif
+    <!-- FINE MESSAGGIO ARTICOLO INSERITO -->
     <div class="container vh-auto">
         <div class="row">
             <livewire:create-article />
