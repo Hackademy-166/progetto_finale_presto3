@@ -1,0 +1,23 @@
+
+/* colori */
+:root{
+    --color-p: #ecfee8ff; /*primary-sfondo */
+    --color-s: #100b00ff; /*secondary-testo */
+    --color-a: #5c7457ff; /*accent-verdino */
+    --color-a2: #c3dfe0ff; /*accent-azzurrino */
+    --color-a2: #a288a6ff; /*accent-rosino */
+}
+
+/* font */
+
+.font-title{
+    font-family: "Abril Fatface", serif;
+}
+
+.font-text{
+    font-family: "LXGW Marker Gothic", sans-serif;
+}
+
+.font-extra{
+    font-family: "Savate", sans-serif;
+}
