@@ -37,5 +37,7 @@ back-end: Lorenzo, Luca, Adriano
 front-end: Sabrina, Emiliano
 
 *all'esigenza tutti facciamo tutto
+
+pasta al pesto
  
 
