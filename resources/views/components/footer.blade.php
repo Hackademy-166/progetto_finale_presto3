@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="text-center text-lg-start bg-body-tertiary text-muted">
+<footer class="text-center text-lg-start bg-nav text-muted">
   <!-- Section: Social media -->
   <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
     <!-- Left -->
@@ -39,7 +39,7 @@
         <div class="row d-flex justify-content-center">
           <!--Grid column-->
           <div class="col-auto">
-            <p class="pt-2">
+            <p class="pt-5">
               <strong>Sign up for our newsletter</strong>
             </p>
           </div>
@@ -48,7 +48,7 @@
           <!--Grid column-->
           <div class="col-md-5 col-12">
             <!-- Email input -->
-            <div data-mdb-input-init class="form-outline mb-4">
+            <div data-mdb-input-init class="form-outline mt-5">
               <input type="email" id="form5Example24" class="form-control" />
               <label class="form-label" for="form5Example24">Email address</label>
             </div>
@@ -58,7 +58,7 @@
           <!--Grid column-->
           <div class="col-auto">
             <!-- Submit button -->
-            <button data-mdb-ripple-init type="submit" class="btn btn-outline mb-4">
+            <button data-mdb-ripple-init type="submit" class="btn bg-button mt-5">
               Subscribe
             </button>
           </div>

@@ -3,9 +3,9 @@
 :root{
     --color-p: #ecfee8ff; /*primary-sfondo */
     --color-s: #100b00ff; /*secondary-testo */
-    --color-a: #5c7457ff; /*accent-verdino */
+    --color-a: rgb(92, 116, 87); /*accent-verdino */
     --color-a2: #c3dfe0ff; /*accent-azzurrino */
-    --color-a3: #a288a6ff; /*accent-rosino */
+    --color-a3: rgb(162, 136, 166); /*accent-rosino */
 }
 
 
@@ -23,6 +23,8 @@
     font-family: "Savate", sans-serif;
 }
 
+/* colori */
+
 .bg-standard{
     background-color:var(--color-p) ;
 }
@@ -33,4 +35,12 @@
 
 .bg-button{
     background-color:var(--color-a) ;
+}
+
+.bg-drop{
+    background-color: var(--color-a2);
+}
+
+.bg-form{
+    background: linear-gradient(rgba(92, 116, 87, 0.356), rgba(162, 136, 166, 0.471));
 }

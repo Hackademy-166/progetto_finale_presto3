@@ -1,10 +1,10 @@
 <x-layout>
     <x-slot name="title">Login</x-slot>
 
-    <header class="container vh-100">
+    <header class="container-fluid">
         <div class="row">
             <div class="col-12 col-md-12 col-lg-12">
-                <h1 class="text-dark text-center fw-bold display-1">Log-In</h1>
+                <h1 class="text-dark text-center pt-5 display-1 font-title">Log-In</h1>
             </div>
         </div>
     </header>
@@ -13,7 +13,7 @@
     <section class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-md-6">
-                <form class="shadow p-5 rounded" method="POST" action="{{route('login')}}">
+                <form class="shadow p-5 rounded mt-5 bg-form" method="POST" action="{{route('login')}}">
                     @csrf
                     <div class="mb-3">
                         <label for="email" class="form-label">Email address</label>
