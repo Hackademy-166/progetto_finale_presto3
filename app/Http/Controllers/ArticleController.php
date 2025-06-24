@@ -12,7 +12,7 @@ class ArticleController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {   $articles= Article::orderBy('created_at', 'desc')->all();
+    {   $articles= Article::orderBy('created_at', 'desc')->get();
         return view('articles.index-articles', compact('articles'));
     }
 
@@ -37,7 +37,7 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-        //
+        return view('articles.show', compact('article'));
     }
 
     /**

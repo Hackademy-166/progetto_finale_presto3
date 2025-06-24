@@ -9,4 +9,5 @@ Route::get('/', [PublicController::class, 'home'])->name('homepage');
 // ROTTE PER ARTICOLI
 Route::get('/articles/create', [ArticleController::class, 'create'])->name('articles.create')->middleware('auth');
 Route::get('/articles/index', [ArticleController::class, 'index'])->name('articles.index');
+Route::get('/articles/show/{article}', [ArticleController::class, 'show'])->name('articles.show');
 

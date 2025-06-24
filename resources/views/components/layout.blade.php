@@ -12,7 +12,7 @@
     {{-- vite --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-    <title>{{$title ?? Presto3.it}}</title>
+    {{-- <title>{{$title ?? Presto3.it}}</title> --}}
 </head>
 <body>
     <x-navbar/>
