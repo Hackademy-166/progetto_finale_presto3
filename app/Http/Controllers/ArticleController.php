@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
+use App\Models\Category;
 use App\Http\Requests\StoreArticleRequest;
 use App\Http\Requests\UpdateArticleRequest;
-use App\Models\Article;
 
 class ArticleController extends Controller
 {
@@ -62,5 +63,8 @@ class ArticleController extends Controller
     public function destroy(Article $article)
     {
         //
+    }
+    public function category_page(Category $category){
+        return view('articles.categories-index', compact('category'));
     }
 }

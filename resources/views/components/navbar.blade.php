@@ -19,7 +19,7 @@
           </a>
           <ul class="dropdown-menu bg-drop">
             @foreach($categories as $category)
-            <li><a class="dropdown-item text-dark" href="">{{$category->category_name}}</a></li>
+            <li><a class="dropdown-item text-dark" href={{route('categories-index', $category)}}>{{$category->category_name}}</a></li>
             @if($category->id !=12)
             <li><hr class="dropdown-divider"></li>
             @endif

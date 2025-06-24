@@ -6,7 +6,7 @@
         <h5 class="card-title">Titolo{{$article->title}}</h5>
         <p class="card-text">Descrizione{{$article->description}}</p>
         <p class="card-text">Prezzi{{$article->price}}</p>
-        <a href="">Categoria:{{$article->category->category_name}}</a>
+        <a href="{{route('categories-index', $article->category)}}">Categoria:{{$article->category->category_name}}</a>
         
       </div>
 </div>
