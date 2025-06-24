@@ -12,6 +12,19 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Link</a>
         </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Categorie
+          </a>
+          <ul class="dropdown-menu bg-drop">
+            @foreach($categories as $category)
+            <li><a class="dropdown-item text-dark" href="">{{$category->category_name}}</a></li>
+            <li><hr class="dropdown-divider"></li>
+            @endforeach
+          </ul>
+        </li>
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
@@ -26,6 +39,7 @@
           </ul>
         </li>
       </ul>
+
       @auth
         <div class="d-lg-col-lg-3 justify-content-lg-end align-items-lg-center">
           <a href="" class="btn bg-button mx-3">{{Auth::user()->name}}</a>
@@ -34,12 +48,12 @@
         </div>
       @endauth
 
-      @guest
+        
         <div class="d-lg-flex col-lg-3 justify-content-lg-end align-items-lg-center">
           <a class="me-1 btn mx-3 bg-button" href="{{route('login')}}">Login</a>
-          <a href="{{route('register')}}" class=" ms-1 btn mx-3 bg-button">Registrati</a>
+          <a href="{{route('register')}}" class="ms-1 btn mx-3 bg-button">Registrati</a>
         </div>
-      @endguest  
+
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
         <button class="btn bg-button" type="submit">Search</button>
