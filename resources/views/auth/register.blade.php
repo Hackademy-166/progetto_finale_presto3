@@ -23,7 +23,7 @@
                     @csrf
                      <div class="mb-3">
                         <label for="name" class="form-label">Nome utente</label>
-                        <input type="text" class="form-control " value="{{old('name')}}" id="name" name="name" required value="{{old('name')}}">
+                        <input type="text" class="form-control @error('email') is-invalid @enderror @success('email') is-valid @endsuccess" value="{{old('name')}}" id="name" name="name" required value="{{old('name')}}">
                         @error('name')
                             <span class="fst-italic text-danger">{{$message}}</span>
                         @enderror

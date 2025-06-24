@@ -15,26 +15,25 @@
     <section>
         <div class="container mt-5 ">
             <div class="row d-flex justify-content-center">
-                <div class="col-12 col-md-3 col-lg-3">  
+                <div class="col-12 col-md-8 col-lg-8">  
                     <div id="carouselExampleDark" class="carousel carousel-dark slide">
                         <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            @foreach ($articles as $article )
+                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="{{$loop->index}}" class="{{$loop->first ? 'active' : ''}}" aria-current="true" aria-label="Slide {{$loop->index}}"></button>
+                            @endforeach
                         </div>
                         <div class="carousel-inner">
-                            <div class="carousel-item active" data-bs-interval="10000">
-                            </div>
-                        </div>
-                        @foreach ($articles as $article )
-                                <div class="col-12 col-md-3">
-                                        <x-card-vertical :article="$article" />
+                            @foreach ($articles as $article )
+                                <div class="carousel-item  {{$loop->first ? 'active' : ''}}"  data-bs-interval="10000">
+                                    <img src="https://picsum.photos/300/200" class="d-block w-100" alt="...">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>{{$article->title}}</h5>
+                                        <p>{{$article->price}}</p>
                                     </div>
-                        @endforeach
-                            
-                          
-                                
-                        </div>
+                                </div>
+                            @endforeach
+                        </div>      
+                        
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
