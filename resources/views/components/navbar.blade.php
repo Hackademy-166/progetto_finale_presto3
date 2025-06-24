@@ -48,7 +48,7 @@
         
          <ul class="navbar-nav mx-3">
         <li class="nav-item dropdown">
-          <button class="nav-link dropdown-toggle font-title" data-bs-toggle="dropdown" aria-expanded="false">
+          <button class="nav-link dropdown-toggle font-title fs-4" data-bs-toggle="dropdown" aria-expanded="false">
            {{Auth::user()->name}}
           </button>
           <ul class="dropdown-menu bg-drop">
