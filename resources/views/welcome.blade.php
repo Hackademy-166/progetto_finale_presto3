@@ -27,13 +27,12 @@
                                 <div class="carousel-item  {{$loop->first ? 'active' : ''}}"  data-bs-interval="10000">
                                     <img src="https://picsum.photos/300/200" class="d-block w-100" alt="...">
                                     <div class="carousel-caption d-none d-md-block">
-                                        <h5>{{$article->title}}</h5>
-                                        <p>{{$article->price}}</p>
+                                        <h5 class="text-white">{{$article->title}}</h5>
+                                        <p class="text-white>{{$article->price}}</p>
                                     </div>
                                 </div>
                             @endforeach
                         </div>      
-                        
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
