@@ -50,6 +50,10 @@
     color: var(--color-s);
 }
 
+.bg-card{
+    background-color: rgba(162, 136, 166, 0.701);
+}
+
 /* hover */
 
 .bg-button:hover{

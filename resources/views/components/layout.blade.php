@@ -14,7 +14,7 @@
 
     {{-- <title>{{$title ?? Presto3.it}}</title> --}}
 </head>
-<body>
+<body class="bg-standard">
     <x-navbar/>
     
     <div class="min-vh-100 bg-standard">
