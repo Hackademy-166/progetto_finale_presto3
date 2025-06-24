@@ -40,7 +40,7 @@ class CreateArticle extends Component
         Article::create([
             'title' => $this->title,
             'description' => $this->description,
-            'price' => $this->price,
+            'price' => $this->price.'€',
             'category_id' => $this->category, // ??
         ]);
         session()->flash('message', 'Articolo creato con successo!');

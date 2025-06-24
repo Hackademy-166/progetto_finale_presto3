@@ -10,8 +10,8 @@
             </div>
         </div>
     </header>
-
-
+    
+    
     <section>
         <div class="container mt-5 ">
             <div class="row d-flex justify-content-center">
@@ -24,25 +24,14 @@
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active" data-bs-interval="10000">
-                               <x-card-vertical/>
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>First slide label</h5>
-                                    <p>Some representative placeholder content for the first slide.</p>
+                                @foreach ($articles as $article )
+                                <div class="col-12 col-md-3">
+                                    <x-card-vertical :article="$article" />
                                 </div>
+                                @endforeach
                             </div>
-                            <div class="carousel-item" data-bs-interval="2000">
-                               <x-card-vertical/>
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>Second slide label</h5>
-                                    <p>Some representative placeholder content for the second slide.</p>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                               <x-card-vertical/>
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>Third slide label</h5>
-                                    <p>Some representative placeholder content for the third slide.</p>
-                                </div>
+                            
+                          
                                 
                             </div>
                         </div>
@@ -59,7 +48,7 @@
             </div>
         </div>
     </section>
-
+    
     {{-- <section>
         <div class="container-fluid mt-5 min-vh-100">
             <div class="row">
@@ -67,31 +56,33 @@
                     <h2>Aggiungi Articolo</h2>
                     <p>Tramite questo pulsante potrai inserire un articolo in base alle vategorie elencate</p>
                 </div>
-
+                
                 <div class="col-12 col-md-6 col-lg-6">
                     <button></button>
                 </div>
             </div>
         </div>
     </section> --}}
-
+    
     <section class="container  mt-5 min-vh-100 py-5">
-    <div class="row align-items-center h-100">
-      <div class="col-12 col-md-7">
-        <h2 class="text-center font-title display-1" id="text">INSERISCI ARTICOLO</h2>
-        <h3 class="text-center">Tramite questo pulsante, accederai alla pagina per l'inserimento di un articolo a tua scelta</h3>
-        
-        
-    </div>
-    <div class="col-12 col-md-5 ">
-        <div class=" d-flex justify-content-center">
-          <button class="rounded text-center bg-button p-5 mx-5">
-            <h4 class="font-title display-5 ">Crea Articolo</h4>
-          </button>
+        <div class="row align-items-center h-100">
+            <div class="col-12 col-md-7">
+                <h2 class="text-center font-title display-1" id="text">INSERISCI ARTICOLO</h2>
+                <h3 class="text-center">Tramite questo pulsante, accederai alla pagina per l'inserimento di un articolo a tua scelta</h3>
+                
+                
+            </div>
+            <div class="col-12 col-md-5 ">
+                <div class=" d-flex justify-content-center">
+                    <button class="rounded text-center bg-button p-5 mx-5">
+                        <a href="{{route('articles.create')}}" class="text-decoration-none">
+                            <h4 class="font-title display-5 ">Crea Articolo</h4>
+                        </a>
+                    </button>
+                </div>  
+            </div>
         </div>
         
-      </div>
-    </div>
-  </section>
-
+    </section>
+    
 </x-layout>

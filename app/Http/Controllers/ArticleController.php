@@ -12,8 +12,8 @@ class ArticleController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        
+    {   $articles= Article::orderBy('created_at', 'desc')->all();
+        return view('articles.index-articles', compact('articles'));
     }
 
     /**
