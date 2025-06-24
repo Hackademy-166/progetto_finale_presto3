@@ -28,7 +28,7 @@
                                     <img src="https://picsum.photos/300/200" class="d-block w-100" alt="...">
                                     <div class="carousel-caption d-none d-md-block">
                                         <h5 class="text-white">{{$article->title}}</h5>
-                                        <p class="text-white>{{$article->price}}</p>
+                                        <p class="text-white">{{$article->price}}</p>
                                     </div>
                                 </div>
                             @endforeach
