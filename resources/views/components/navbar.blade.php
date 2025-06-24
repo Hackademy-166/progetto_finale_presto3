@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-nav ">
+<nav class="navbar navbar-expand-lg bg-nav text-color">
   <div class="container-fluid">
     <a class="navbar-brand font-title" href="{{route('homepage')}}">PRESTO.IT</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

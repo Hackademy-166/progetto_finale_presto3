@@ -34,7 +34,8 @@
 }
 
 .bg-button{
-    background-color:var(--color-a) ;
+    background-color:rgba(92, 116, 87, 0.614) ;
+   
 }
 
 .bg-drop{
@@ -43,4 +44,18 @@
 
 .bg-form{
     background: linear-gradient(rgba(92, 116, 87, 0.356), rgba(162, 136, 166, 0.471));
+}
+
+.text-color{
+    color: var(--color-s);
+}
+
+/* hover */
+
+.bg-button:hover{
+    background-color: var(--color-a);
+    border: 2px solid var(--color-s);
+    
+    transition: 1000ms;
+
 }
