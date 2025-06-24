@@ -49,20 +49,6 @@
         </div>
     </section>
     
-    {{-- <section>
-        <div class="container-fluid mt-5 min-vh-100">
-            <div class="row">
-                <div class="col-12 col-md-6 col-lg-6">
-                    <h2>Aggiungi Articolo</h2>
-                    <p>Tramite questo pulsante potrai inserire un articolo in base alle vategorie elencate</p>
-                </div>
-                
-                <div class="col-12 col-md-6 col-lg-6">
-                    <button></button>
-                </div>
-            </div>
-        </div>
-    </section> --}}
     
     <section class="container  mt-5 min-vh-100 py-5">
         <div class="row align-items-center h-100">
@@ -75,7 +61,7 @@
             <div class="col-12 col-md-5 ">
                 <div class=" d-flex justify-content-center">
                     <button class="rounded text-center bg-button p-5 mx-5">
-                        <a href="{{route('articles.create')}}" class="text-decoration-none">
+                        <a href="{{route('articles.create')}}" class="text-decoration-none text-dark">
                             <h4 class="font-title display-5 ">Crea Articolo</h4>
                         </a>
                     </button>

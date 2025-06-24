@@ -12,7 +12,7 @@
         <li class="nav-item">
           <a class="nav-link" href="{{route('articles.index')}}">I nostri articoli</a>
         </li>
-
+        
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Categorie
@@ -20,13 +20,13 @@
           <ul class="dropdown-menu bg-drop">
             @foreach($categories as $category)
             <li><a class="dropdown-item text-dark" href="">{{$category->category_name}}</a></li>
-            @if($category->id !== 12)
+            @if($category->id !=12)
             <li><hr class="dropdown-divider"></li>
             @endif
             @endforeach
           </ul>
         </li>
-
+        
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
@@ -35,27 +35,44 @@
             <li><a class="dropdown-item" href="#">Action</a></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
             @auth
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="{{route('articles.create')}}">Inserisci Articolo</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{{route('articles.create')}}">Inserisci Articolo</a></li>
             @endauth
+          </ul>
+        </li>
+        
+      </ul>
+
+      
+        @auth
+        
+         <ul class="navbar-nav mx-3">
+        <li class="nav-item dropdown">
+          <button class="nav-link dropdown-toggle font-title" data-bs-toggle="dropdown" aria-expanded="false">
+           {{Auth::user()->name}}
+          </button>
+          <ul class="dropdown-menu bg-drop">
+            <li><a class="dropdown-item" href="#">Profilo</a></li>
+            <li><a class=" btn dropdown-item " onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Log-Out</a>
+              <form action="{{route('logout')}}" method="POST" class="d-none" id="form-logout">@csrf</form></li>
+            
           </ul>
         </li>
       </ul>
 
-      @auth
-        <div class="d-lg-col-lg-3 justify-content-lg-end align-items-lg-center">
-          <a href="" class="btn bg-button mx-3">{{Auth::user()->name}}</a>
-          <a class="mx-3 btn bg-button" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Log-Out</a>
-          <form action="{{route('logout')}}" method="POST" class="d-none" id="form-logout">@csrf</form>
-        </div>
-      @endauth
-
         
-        <div class="d-lg-flex col-lg-3 justify-content-lg-end align-items-lg-center">
-          <a class="me-1 btn mx-3 bg-button" href="{{route('login')}}">Login</a>
-          <a href="{{route('register')}}" class="ms-1 btn mx-3 bg-button">Registrati</a>
-        </div>
-
+        @endauth
+      
+      
+      @guest
+      
+      <div class="d-lg-flex col-lg-3 justify-content-lg-end align-items-lg-center">
+        <a class="me-1 btn mx-3 bg-button" href="{{route('login')}}">Login</a>
+        <a href="{{route('register')}}" class="ms-1 btn mx-3 bg-button">Registrati</a>
+      </div>
+      
+      @endguest
+      
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
         <button class="btn bg-button" type="submit">Search</button>
