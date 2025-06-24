@@ -1,11 +1,11 @@
 <x-layout>
     
-    <h1 class="text-dark text-center font-title display-5 pt-3">DETTAGLIO ARTICOLO: {{$article->title}}</h1>
+    <h1 class="text-dark text-center font-title display-5 pt-3">{{$article->title}}</h1>
     
         <section>
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-md-8 col-lg-8">
                         <div id="carouselExample" class="carousel slide">
                             <div class="carousel-inner ">
                                 <div class="carousel-item active">
@@ -31,7 +31,7 @@
                 </div>
             </div>
         </section>
-    {{-- <div class="container bg-form shadow shadow-2 p-5">
+   <!-- <div class="container bg-form shadow shadow-2 p-5">
         <div class="row justify-content-center align-items-center ">
                 <div class="col-12 col-md-4">
                     <h5 class=" font-extra">Titolo: {{$article->title}}</h5>
@@ -40,7 +40,7 @@
             <a href="" class="link-offset-2 link-underline link-underline-opacity-0 text-color font-text">Categoria: {{$article->category->category_name}}</a>
                 </div>
             </div>
-        </div> --}}
+        </div>  -->
         <div class="container">
             <div class="row justify-content-center p-3">
                 <div class="col-12 col-md-6">
