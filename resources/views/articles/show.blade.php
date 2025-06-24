@@ -1,9 +1,38 @@
 <x-layout>
-
-    <h1 class="text-dark text-center font-title display-3 pt-3">DETTAGLIO ARTICOLO: {{$article->title}}</h1>
-
-        {{-- <div class="container bg-form shadow shadow-2 p-5">
-            <div class="row justify-content-center align-items-center ">
+    
+    <h1 class="text-dark text-center font-title display-5 pt-3">DETTAGLIO ARTICOLO: {{$article->title}}</h1>
+    
+        <section>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-6">
+                        <div id="carouselExample" class="carousel slide">
+                            <div class="carousel-inner ">
+                                <div class="carousel-item active">
+                                <img src="https://picsum.photos/300/200" class="d-block w-100 img-fluid" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                <img src="https://picsum.photos/301/200"  class="d-block w-100 img-fluid" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                <img src="https://picsum.photos/302/200"  class="d-block w-100 img-fluid" alt="...">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {{-- <div class="container bg-form shadow shadow-2 p-5">
+        <div class="row justify-content-center align-items-center ">
                 <div class="col-12 col-md-4">
                     <h5 class=" font-extra">Titolo: {{$article->title}}</h5>
             <p class="font-text">Descrizione: {{$article->description}}</p>
@@ -13,11 +42,10 @@
             </div>
         </div> --}}
         <div class="container">
-            <div class="row">
-                <div class="col-12 col-md 4">
-
+            <div class="row justify-content-center p-3">
+                <div class="col-12 col-md-6">
                     <div class="card text-center bg-form">
-                        <div class="card-header font-extra text-color display-5">
+                        <div class="card-header font-extra text-color">
                             {{$article->title}}
                         </div>
                         <div class="card-body text-color">
@@ -35,13 +63,4 @@
                 </div>
             </div>
         </div>
-        <section>
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-md-6">
-                        {{-- CAROSELLO --}}
-                    </div>
-                </div>
-            </div>
-        </section>
 </x-layout>

@@ -22,14 +22,14 @@
                             <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
                             <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
                         </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-bs-interval="10000">
+                            </div>
+                        </div>
                         @foreach ($articles as $article )
-                            <div class="carousel-inner">
-                                <div class="carousel-item active" data-bs-interval="10000">
                                 <div class="col-12 col-md-3">
                                         <x-card-vertical :article="$article" />
                                     </div>
-                                </div>
-                            </div>
                         @endforeach
                             
                           
@@ -48,7 +48,6 @@
             </div>
         </div>
     </section>
-    
     
     <section class="container  mt-5 min-vh-100 py-5 bg-standard">
         <div class="row align-items-center h-100">

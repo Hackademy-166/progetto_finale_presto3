@@ -63,3 +63,18 @@
     transition: 1000ms;
 
 }
+
+/*card*/
+
+.card {
+  width: 300px;
+  margin: 10px;
+  border: 1px solid black;
+  
+
+  align-items: stretch; 
+}
+
+.card-p {
+  overflow: auto; 
+}
