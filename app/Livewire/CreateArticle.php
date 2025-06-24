@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Models\Article;
 use Livewire\Component;
+use App\Models\Category;
 use Livewire\Attributes\Validate;
 
 class CreateArticle extends Component
@@ -14,7 +15,7 @@ class CreateArticle extends Component
     public $description;
     #[Validate('required|string|min:3|max:100')]
     public $price;
-    #[Validate('required|string|min:3|max:100')]
+    // #[Validate('required|string|min:3|max:100')]
     public $category;
 
 
@@ -40,8 +41,9 @@ class CreateArticle extends Component
         Article::create([
             'title' => $this->title,
             'description' => $this->description,
-            'price' => $this->price,
-            'category_id' => $this->category, // ??
+            'price' => $this->price.'€',
+            'category_id' => $this->category,
+            'user_id' => auth()->user()->id,
         ]);
         session()->flash('message', 'Articolo creato con successo!');
         $this->reset();
@@ -51,6 +53,7 @@ class CreateArticle extends Component
 
     public function render()
     {
-        return view('livewire.create-article');
+        $categories = Category::all();
+        return view('livewire.create-article', compact('categories'));
     }
 }
