@@ -20,7 +20,7 @@
           <ul class="dropdown-menu bg-drop">
             @foreach($categories as $category)
             <li><a class="dropdown-item text-dark" href="">{{$category->category_name}}</a></li>
-            @if($category->id !== 12)
+            @if($category->id !=12)
             <li><hr class="dropdown-divider"></li>
             @endif
             @endforeach
@@ -43,24 +43,9 @@
         
       </ul>
 
-      {{-- <ul> --}}
+      
         @auth
-        {{-- <li list-style-type="none" class="nav-item dropdown nav-link dropdown-toggle">
-          <a href="" class="nav-item dropdown font-title text-decoration-none text-dark"  role="button" data-bs-toggle="dropdown" aria-expanded="false">{{Auth::user()->name}}</a>
-          
-          <ul class="dropdown-menu bg-drop ">
-            <li><a class="bg-button btn dropdown-item " onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Log-Out</a>
-              <form action="{{route('logout')}}" method="POST" class="d-none" id="form-logout">@csrf</form>
-            </li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Visualizza Profilo</a></li>
-            <li>
-              
-            </li>
-          </ul>
-        </li>
-        <div class="d-lg-col-lg-3 justify-content-lg-end align-items-lg-center">
-        </div> --}}
+        
          <ul class="navbar-nav mx-3">
         <li class="nav-item dropdown">
           <button class="nav-link dropdown-toggle font-title" data-bs-toggle="dropdown" aria-expanded="false">
@@ -77,7 +62,7 @@
 
         
         @endauth
-      {{-- </ul> --}}
+      
       
       @guest
       
