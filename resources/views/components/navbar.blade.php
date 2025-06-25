@@ -9,14 +9,53 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{{route('homepage')}}">Home</a>
         </li>
-        <li class="nav-item">
+
+
+
+        {{-- <li class="nav-item">
           <a class="nav-link" href="{{route('articles.index')}}">I nostri articoli</a>
+        </li> --}}
+        {{-- <ul class="navbar-nav mx-3">
+        <li class="nav-item dropdown">
+          <button class="nav-link dropdown-toggle font-extra"   data-bs-toggle="dropdown" aria-expanded="false">
+            Articoli
+          </button>
+          <ul class="dropdown-menu bg-drop">
+
+            <li><a class="dropdown-item" href="{{route('articles.index')}}">I nostri Articoli</a></li>
+             <li><hr class="dropdown-divider"></li>
+
+            <li><a class="dropdown-item" href="{{route('articles.create')}}"></a>Inserisci un articolo</li>
+
+            
+              
+            </ul>
+          </li>
+        </ul> --}}
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Articoli
+          </a>
+          <ul class="dropdown-menu bg-drop">
+            <li><a class="dropdown-item" href="{{route('articles.index')}}">I nostri articoli</a></li>
+            @auth
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{{route('articles.create')}}">Inserisci Articolo</a></li>
+            @endauth
+          </ul>
         </li>
-        
+
+
+
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Categorie
           </a>
+
+
+
           <ul class="dropdown-menu bg-drop">
             @foreach($categories as $category)
             <li><a class="dropdown-item text-dark" href={{route('categories-index', $category)}}>{{$category->category_name}}</a></li>
@@ -26,6 +65,8 @@
             @endforeach
           </ul>
         </li>
+        
+        
         
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -42,41 +83,41 @@
         </li>
         
       </ul>
-
       
-        @auth
-        
-         <ul class="navbar-nav mx-3">
+      
+      @auth
+      
+      <ul class="navbar-nav mx-3">
         <li class="nav-item dropdown">
           <button class="nav-link dropdown-toggle font-title fs-4" data-bs-toggle="dropdown" aria-expanded="false">
-           {{Auth::user()->name}}
+            {{Auth::user()->name}}
           </button>
           <ul class="dropdown-menu bg-drop">
             <li><a class="dropdown-item" href="#">Profilo</a></li>
             <li><a class=" btn dropdown-item " onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Log-Out</a>
               <form action="{{route('logout')}}" method="POST" class="d-none" id="form-logout">@csrf</form></li>
-            
-          </ul>
-        </li>
-      </ul>
-
+              
+            </ul>
+          </li>
+        </ul>
+        
         
         @endauth
-      
-      
-      @guest
-      
-      <div class="d-lg-flex col-lg-3 justify-content-lg-end align-items-lg-center">
-        <a class="me-1 btn mx-3 bg-button" href="{{route('login')}}">Login</a>
-        <a href="{{route('register')}}" class="ms-1 btn mx-3 bg-button">Registrati</a>
+        
+        
+        @guest
+        
+        <div class="d-lg-flex col-lg-3 justify-content-lg-end align-items-lg-center">
+          <a class="me-1 btn mx-3 bg-button" href="{{route('login')}}">Login</a>
+          <a href="{{route('register')}}" class="ms-1 btn mx-3 bg-button">Registrati</a>
+        </div>
+        
+        @endguest
+        
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+          <button class="btn bg-button" type="submit">Search</button>
+        </form>
       </div>
-      
-      @endguest
-      
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn bg-button" type="submit">Search</button>
-      </form>
     </div>
-  </div>
-</nav>
+  </nav>
