@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-nav text-color font-text">
+ {{-- <nav class="navbar navbar-expand-lg bg-nav text-color font-text">
   <div class="container-fluid">
     <a class="navbar-brand font-title" href="{{route('homepage')}}">PRESTO.IT</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -8,7 +8,8 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{{route('homepage')}}">Home</a>
-        </li>
+        </li> 
+      </ul>--}}
 
 
 
@@ -30,10 +31,10 @@
             
               
             </ul>
-          </li>
-        </ul> --}}
+          </li>--}}
+          
 
-        <li class="nav-item dropdown">
+        {{-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Articoli
           </a>
@@ -120,4 +121,75 @@
         </form>
       </div>
     </div>
-  </nav>
+  </nav> 
+
+ --}}
+
+
+  <nav>
+  <ul>
+    <li>
+      <a class=""  href="{{route('homepage')}}">Home</a>
+    </li>
+    <li class="">
+          <a class="" href="{{route('articles.index')}}">I nostri articoli</a>
+    </li>
+    
+    <li class="dropdown">
+          <a class=" dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Categorie
+          </a>
+
+          <ul class="dropdown-menu">
+            @foreach($categories as $category)
+            <li><a class="" href={{route('categories-index', $category)}}>{{$category->category_name}}</a></li>
+            @if($category->id !=12)
+            <li><hr class="dropdown-divider"></li>
+            @endif
+            @endforeach
+          </ul>
+        </li>
+        
+        
+      @auth
+      <li>
+        <a class="" href="{{route('articles.create')}}">Inserisci un articolo</a>
+      </li> 
+      <li class="">
+          <a class="" href="#">Lavora con noi</a>
+        </li> 
+          
+      @endauth
+
+
+      @auth
+      
+        <li class=" dropdown">
+          <a href="" class=" dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">{{Auth::user()->name}}</a> 
+            
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Profilo</a></li>
+            <hr class="dropdown-divider">
+            
+            <li><a class=" dropdown-item " onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Log-Out</a>
+              <form action="{{route('logout')}}" method="POST" class="d-none" id="form-logout">@csrf</form></li>
+            </ul>
+        
+          </li>
+    
+        @endauth
+
+
+
+
+
+      @guest    
+    <li>
+      <a class="me-1 mx-3 " href="{{route('login')}}">Login</a>
+    </li>
+    <li>
+      <a href="{{route('register')}}" class="ms-1 mx-3">Registrati</a>
+    </li>
+    @endguest
+  </ul>
+</nav>
