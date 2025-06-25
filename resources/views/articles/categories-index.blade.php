@@ -10,11 +10,12 @@
                 <div class="col-12">
                     <h3 class="font-extra text-center p-5 display-4" >Nessun articolo nella categoria di: {{$category->category_name}}</h3>
                 </div>
-            @endforelse
-            <div class="col-12 col-md-3 col-lg-2">
-                <a class="btn bg-button font-title p-2 fs-4" href="{{route('homepage')}}">Torna alla home</a>
 
-            </div>
+                <div class="col-12 col-md-3 col-lg-2">
+                    <a class="btn bg-button font-title p-2 fs-4" href="{{route('homepage')}}">Torna alla home</a>
+    
+                </div>
+            @endforelse
         </div>
     </div>
 </x-layout>
