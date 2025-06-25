@@ -4,7 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\ArticleController;
 
+// ROTTE PUBLIC
 Route::get('/', [PublicController::class, 'home'])->name('homepage');
+Route::get('/contact-us', [PublicController::class, 'contact_us'])->name('contact');
+Route::post('/contact/submit', [PublicController::class, 'invioForm'])->name('submit'); 
 
 // ROTTE PER ARTICOLI
 Route::get('/articles/create', [ArticleController::class, 'create'])->name('articles.create')->middleware('auth');

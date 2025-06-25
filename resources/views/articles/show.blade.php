@@ -1,4 +1,5 @@
 <x-layout>
+    <x-slot>Dettaglio {{$article->title}}</x-slot>
     
     <h1 class="text-dark text-center font-title display-5 pt-3">DETTAGLIO ARTICOLO: {{$article->title}}</h1>
     
