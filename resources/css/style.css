@@ -97,9 +97,7 @@ nav {
   mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 25%, #ffffff 75%, rgba(255, 255, 255, 0) 100%);
   margin: 0 auto;
   padding-top: 10vh;
-  padding-bottom: 20vh;
-  z-index:999, !important;
- 
+  padding-bottom: 20vh; 
 }
 
 nav ul {
@@ -128,9 +126,19 @@ nav ul li a:hover {
   color: rgba(0, 35, 122, 0.7);
 }
 
-.dropdown-menu{
-    background-color: rgba(181, 196, 84, 0.245);
+.dropdown-custom{
+  z-index: 10;
+  background-color: rgba(181, 196, 84, 0.245);
 }
+
+/* .layout-div {
+  z-index: 2;
+  display: none;
+} */
+
+/* .c1 {
+  z-index: 2;
+} */
 
 /*immagine*/
 
@@ -139,4 +147,21 @@ img{
     height: auto;
     
 }
+
+
+
+
+
+
+.sparisci {
+  animation-name: prova;
+  animation-duration: 3s;
+}
+
+@keyframes prova {
+  0% {translate: 0px;}
+  50% {translate: 50px;}
+  100% {translate: 150px;}
+}
+
 

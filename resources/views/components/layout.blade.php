@@ -13,12 +13,12 @@
     {{-- vite --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-    {{-- <title>{{$title ?? Presto3.it}}</title> --}}
+    <title>Presto.it - {{$title ?? $title='Presto3.it'}}</title>
 </head>
 <body class="bg-header">
     <x-navbar/>
     
-    <div class="min-vh-100 ">
+    <div class="min-vh-100 layout-div z-1">
 
         {{$slot}}
 

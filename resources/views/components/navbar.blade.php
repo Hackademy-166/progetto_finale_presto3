@@ -140,9 +140,9 @@
             Categorie
           </a>
 
-          <ul class="dropdown-menu ">
+          <ul class="dropdown-menu dropdown-custom">
             @foreach($categories as $category)
-            <li><a class="text-dark z-3" href={{route('categories-index', $category)}}>{{$category->category_name}}</a></li>
+            <li><a class="text-dark" href={{route('categories-index', $category)}}>{{$category->category_name}}</a></li>
             @if($category->id !=12)
             <li><hr class="dropdown-divider"></li>
             @endif
@@ -176,6 +176,10 @@
             </ul>
         
           </li>
+
+          @if(Auth::user()->is_revisor)
+            <li><a class="text-dark position-relative linker" href="{{route('revisor.dashboard')}}">Zona revisore <span class="position-absolute top-0 start-100 translate-middle rounded">{{\App\Models\Article::toBeRevisedCount()}}</span></a></li>
+          @endif
     
         @endauth
 

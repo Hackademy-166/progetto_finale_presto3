@@ -3,10 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\RevisorController;
 
 // ROTTE PUBLIC
 Route::get('/', [PublicController::class, 'home'])->name('homepage');
-Route::get('/contact-us', [PublicController::class, 'contact_us'])->name('contact');
+Route::get('/contact-us', [PublicController::class, 'contact_us'])->name('contact')->middleware('auth');
 Route::post('/contact/submit', [PublicController::class, 'invioForm'])->name('submit'); 
 
 // ROTTE PER ARTICOLI
@@ -16,5 +17,10 @@ Route::get('/articles/show/{article}', [ArticleController::class, 'show'])->name
 Route::get('/articles/category/{category}', [ArticleController::class, 'category_page'])->name('categories-index');
 
 // ROTTE REVISORI
-Route::get('/revisor/dashboard', [RevisorController::class, 'index'])->name('revisor.dashboard');
+Route::get('/revisor/dashboard', [RevisorController::class, 'index'])->name('revisor.dashboard')->middleware('IsRevisor');
+
+Route::patch('/accept/{article}', [RevisorController::class, 'accept'])->name('accept');
+
+Route::patch('/reject/{article}', [RevisorController::class, 'reject'])->name('reject');
+
 

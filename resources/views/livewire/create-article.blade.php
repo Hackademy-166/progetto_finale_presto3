@@ -3,6 +3,42 @@
         <div class="row justify-content-center">
             <div class="col-12 col-md-6">
                 
+                {{-- @if(session('message'))
+                <div id="timer_alert" class="alert alert-success" wire:ignore>
+                    {{ session('message') }}
+                </div>
+                @endif
+                
+                @push('scripts')
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                    const alertBox = document.querySelector('#timer_alert');
+                    if (alertBox) {
+                    setTimeout(function () {
+                    alertBox.classList.add('d-none');
+                    }, 3000); // 3 secondi
+                    }
+                    });
+                </script>
+                @endpush
+                @stack('scripts') --}}
+                
+                @if(session('message'))
+                <div id="timer_alert" class="alert alert-success">
+                    {{session('message')}}
+                    
+                    <script>
+                        let btn_trigger=document.querySelector('#btn_trigger');
+                        let timer_alert=document.querySelector('#timer_alert');
+
+                        btn_trigger.addEventListener('click', function() {
+                            timer_alert.classList.add('sparisci');
+                        });                        
+                    </script>                
+                    
+                </div> 
+                @endif
+                
                 <form wire:submit="store" class="shadow rounded p-5 bg-form">
                     <div class="mb-3">
                         <label for="title" class="form-label">Titolo</label>
@@ -33,7 +69,7 @@
                             @endforeach
                         </select>
                     </div>
-                    <button type="submit" class="btn bg-button ">Inserisci</button>
+                    <button type="submit" id="btn_trigger" class="btn bg-button ">Inserisci</button>
                 </form>
             </div>
         </div>

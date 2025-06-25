@@ -1,7 +1,7 @@
 <x-layout>
     <x-slot name="title">Homepage</x-slot>
     <header >
-        <div class="container-fluid ">
+        <div class="container-fluid c1">
             <div class="row d-flex justify-content-center  ">
 
                 <div class="col-12 col-md-6 col-lg-4  ">
@@ -10,7 +10,12 @@
             </div>
         </div>
     </header>
-    
+
+    @if(session()->has('errorMessage'))
+        <div class="alert alert-danger">
+            {{session('errorMessage')}}
+        </div>
+    @endif
     
     {{-- <section>
         <div class="container mt-5 ">
@@ -47,7 +52,7 @@
         </div>
     </section> --}}
     
-    <section class="container  mt-5 py-5 ">
+    <section class="container mt-5 py-5 ">
         <div class="row align-items-center h-100">
             <div class="col-12 col-md-7">
                 <h2 class="text-center font-title display-1" id="text">INSERISCI ARTICOLO</h2>
