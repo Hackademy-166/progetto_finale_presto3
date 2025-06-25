@@ -34,11 +34,12 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    z-index: 1;
+    
 }
 
 .bg-button{
-    background-color:rgba(92, 116, 87, 0.614) ;
+    background-color:rgba(92, 116, 87, 0.781) ;
+    border: 2px solid var(--color-s);
    
 }
 
@@ -97,7 +98,7 @@ nav {
   margin: 0 auto;
   padding-top: 10vh;
   padding-bottom: 20vh;
-  z-index: 2;
+  z-index:999, !important;
  
 }
 
@@ -136,5 +137,6 @@ nav ul li a:hover {
 img{
     max-width: 100%;
     height: auto;
-    z-index: 1;
+    
 }
+

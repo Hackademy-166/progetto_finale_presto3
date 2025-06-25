@@ -2,8 +2,9 @@
     <x-slot name="title">Homepage</x-slot>
     <header >
         <div class="container-fluid ">
-            <div class="row justify-content-center align-items-center">
-                <div class="col-12 col-md-6 col-lg-4">
+            <div class="row d-flex justify-content-center  ">
+
+                <div class="col-12 col-md-6 col-lg-4  ">
                     <img src="/img/Bianco_e_Nero_Minimalista_Life_Coach_Logo__3_-removebg-preview.png" alt="">
                 </div>
             </div>
@@ -46,7 +47,7 @@
         </div>
     </section> --}}
     
-    <section class="container  mt-5 vh-100 py-5 ">
+    <section class="container  mt-5 py-5 ">
         <div class="row align-items-center h-100">
             <div class="col-12 col-md-7">
                 <h2 class="text-center font-title display-1" id="text">INSERISCI ARTICOLO</h2>

@@ -83,7 +83,7 @@
           </ul>
         </li> --}}
         
-      </ul>
+      {{-- </ul>
       
       
       @auth
@@ -121,28 +121,28 @@
         </form>
       </div>
     </div>
-  </nav> 
+  </nav>  --}}
 
- --}}
+ 
 
 
   <nav>
   <ul>
     <li>
-      <a class=""  href="{{route('homepage')}}">Home</a>
+      <a class="text-dark"  href="{{route('homepage')}}">Home</a>
     </li>
     <li class="">
-          <a class="" href="{{route('articles.index')}}">I nostri articoli</a>
+          <a class="text-dark" href="{{route('articles.index')}}">I nostri articoli</a>
     </li>
     
     <li class="dropdown">
-          <a class=" dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="text-dark dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Categorie
           </a>
 
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu ">
             @foreach($categories as $category)
-            <li><a class="" href={{route('categories-index', $category)}}>{{$category->category_name}}</a></li>
+            <li><a class="text-dark z-3" href={{route('categories-index', $category)}}>{{$category->category_name}}</a></li>
             @if($category->id !=12)
             <li><hr class="dropdown-divider"></li>
             @endif
@@ -153,10 +153,10 @@
         
       @auth
       <li>
-        <a class="" href="{{route('articles.create')}}">Inserisci un articolo</a>
+        <a class="text-dark" href="{{route('articles.create')}}">Inserisci un articolo</a>
       </li> 
       <li class="">
-          <a class="" href="#">Lavora con noi</a>
+          <a class="text-dark" href="#">Lavora con noi</a>
         </li> 
           
       @endauth
@@ -165,13 +165,13 @@
       @auth
       
         <li class=" dropdown">
-          <a href="" class=" dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">{{Auth::user()->name}}</a> 
+          <a href="" class="text-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">{{Auth::user()->name}}</a> 
             
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Profilo</a></li>
+            <li><a class="text-dark dropdown-item linker" href="#">Profilo</a></li>
             <hr class="dropdown-divider">
             
-            <li><a class=" dropdown-item " onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Log-Out</a>
+            <li><a class="text-dark dropdown-item linker" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Log-Out</a>
               <form action="{{route('logout')}}" method="POST" class="d-none" id="form-logout">@csrf</form></li>
             </ul>
         
@@ -185,10 +185,10 @@
 
       @guest    
     <li>
-      <a class="me-1 mx-3 " href="{{route('login')}}">Login</a>
+      <a class="me-1 mx-3 text-dark " href="{{route('login')}}">Login</a>
     </li>
     <li>
-      <a href="{{route('register')}}" class="ms-1 mx-3">Registrati</a>
+      <a href="{{route('register')}}" class="ms-1 mx-3 text-dark ">Registrati</a>
     </li>
     @endguest
   </ul>
