@@ -184,7 +184,7 @@
         <a href="" class="text-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">{{Auth::user()->name}}</a> 
         
         <ul class="dropdown-menu dropdown-custom ">
-          <li><a class="text-dark dropdown-item linker" href="#">Profilo</a></li>
+          <li><a class="text-dark dropdown-item linker" href="{{route('dashboard', Auth::user())}}">Profilo</a></li>
           <hr class="dropdown-divider">
           
           <li><a class="text-dark dropdown-item linker" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Log-Out</a>
