@@ -131,7 +131,7 @@
     <li>
       <a class="text-dark"  href="{{route('homepage')}}">Home</a>
     </li>
-    <li class="">
+    <li class="text-dark">
           <a class="text-dark" href="{{route('articles.index')}}">I nostri articoli</a>
     </li>
     
