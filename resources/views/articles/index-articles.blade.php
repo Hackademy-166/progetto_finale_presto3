@@ -14,7 +14,7 @@
             <div class="row">
                 @foreach ($articles as $article )
                 <div class="col-12 col-md-4">
-                    <x-card-orizontal :article="$article" />
+                    <x-card-vertical :article="$article" />
                 </div>
                 @endforeach
             </div>

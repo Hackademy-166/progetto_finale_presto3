@@ -9,10 +9,10 @@
             </div>
         </div>
     </header>
-    <section class="container">
-        <div class="row">
-            <div class="col-12 col-md-12 col-lg-12">
-                <form class="p-5 shadow" method="POST" action="{{route('submit')}}">
+    <section class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6 col-lg-6">
+                <form class="p-5 bg-form shadow" method="POST" action="{{route('submit')}}">
                         @csrf
                         <div class="mb-3">
                             <label for="name" class="form-label text-center w-100 text-white">Nome</label>
@@ -31,7 +31,7 @@
                             <textarea class="form-control" name="user_message" id="message" cols="30" rows="10" placeholder="Raccontaci perché vuoi lavorare con noi." required></textarea>
                         </div>
                         <div class="d-flex justify-content-center">   
-                            <button type="submit" class="btn bg-button">Invia</button>
+                            <button type="submit" class="btn  bg-button">Invia</button>
                         </div>
                 </form>
             </div>
