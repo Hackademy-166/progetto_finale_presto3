@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Article;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 
 class RevisorController extends Controller
 {
@@ -24,6 +26,11 @@ class RevisorController extends Controller
         return redirect()
                         ->back()
                         ->with('message', "Hai rifiutato l'articolo $article->title");
-    }   
+    }  
+
+    public function makeRevisor(User $user){
+        Artisan::call('app:make-user-revisor', ['email' => $user -> email]);
+        return redirect()->back();
+    }
 
 }
