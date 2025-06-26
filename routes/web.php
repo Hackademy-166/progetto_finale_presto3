@@ -18,9 +18,7 @@ Route::get('/articles/category/{category}', [ArticleController::class, 'category
 
 // ROTTE REVISORI
 Route::get('/revisor/dashboard', [RevisorController::class, 'index'])->name('revisor.dashboard')->middleware('IsRevisor');
-
 Route::patch('/accept/{article}', [RevisorController::class, 'accept'])->name('accept');
-
 Route::patch('/reject/{article}', [RevisorController::class, 'reject'])->name('reject');
 
 
