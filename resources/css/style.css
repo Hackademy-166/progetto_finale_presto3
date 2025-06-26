@@ -129,18 +129,13 @@ nav ul li a:hover {
 
 .dropdown-custom{
   z-index: 10;
-  background-color: rgba(181, 196, 84, 0.53);
+  background-color: rgba(181, 196, 84, 0.812);
  
 }
 
-/* .layout-div {
-  z-index: 2;
-  display: none;
-} */
 
-/* .c1 {
-  z-index: 2;
-} */
+
+
 
 /*immagine*/
 
@@ -194,19 +189,7 @@ h1{
   box-sizing: border-box;
 }
 
-/* Remove default margin */
-/* body,
-h2,
-p {
-  margin: 0;
-} */
 
-/* GLOBAL STYLES */
-/* body {
-  display: grid;
-  place-items: center;
-  height: 100vh;
-} */
 
 /* h2 {
   font-size: 2.25rem;
@@ -384,7 +367,8 @@ p {
 /* search */
 
 /* From Uiverse.io by vnuny */ 
-.container {
+
+.container-Search{
   position: relative;
   box-sizing: border-box;
   width: fit-content;
