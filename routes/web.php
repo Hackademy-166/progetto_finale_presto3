@@ -22,4 +22,7 @@ Route::get('/revisor/dashboard', [RevisorController::class, 'index'])->name('rev
 Route::patch('/accept/{article}', [RevisorController::class, 'accept'])->name('accept');
 Route::patch('/reject/{article}', [RevisorController::class, 'reject'])->name('reject');
 
+// ROTTA SEARCH
+Route::get('/search/article', [PublicController::class, 'search'])->name('search');
+
 

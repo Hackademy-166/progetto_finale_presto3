@@ -34,4 +34,10 @@ class PublicController extends Controller
             return redirect(route('homepage'))->with('error', 'Si è verificato un errore durante l\'invio del messaggio');   
         }
     }
+
+    public function search(Request $req){
+        $query=$req->input('query');
+        $articles=Article::search($query)->where('is_accepted', true)->paginate(10);
+        return view('articles.searched', ['articles'=>$articles , 'query'=>$query]);
+   }
 }
