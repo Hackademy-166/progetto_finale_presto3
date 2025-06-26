@@ -213,7 +213,7 @@
         @endguest
 
         <li>
-          <div class="container">
+          <div class="container-Search">
             <form action="{{route('search')}}" method="GET">
                 <input checked="" class="checkbox" type="checkbox"> 
                 <div class="mainbox">
