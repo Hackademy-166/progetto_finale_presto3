@@ -10,12 +10,25 @@
             </div>
         </div>
     </header>
-
+    <!-- ALERT PER RIFIUTO ARTICOLO -->
     @if(session()->has('errorMessage'))
         <div class="alert alert-danger">
             {{session('errorMessage')}}
         </div>
     @endif
+    <!-- FINE ALERT PER RIFIUTO ARTICOLO -->
+
+    <!-- ALERT INVIO MAIL DI CONTATTO -->
+    @if(session('success'))
+        <div class="alert alert-danger">
+            {{session('success')}}
+        </div>
+    @elseif(session('error'))
+        <div class="alert alert-danger">
+            {{session('error')}}
+        </div>
+    @endif
+    <!-- FINE ALERT INVIO MAIL DI CONTATTO -->
     
     <section>
         <div class="container mt-5 ">
