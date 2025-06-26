@@ -1,4 +1,5 @@
 <x-layout>
+    <x-slot name="title">Categorie</x-slot>
     <h1 class="text-center font-title p-5 display-1" >Articoli della categoria: {{$category->category_name}}</h1>
     <div class="container">
         <div class="row justify-content-center">

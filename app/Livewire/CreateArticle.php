@@ -56,4 +56,12 @@ class CreateArticle extends Component
         $categories = Category::all();
         return view('livewire.create-article', compact('categories'));
     }
+
+    // public function showMessage()
+    // {
+    //     session()->flash('message', 'Articolo inserito con successo!');
+    //     // dispatch evento JS dopo 3 secondi
+    //     $this->dispatchBrowserEvent('hide-alert', [], 3000);
+    // }
+
 }

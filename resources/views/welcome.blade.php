@@ -1,18 +1,23 @@
 <x-layout>
-    <header>
-        <x-slot name="title">Homepage</x-slot>
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-12 col-lg-12">
-                    <h1 class="text-dark text-center pt-5 display-1 font-title">PRESTO.IT</h1>
-                    
+    <x-slot name="title">Homepage</x-slot>
+    <header >
+        <div class="container-fluid c1">
+            <div class="row d-flex justify-content-center  ">
+
+                <div class="col-12 col-md-6 col-lg-4  ">
+                    <img src="/img/Bianco_e_Nero_Minimalista_Life_Coach_Logo__3_-removebg-preview.png" alt="">
                 </div>
             </div>
         </div>
     </header>
+
+    @if(session()->has('errorMessage'))
+        <div class="alert alert-danger">
+            {{session('errorMessage')}}
+        </div>
+    @endif
     
-    
-    <section>
+    {{-- <section>
         <div class="container mt-5 ">
             <div class="row d-flex justify-content-center">
                 <div class="col-12 col-md-8 col-lg-8">  
@@ -45,9 +50,9 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     
-    <section class="container  mt-5 min-vh-100 py-5 bg-standard">
+    <section class="container mt-5 py-5 ">
         <div class="row align-items-center h-100">
             <div class="col-12 col-md-7">
                 <h2 class="text-center font-title display-1" id="text">INSERISCI ARTICOLO</h2>
@@ -67,5 +72,7 @@
         </div>
         
     </section>
-    
+
+
 </x-layout>
+
