@@ -150,6 +150,16 @@ h1{
   background-color: transparent;
 }
 
+.container-dashboard {
+  background: linear-gradient(rgba(16, 11, 0, 0.301), rgba(181, 196, 84, 0.405));
+  height: 70vh;
+  width: 80vh;
+  justify-self: center;
+  padding: 15px;
+  border-radius: 5%;
+  margin-top: 7vh;
+}
+
 
 
 
