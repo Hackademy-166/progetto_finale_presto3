@@ -3,10 +3,12 @@
 namespace App\Models;
 
 use App\Models\User;
+use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
 {
+    use Searchable;
     protected $fillable = [
         'title',
         'description',
@@ -31,5 +33,14 @@ class Article extends Model
 
     public static function toBeRevisedCount(){
         return Article::where('is_accepted', null)->count();
+    }
+
+        public function toSearchableArray(){
+        return[
+            'id'=>$this->id,
+            'title'=>$this->title,
+            'description'=>$this->description,
+            'categeory'=>$this->category,
+        ];
     }
 }
