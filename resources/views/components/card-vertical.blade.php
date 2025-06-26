@@ -34,7 +34,7 @@
         Prezzo: {{$article->price}}
       </p>
     </div>
-    <button class="card__button "><a href="{{route('articles.show', $article)}}" class="btn link-offset-2 link-underline link-underline-opacity-0 text-color font-text">Vai al dettaglio</a></button>
+    <button class="card__button "><a href="{{route('articles.show', $article)}}" class="btn  link-offset-2 link-underline link-underline-opacity-0 text-color font-text">Vai al dettaglio</a></button>
 
   </div>
 </article>

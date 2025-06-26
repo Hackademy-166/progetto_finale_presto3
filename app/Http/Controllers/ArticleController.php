@@ -13,7 +13,7 @@ class ArticleController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {   $articles= Article::where('is_accepted', true)->orderBy('created_at', 'desc')->get()->paginate(10);
+    {   $articles= Article::where('is_accepted', true)->orderBy('created_at', 'desc')->paginate(10);
         return view('articles.index-articles', compact('articles'));
     }
 

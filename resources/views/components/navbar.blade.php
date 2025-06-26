@@ -10,30 +10,30 @@
           <a class="nav-link active" aria-current="page" href="{{route('homepage')}}">Home</a>
         </li> 
       </ul>
-
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="{{route('articles.index')}}">I nostri articoli</a>
-        </li>
-        <ul class="navbar-nav mx-3">
+      
+      
+      
+      <li class="nav-item">
+        <a class="nav-link" href="{{route('articles.index')}}">I nostri articoli</a>
+      </li>
+      <ul class="navbar-nav mx-3">
         <li class="nav-item dropdown">
           <button class="nav-link dropdown-toggle font-extra"   data-bs-toggle="dropdown" aria-expanded="false">
             Articoli
           </button>
           <ul class="dropdown-menu bg-drop">
-
-            <li><a class="dropdown-item" href="{{route('articles.index')}}">I nostri Articoli</a></li>
-             <li><hr class="dropdown-divider"></li>
-
-            <li><a class="dropdown-item" href="{{route('articles.create')}}"></a>Inserisci un articolo</li>
-
             
-              
-            </ul>
-          </li>
-          
-
+            <li><a class="dropdown-item" href="{{route('articles.index')}}">I nostri Articoli</a></li>
+            <li><hr class="dropdown-divider"></li>
+            
+            <li><a class="dropdown-item" href="{{route('articles.create')}}"></a>Inserisci un articolo</li>
+            
+            
+            
+          </ul>
+        </li>
+        
+        
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Articoli
@@ -46,17 +46,17 @@
             @endauth
           </ul>
         </li>
-
-
-
-
+        
+        
+        
+        
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Categorie
           </a>
-
-
-
+          
+          
+          
           <ul class="dropdown-menu bg-drop">
             @foreach($categories as $category)
             <li><a class="dropdown-item text-dark" href="{{route('categories-index', $category)}}">{{$category->category_name}}</a></li>
@@ -83,7 +83,7 @@
           </ul>
         </li>
         
-     </ul>
+      </ul>
       
       
       @auth
@@ -122,78 +122,79 @@
       </div>
     </div>
   </nav> 
-
+  
   --}}
-
-
+  
+  
   <nav>
-  <ul>
-    <li>
-      <a class="text-dark"  href="{{route('homepage')}}">Home</a>
-    </li>
-    <li class="text-dark">
-          <a class="text-dark" href="{{route('articles.index')}}">I nostri articoli</a>
-    </li>
-    
-    <li class="dropdown ">
-          <a class="text-dark dropdown-toggle nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Categorie
-          </a>
-
-          <ul class="dropdown-menu dropdown-custom ">
-            @foreach($categories as $category)
-            <li><a class="text-dark dropdown-item" href="{{route('categories-index', $category)}}">{{$category->category_name}}</a></li>
-            @if($category->id !=12)
-            <li><hr class="dropdown-divider"></li>
-            @endif
-            @endforeach
-          </ul>
-        </li>
+    <ul>
+      <li>
+        <a class="text-dark"  href="{{route('homepage')}}">Home</a>
+      </li>
+      <li class="text-dark">
+        <a class="text-dark" href="{{route('articles.index')}}">I nostri articoli</a>
+      </li>
+      
+      <li class="nav-item dropdown">
+        <a class=" text-dark dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Categorie
+        </a>
         
-        
+        <ul class="dropdown-menu dropdown-custom ">
+          @foreach($categories as $category)
+          <li><a class="text-dark dropdown-item" href="{{route('categories-index', $category)}}">{{$category->category_name}}</a></li>
+          @if($category->id !=12)
+          <li><hr class="dropdown-divider"></li>
+          @endif
+          @endforeach
+        </ul>
+      </li>
+      
+      
+      
       @auth
       <li>
         <a class="text-dark" href="{{route('articles.create')}}">Inserisci un articolo</a>
       </li> 
-      <li class="">
-          <a class="text-dark" href="{{route('contact')}}">Lavora con noi</a>
-        </li> 
-          
+      <li>
+        <a class="text-dark" href="{{route('contact')}}">Lavora con noi</a>
+      </li> 
+      
       @endauth
-
-
+      
+      
       @auth
       
-        <li class=" dropdown">
-          <a href="" class="text-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">{{Auth::user()->name}}</a> 
-            
-          <ul class="dropdown-menu">
-            <li><a class="text-dark dropdown-item linker" href="#">Profilo</a></li>
-            <hr class="dropdown-divider">
-            
-            <li><a class="text-dark dropdown-item linker" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Log-Out</a>
-              <form action="{{route('logout')}}" method="POST" class="d-none" id="form-logout">@csrf</form></li>
-            </ul>
+      <li class=" dropdown">
+        <a href="" class="text-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">{{Auth::user()->name}}</a> 
         
-          </li>
-
-          @if(Auth::user()->is_revisor)
-            <li><a class="text-dark position-relative linker" href="{{route('revisor.dashboard')}}">Zona revisore <span class="position-absolute top-0 start-100 translate-middle rounded">{{\App\Models\Article::toBeRevisedCount()}}</span></a></li>
-          @endif
-    
+        <ul class="dropdown-menu">
+          <li><a class="text-dark dropdown-item linker" href="#">Profilo</a></li>
+          <hr class="dropdown-divider">
+          
+          <li><a class="text-dark dropdown-item linker" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Log-Out</a>
+            <form action="{{route('logout')}}" method="POST" class="d-none" id="form-logout">@csrf</form></li>
+          </ul>
+          
+        </li>
+        
+        @if(Auth::user()->is_revisor)
+        <li><a class="text-dark position-relative linker" href="{{route('revisor.dashboard')}}">Zona revisore <span class="position-absolute top-0 start-100 translate-middle rounded">{{\App\Models\Article::toBeRevisedCount()}}</span></a></li>
+        @endif
+        
         @endauth
-
-
-
-
-
-      @guest    
-    <li>
-      <a class="me-1 mx-3 text-dark " href="{{route('login')}}">Login</a>
-    </li>
-    <li>
-      <a href="{{route('register')}}" class="ms-1 mx-3 text-dark ">Registrati</a>
-    </li>
-    @endguest
-  </ul>
-</nav>
+        
+        
+        
+        
+        
+        @guest    
+        <li>
+          <a class="me-1 mx-3 text-dark " href="{{route('login')}}">Login</a>
+        </li>
+        <li>
+          <a href="{{route('register')}}" class="ms-1 mx-3 text-dark ">Registrati</a>
+        </li>
+        @endguest
+      </ul>
+    </nav>
