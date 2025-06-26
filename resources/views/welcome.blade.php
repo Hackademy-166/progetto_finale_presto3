@@ -17,7 +17,7 @@
         </div>
     @endif
     
-    {{-- <section>
+    <section>
         <div class="container mt-5 ">
             <div class="row d-flex justify-content-center">
                 <div class="col-12 col-md-8 col-lg-8">  
@@ -50,8 +50,8 @@
                 </div>
             </div>
         </div>
-    </section> --}}
-    
+    </section> 
+   
     <section class="container mt-5 py-5 ">
         <div class="row align-items-center h-100">
             <div class="col-12 col-md-7">
@@ -71,7 +71,7 @@
             </div>
         </div>
         
-    </section>
+    </section> 
 
 
 </x-layout>

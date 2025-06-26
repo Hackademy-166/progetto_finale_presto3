@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-12 col-md-12 col-lg-12">
                 <form class="p-5 shadow" method="POST" action="{{route('submit')}}">
-                        @csr
+                        @csrf
                         <div class="mb-3">
                             <label for="name" class="form-label text-center w-100 text-white">Nome</label>
                             <input type="text" class="form-control" id="name" name="name" placeholder="Nome" required>

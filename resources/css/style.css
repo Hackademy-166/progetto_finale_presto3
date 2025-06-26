@@ -1,7 +1,7 @@
 
 /* colori */
 :root{
-    --color-p: #F6FEDB; /*primary-sfondo */
+    --color-p: rgb(246, 254, 219); /*primary-sfondo */
     --color-s: rgb(16, 11, 0); /*secondary-testo */
     --color-a: #E6D3A3; /*accent-verdino */
     --color-a2: #D8D174; /*accent-verdino-giallino */
@@ -30,8 +30,8 @@
 }
 
 .bg-header{
-    background-image: url(../../public/img/Cover\ Page.png);
-    background-size: cover;
+    background-image: url(../../public/img/CoverPage2.png);
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
     
@@ -44,7 +44,7 @@
 }
 
 .bg-drop{
-    background-color: var(--color-a2);
+    background-color: rgba(246, 254, 219, 0.468);
 }
 
 .bg-form{
@@ -127,7 +127,7 @@ nav ul li a:hover {
 }
 
 .dropdown-custom{
-  z-index: 10;
+  /* z-index: 10; */
   background-color: rgba(181, 196, 84, 0.245);
 }
 

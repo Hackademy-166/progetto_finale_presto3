@@ -9,14 +9,14 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{{route('homepage')}}">Home</a>
         </li> 
-      </ul>--}}
+      </ul>
 
 
 
-        {{-- <li class="nav-item">
+        <li class="nav-item">
           <a class="nav-link" href="{{route('articles.index')}}">I nostri articoli</a>
-        </li> --}}
-        {{-- <ul class="navbar-nav mx-3">
+        </li>
+        <ul class="navbar-nav mx-3">
         <li class="nav-item dropdown">
           <button class="nav-link dropdown-toggle font-extra"   data-bs-toggle="dropdown" aria-expanded="false">
             Articoli
@@ -31,10 +31,10 @@
             
               
             </ul>
-          </li>--}}
+          </li>
           
 
-        {{-- <li class="nav-item dropdown">
+        <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Articoli
           </a>
@@ -69,7 +69,7 @@
         
         
         
-        {{-- <li class="nav-item dropdown">
+        <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
           </a>
@@ -81,9 +81,9 @@
             <li><a class="dropdown-item" href="{{route('articles.create')}}">Inserisci Articolo</a></li>
             @endauth
           </ul>
-        </li> --}}
+        </li>
         
-      {{-- </ul>
+     </ul>
       
       
       @auth
@@ -121,9 +121,9 @@
         </form>
       </div>
     </div>
-  </nav>  --}}
+  </nav> 
 
- 
+  --}}
 
 
   <nav>
@@ -135,14 +135,14 @@
           <a class="text-dark" href="{{route('articles.index')}}">I nostri articoli</a>
     </li>
     
-    <li class="dropdown">
-          <a class="text-dark dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <li class="dropdown ">
+          <a class="text-dark dropdown-toggle nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Categorie
           </a>
 
-          <ul class="dropdown-menu dropdown-custom">
+          <ul class="dropdown-menu dropdown-custom ">
             @foreach($categories as $category)
-            <li><a class="text-dark" href={{route('categories-index', $category)}}>{{$category->category_name}}</a></li>
+            <li><a class="text-dark dropdown-item" href="{{route('categories-index', $category)}}">{{$category->category_name}}</a></li>
             @if($category->id !=12)
             <li><hr class="dropdown-divider"></li>
             @endif
@@ -156,7 +156,7 @@
         <a class="text-dark" href="{{route('articles.create')}}">Inserisci un articolo</a>
       </li> 
       <li class="">
-          <a class="text-dark" href="#">Lavora con noi</a>
+          <a class="text-dark" href="{{route('contact')}}">Lavora con noi</a>
         </li> 
           
       @endauth
