@@ -29,7 +29,9 @@
     </div>
     @endif
     <!-- FINE ALERT INVIO MAIL DI CONTATTO -->
-    
+
+  
+    <!--inserisci articolo-->
     <section class="container mt-5 py-5 ">
         <div class="row align-items-center h-100">
             <div class="col-12 col-md-7">
@@ -50,6 +52,12 @@
         </div>
         
     </section>
+
+<!--fine inserisci articolo-->
+
+  <!--search bar-->
+
+    <!--search bar-->
     
     <section>
         <h1 class="text-center font-title display-1 mt-5">Gli ultimi articoli</h1>
