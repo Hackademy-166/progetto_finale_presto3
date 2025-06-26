@@ -95,7 +95,7 @@ html {
 
 nav {
   max-width: 100vw;
-  mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 25%, #ffffff 75%, rgba(255, 255, 255, 0) 100%);
+  /* mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 25%, #ffffff 75%, rgba(255, 255, 255, 0) 100%); */
   margin: 0 auto;
   padding-top: 10vh;
   /* padding-bottom: 20vh;  */
