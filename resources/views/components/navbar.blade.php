@@ -94,7 +94,7 @@
             {{Auth::user()->name}}
           </button>
           <ul class="dropdown-menu bg-drop">
-            <li><a class="dropdown-item" href="#">Profilo</a></li>
+            <li><a class="dropdown-item" href="{{route('dashboard', $user)}}">Profilo</a></li>
             <li><a class=" btn dropdown-item " onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Log-Out</a>
               <form action="{{route('logout')}}" method="POST" class="d-none" id="form-logout">@csrf</form></li>
               
