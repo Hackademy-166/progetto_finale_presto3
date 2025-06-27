@@ -28,6 +28,13 @@
     </div>
     @endif
     <!-- FINE ALERT INVIO MAIL DI CONTATTO -->
+    <!-- ALERT UTENTE CANCELLATO -->
+    @if(session('message'))
+        <div class="alert alert-danger">
+            {{session('message')}}
+        </div>
+    @endif
+    <!-- FINE ALERT UTENTE CANCELLATO -->
 
   
     <!--inserisci articolo-->

@@ -15,7 +15,7 @@
                 @if ($profile && $profile->user_id === $user->id)
                     <div class="row">
                         <div class="col-12 col-md-12 col-lg-12">
-                            <form action="" method="POST">
+                            <form action="{{route('user.destroy')}}" method="POST">
                                 @method('DELETE')
                                 @csrf
                                 <button class="btn bg-button" >Elimina</button>
