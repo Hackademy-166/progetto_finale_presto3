@@ -93,17 +93,19 @@
             Articoli
           </h6>
           <p>
-            <a href="#!" class="text-reset">Angular</a>
+            <a href="{{route('articles.index')}}" class="text-reset">I Nostri Articoli</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">React</a>
+            <a href="" class="text-reset">Categorie</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Vue</a>
+            <a href="#!" class="text-reset">##</a>
           </p>
-          <p>
-            <a href="#!" class="text-reset">Laravel</a>
-          </p>
+          @auth
+            <p>
+              <a href="{{route('articles.create')}}" class="text-reset">Inserisci Articolo</a>
+            </p>
+          @endauth
         </div>
         <!-- Grid column -->
 
@@ -114,17 +116,19 @@
             Useful links
           </h6>
           <p>
-            <a href="#!" class="text-reset">Pricing</a>
+            <a href="{{route('homepage')}}" class="text-reset">HomePage</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Settings</a>
+            <a href="{{route('contact')}}" class="text-reset">Lavora con Noi</a>
           </p>
-          <p>
-            <a href="#!" class="text-reset">Orderini</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Assistenza</a>
-          </p>
+          @auth
+            <p>
+              <a href="" class="text-reset">Profilo Personale</a>
+            </p>
+            <p>
+              <a href="" class="text-reset">Zona Revisore</a>
+            </p>
+          @endauth
         </div>
         <!-- Grid column -->
 

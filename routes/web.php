@@ -8,6 +8,7 @@ use App\Http\Controllers\RevisorController;
 
 // ROTTE PUBLIC
 Route::get('/', [PublicController::class, 'home'])->name('homepage');
+// ROTTA CONTATTACI
 Route::get('/contact-us', [PublicController::class, 'contact_us'])->name('contact')->middleware('auth');
 Route::post('/contact/submit', [PublicController::class, 'invioForm'])->name('submit');
 // ROTTA SEARCH
