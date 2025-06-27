@@ -33,16 +33,6 @@
             </div>
         </section>
         
-    {{-- <div class="container bg-form shadow shadow-2 p-5">
-        <div class="row justify-content-center align-items-center ">
-                <div class="col-12 col-md-4">
-                    <h5 class=" font-extra">Titolo: {{$article->title}}</h5>
-            <p class="font-text">Descrizione: {{$article->description}}</p>
-            <p class=" font-extra">Prezzi: {{$article->price}}</p>
-            <a href="" class="link-offset-2 link-underline link-underline-opacity-0 text-color font-text">Categoria: {{$article->category->category_name}}</a>
-                </div>
-            </div>
-        </div> --}}
 
         <div class="container">
             <div class="row justify-content-center p-3">
