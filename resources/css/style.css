@@ -140,7 +140,7 @@ nav ul li a:hover {
 /*immagine*/
 
 img{
-    max-width: 1200px;
+    max-width: 100%;
     height: auto;
     
 }

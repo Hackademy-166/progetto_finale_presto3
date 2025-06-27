@@ -1,11 +1,10 @@
 <x-layout>
     <x-slot name="title">Homepage</x-slot>
     <header >
-        <div class="container-fluid c1">
-            <div class="row d-flex justify-content-center">
-                
-                <div class="col-12 col-md-6 col-lg-4">
-                    <img class="" src="/img/Bianco_e_Nero_Minimalista_Life_Coach_Logo__3_-removebg-preview.png" alt="Logo Presto.it">
+        <div class="container">
+            <div class="row ">
+                <div class="col-12 ">
+                    <img class="" src="/img/erasebg-transformed.png" alt="Logo Presto.it">
                 </div>
             </div>
         </div>

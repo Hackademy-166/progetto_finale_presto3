@@ -19,7 +19,7 @@
                 {{$articles->links()}}
                 @empty
 
-                <h1 class="text-dark text-center font-title p-5 display-1">nessun articolo caricato</h1>
+                <h1 class="text-dark text-center font-title p-5 display-1">Nessun articolo caricato</h1>
                
                 @endforelse
             </div>
