@@ -5,7 +5,7 @@
             <div class="row d-flex justify-content-center  ">
                 
                 <div class="col-12 col-md-6 col-lg-4  ">
-                    <img src="/img/Bianco_e_Nero_Minimalista_Life_Coach_Logo__3_-removebg-preview.png" alt="">
+                    <img class="animate__hinge" src="/img/Bianco_e_Nero_Minimalista_Life_Coach_Logo__3_-removebg-preview.png" alt="">
                 </div>
             </div>
         </div>
