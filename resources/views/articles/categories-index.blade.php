@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row justify-content-center">
             @forelse ($category->articles as $article)
-                <div class="col-12 col-md-3">
+                <div class="col-12 col-md-3 mx-5">
                     <x-card-orizontal :article="$article" />
                 </div>
             @empty

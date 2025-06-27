@@ -137,3 +137,133 @@ prova lorenzooooo
 
 </x-layout>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- DASHBOARD UTENTE -->
+ <div class="row">
+            <div class="col-12 col-md-6 col-lg-6">
+                <div class="card text-bg-danger mb-3" style="max-width: 18rem;">
+                    <div class="card-header">Nome Utente: {{Auth::user()->name}}</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Email: {{Auth::user()->email}}</h5>
+                        <a href="" class="btn bg-button">Modifica</a>
+                    </div>
+                </div>
+            </div>
+                @if($profile && $profile->user_id === $user->id)
+                    <div class="col-12 col-md-6 col-lg-6">
+                        <div class="card text-bg-danger mb-3" style="max-width: 18rem;">
+                            <div class="card-header">
+                                <h4 class="card-title">Nome e Cognome: <hr> {{$profile->name}} {{$profile->last_name}}</h4>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-text">Data di nascita: {{$profile->birthdate}}</h5>
+                                <p class="card-text">Indirizzo: {{$profile->address}}, {{$profile->city}}, {{$profile->postal_code}}, {{$profile->country}} <hr> Numero di telefono: {{$profile->phone_number}}</p>
+                                <a href="" class="btn bg-button">Modifica</a>
+                            </div>
+                        </div>
+                    </div> 
+                @else
+                    <div class="col-12 col-md-6 col-lg-6">
+                        <div class="card text-bg-danger mb-3" style="max-width: 18rem;">
+                            <div class="card-header">
+                                <h4 class="card-title">Non hai ancora inserito il tuo profilo</h4>
+                            </div>
+                            <div class="card-body">
+                                <a href="">
+                                    <h5 class="card-text">Aggiungi il tuo profilo></h5>
+                                </a>
+                            </div>
+                        </div>
+                    </div> 
+                @endif
+        </div>
+                <div class="row">
+                    <div class="col-12 col-md-12 col-lg-12">
+                        @if ($profile && $profile->user_id === $user->id)
+                            <div class="row">
+                                <div class="col-12 col-md-12 col-lg-12">
+                                    <form action="" method="POST">
+                                        @method('DELETE')
+                                        @csrf
+                                        <button class="btn bg-button" >Elimina</button>
+                                    </form>
+                                </div>
+                            </div>
+                        @endif
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+<div class="card">
+  <div class="ds-top"></div>
+  <div class="avatar-holder">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1820405/profile/profile-512.jpg?1533058950" alt="Albert Einstein">
+  </div>
+  <div class="name">
+    <a href="https://codepen.io/AlbertFeynman/" target="_blank">Albert Feynman</a>
+    <h6 title="Followers"><i class="fas fa-users"></i> <span class="followers">90</span></h6>
+  </div>
+  <div class="button">
+    <a href="#" class="btn" onmousedown="follow();">Follow <i class="fas fa-user-plus"></i></a>
+  </div>
+  <div class="ds-info">
+    <div class="ds pens">
+      <h6 title="Number of pens created by the user">Pens <i class="fas fa-edit"></i></h6>
+      <p>29</p>
+    </div>
+    <div class="ds projects">
+      <h6 title="Number of projects created by the user">Projects <i class="fas fa-project-diagram"></i></h6>
+      <p>0</p>
+    </div>
+    <div class="ds posts">
+      <h6 title="Number of posts">Posts <i class="fas fa-comments"></i></h6>
+      <p>0</p>
+    </div>
+  </div>
+  <div class="ds-skill">
+    <h6>Skill <i class="fa fa-code" aria-hidden="true"></i></h6>
+    <div class="skill html">
+      <h6><i class="fab fa-html5"></i> HTML5 </h6>
+      <div class="bar bar-html">
+        <p>95%</p>
+      </div>
+    </div>
+    <div class="skill css">
+      <h6><i class="fab fa-css3-alt"></i> CSS3 </h6>
+      <div class="bar bar-css">
+        <p>90%</p>
+      </div>
+    </div>
+    <div class="skill javascript">
+      <h6><i class="fab fa-js"></i> JavaScript </h6>
+      <div class="bar bar-js">
+        <p>75%</p>
+      </div>
+    </div>
+  </div>
+</div>
