@@ -12,7 +12,7 @@
     <section>
         <div class="container vh-auto p-5">
             <div class="row">
-                @forelse ($articles as $article )
+                @forelse ($articles as $article)
                 <div class="col-12 col-md-4">
                     <x-card-vertical :article="$article" />
                 </div>

@@ -139,11 +139,11 @@ nav ul li a:hover {
 
 /*immagine*/
 
-/* img{
-    max-width: 100%;
+img{
+    max-width: 1200px;
     height: auto;
     
-} */
+}
 
 h1{
   z-index: 0;
@@ -530,7 +530,7 @@ body {
     img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
     }
   }
   .name {
