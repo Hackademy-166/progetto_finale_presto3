@@ -24,7 +24,7 @@ Route::get('/dashboard/{user}', [UserController::class, 'dashboard'])->name('das
 
 // ROTTE REVISORI
 Route::get('/make/revisor/{user}', [RevisorController::class, 'makeRevisor'])->name('make-revisor');
-Route::get('/revisor/dashboard', [RevisorController::class, 'index'])->name('revisor.dashboard')->middleware('isRevisor');
+Route::get('/revisor/dashboard', [RevisorController::class, 'index'])->name('revisor.dashboard')->middleware('isRevisor'); // ROTTA PARAMETRICA ??
 Route::patch('/accept/{article}', [RevisorController::class, 'accept'])->name('accept');
 Route::patch('/reject/{article}', [RevisorController::class, 'reject'])->name('reject');
 

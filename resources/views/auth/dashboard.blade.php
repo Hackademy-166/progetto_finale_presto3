@@ -6,29 +6,133 @@
                 <h1 class="text-dark text-center fw-bold display-1">Profilo Utente</h1>
             </div>
         </div>
+        <div class="row">
+            <div class="col-12 col-md-12 col-lg-12">
+                @if ($profile && $profile->user_id === $user->id)
+                    <div class="row">
+                        <div class="col-12 col-md-12 col-lg-12">
+                            <form action="" method="POST">
+                                @method('DELETE')
+                                @csrf
+                                <button class="btn bg-button" >Elimina</button>
+                            </form>
+                        </div>
+                    </div>
+                @endif
+            </div>
+        </div>
     </header>
-    <section>
-        <div class="container-dashboard">
-            <div class="card-header">
-                <ul class="nav nav-pills card-header-tabs">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="true" href="#">Dati utente</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Dati utente</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-disabled="true">Disabled</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="card-body">
-                <h5 class="card-title mt-3">{{Auth::user()->name}}</h5>
-                <p class="card-text">Email: {{Auth::user()->email}}</p>
-                <p class="card-text"><small>Utente dal: {{Auth::user()->created_at->format('d/m/Y')}}</small></p>
-                <a class="text-dark btn bg-button linker " onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Log-Out</a>
-                <form action="{{route('logout')}}" method="POST" class="d-none" id="form-logout">@csrf</form>
-            </div>
+    <section class="container vh-100">
+        <div class="row">
+            <div class="col-12 col-md-3 col-lg-3">
+                <div class="card">
+                    <div class="ds-top"></div>
+                    <div class="avatar-holder">
+                        <img src="" alt="">
+                    </div>
+                    <div class="name">
+                        <!-- <a href="" target="_blank">{{Auth::user()->name}}</a> -->
+                        <!-- <h6 title="Followers"><i class="fas fa-users"></i> <span class="followers">90</span></h6> -->
+                        <h8 class="text-white">{{Auth::user()->name}} <br> {{Auth::user()->email}}</h8>
+                    </div>
+                    <div class="button">
+                        <a href="route('revisor.dashboard')" class="btn">Ruolo <i class="fas fa-user-plus"></i></a>
+                    </div>
+                    <div class="ds-info">
+                        <div class="ds pens">
+                            <h6 class="text-white">Articoli Pubblicati<i class="fas fa-edit"></i></h6>
+                            <p>29</p>
+                        </div>
+                        <div class="ds projects">
+                            <h6  class="text-white">Articoli Veduti<i class="fas fa-project-diagram"></i></h6>
+                            <p>0</p>
+                        </div>
+                        <div class="ds posts">
+                            <h6 class="text-white">Articoli Acquistati<i class="fas fa-comments"></i></h6>
+                            <p>0</p>
+                        </div>
+                    </div>
+                    <div class="ds-skill">
+                        <h6> Valutazione Utente<i class="fa fa-code" aria-hidden="true"></i></h6>
+                        <div class="skill html">
+                            <h6><i class="fab fa-html5"></i>Affidabilità da venditore</h6>
+                            <div class="bar bar-html">
+                                <!--  <p>95%</p> inserire un contatore della percentuale in base ai feedback ricevuti -->
+                            </div>
+                        </div>
+                        <div class="skill css">
+                            <h6><i class="fab fa-css3-alt"></i> Affidabilità da compratore </h6>
+                            <div class="bar bar-css">
+                                <p>90%</p>
+                            </div>
+                        </div>
+                        @if(Auth::user()->is_revisor)
+                            <div class="skill javascript">
+                                <h6><i class="fab fa-js"></i> Progressi Revisore </h6>
+                                <div class="bar bar-js">
+                                    <p>75%</p>
+                                </div>
+                            </div>
+                        @endif
+                </div>
+                @if($profile && $profile->user_id === $user->id)
+                    <div class="col-12 col-md-3 col-lg-3">
+                        <div class="card">
+                            <div class="ds-top"></div>
+                            <div class="avatar-holder">
+                                <img src="" alt="">
+                            </div>
+                            <div class="name">
+                                <!-- <a href="" target="_blank">{{Auth::user()->name}}</a> -->
+                                <!-- <h6 title="Followers"><i class="fas fa-users"></i> <span class="followers">90</span></h6> -->
+                                <h8 class="text-white">{{$profile->name}} <br> {{$profile->surname}}</h8>
+                            </div>
+                            <div class="button">
+                                <h6>{{$profile->birthdate}} <i class="fas fa-user-plus"></i></h6>
+                            </div>
+                            <div class="ds-info">
+                                <div class="ds pens">
+                                    <h6 class="text-white">Articoli Pubblicati<i class="fas fa-edit"></i></h6>
+                                    <p>29</p>
+                                </div>
+                                <div class="ds projects">
+                                    <h6  class="text-white">Articoli Veduti<i class="fas fa-project-diagram"></i></h6>
+                                    <p>0</p>
+                                </div>
+                                <div class="ds posts">
+                                    <h6 class="text-white">Articoli Acquistati<i class="fas fa-comments"></i></h6>
+                                    <p>0</p>
+                                </div>
+                            </div>
+                            <div class="ds-skill">
+                                <h6> Valutazione Utente<i class="fa fa-code" aria-hidden="true"></i></h6>
+                                <div class="skill html">
+                                    <h6><i class="fab fa-html5"></i>Affidabilità da venditore</h6>
+                                    <div class="bar bar-html">
+                                        <!--  <p>95%</p> inserire un contatore della percentuale in base ai feedback ricevuti -->
+                                    </div>
+                                </div>
+                                <div class="skill css">
+                                    <h6><i class="fab fa-css3-alt"></i> Affidabilità da compratore </h6>
+                                    <div class="bar bar-css">
+                                        <p>90%</p>
+                                    </div>
+                                </div>
+                                <div class="skill javascript">
+                                    <h6><i class="fab fa-js"></i> Progressi Revisore </h6>
+                                    <div class="bar bar-js">
+                                        <p>75%</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @else
+                    <div class="col-12 col-md-3 col-lg-3">
+                        <h4 class="">Non hai ancora inserito il tuo profilo</h4>
+                        <a href=""><h3 class="">Aggiungi il tuo profilo></h3></a>
+                    </div>
+                @endif
         </div>
     </section>
 </x-layout>
