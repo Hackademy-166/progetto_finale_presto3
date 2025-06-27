@@ -6,7 +6,7 @@
         </div>
         <div class="mb-3">
             <label for="surname" class="form-label">Cognome</label>
-            <input type="text" class="form-control @error('last_name') is-invalid @enderror" id="last_name" wire:model.live="surnname" value="{{old('surname')}}">
+            <input type="text" class="form-control @error('last_name') is-invalid @enderror" id="last_name" wire:model.live="surname" value="{{old('surname')}}">
         </div>
         <div class="mb-3">
             <label for="brithdate" class="form-label">Data di nascita</label>
@@ -28,6 +28,6 @@
             <label for="postal_code" class="form-label">CAP</label>
             <input type="text" class="form-control @error('postal_code') is-invalid @enderror" id="postal_code" wire:model.live="postal_code" value="{{old('postal_code')}}">
         </div>
-        <button type="submit" class="btn btn-outline-danger">Registrati</button>
+        <button type="submit" class="btn btn-outline-danger">Modifica</button>
     </form>
 </div>

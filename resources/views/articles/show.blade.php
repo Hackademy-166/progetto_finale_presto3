@@ -51,8 +51,11 @@
                             <p class=" font-extra text-color">Scritto da: {{$article->user->name}}</p>
                         </div>
                         <p class=" font-extra text-color">Inserito il: {{$article->user->created_at->format('d/m/Y')}}</p>
-                        </div>
-                    </div>
+                        <div class="d-flex justify-content-evenly">
+                            <a href="{{route('articles.destroy', $article)}}" class="btn bg-button mb-3"> Elimina</a>
+                            <a href="{{route('articles.edit', $article)}}" class="btn bg-button mb-3"> Modifica</a>
+                        </div>                
+                    </div>                    
                 </div>
             </div>
         </div>

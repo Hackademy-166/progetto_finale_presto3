@@ -2,30 +2,31 @@
 
 namespace App\Livewire;
 
+use App\Models\Profile;
 use Livewire\Component;
+use Livewire\Attributes\Validate;
 
 class EditProfile extends Component
 {
-        #[Validate('required|string|min:3|max:100')]
-        public $user_id;
-        #[Validate('required|string|min:3|max:100')]
-        public $name;
-        #[Validate('required|string|min:3|max:100')]
-        public $surname;
-        #[Validate('required|string|min:3|max:100')]
-        public $birthdate;
-        #[Validate('required|string|min:3|max:100')]
-        public $phone_number;
-        #[Validate('required|string|min:3|max:100')]
-        public $address;
-        #[Validate('required|string|min:3|max:100')]
-        public $city;
-        #[Validate('required|string|min:3|max:100')]
-        public $country;
-        #[Validate('required|string|min:3|max:100')]
-        public $postal_code;
+    public $user_id;
+    #[Validate('required|string|min:3|max:100')]
+    public $name;
+    #[Validate('required|string|min:3|max:100')]
+    public $surname;
+    #[Validate('required|date|min:3|max:100')]
+    public $birthdate;
+    #[Validate('required|string|min:3|max:100')]
+    public $phone_number;
+    #[Validate('required|string|min:3|max:100')]
+    public $address;
+    #[Validate('required|string|min:3|max:100')]
+    public $city;
+    #[Validate('required|string|min:3|max:100')]
+    public $country;
+    #[Validate('required|string|min:3|max:100')]
+    public $postal_code;
 
-         public function rules(){
+    public function rules(){
         return [
             'name' => 'required|string|min:2|max:50',
             'surname' => 'required|string|min:2|max:50',
@@ -40,7 +41,7 @@ class EditProfile extends Component
 
     public function messages(){
         return [
-            'required' => 'Il campo :attributeè richiesto obbligatoriamente.',
+            'required' => 'Il campo :attribute è richiesto obbligatoriamente.',
             'between' => 'Il campo :attribute deve essere compreso tra :min e :max.',
             'date' => 'Il campo :attribute deve essere una data.',
             'before' => 'Il campo :attribute deve essere una data precedente alla data di oggi.',
@@ -48,9 +49,9 @@ class EditProfile extends Component
         ];
     }
 
-        public function editProfile(){
+        public function editProfile(Profile $profile){
         $this->validate();
-        Profile::create([
+        Profile::update([
         'user_id'=>auth()->user()->id,
         'name'=>$this->name,
         'surname'=>$this->surname,  
@@ -60,11 +61,23 @@ class EditProfile extends Component
         'city'=>$this->city,
         'country'=>$this->country,
         'postal_code'=>$this->postal_code
-        ]);
-            
-        session()->flash('message', 'Profilo creato con successo!');
-        $this->reset;
+        ]);      
+        session()->flash('message', 'Profilo aggiornato con successo!');
+        $this->reset();
     }
+
+    // public function mount(){
+    //     $this->user_id = auth()->user()->id;
+    //     $this->name = $this->profile->name;
+    //     $this->surname = $this->profile->surname;
+    //     $this->birthdate = $this->profile->birthdate;
+    //     $this->phone_number = $this->profile->phone_number;
+    //     $this->address = $this->profile->address;
+    //     $this->city = $this->profile->city;
+    //     $this->country = $this->profile->country;
+    //     $this->postal_code = $this->profile->postal_code;
+    // }
+
     public function render()
     {
         return view('livewire.edit-profile');

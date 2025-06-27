@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use App\Models\Category;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreArticleRequest;
 use App\Http\Requests\UpdateArticleRequest;
 
@@ -47,23 +48,24 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        //
+        if(Auth::user() && Auth::user()->id == $article->user_id){
+            
+        return view('articles.edit-article', compact('article')); 
+        }
+        return redirect(route('home'))->with('access_denied', 'Accesso Negato'); // messaggni nella vista
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateArticleRequest $request, Article $article)
-    {
-        //
-    }
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(Article $article)
     {
-        //
+        if(Auth::user()&&Auth::user()->id == $article->user_id){
+        $article->categories()->detach();
+        $article->delete();
+        return redirect(route('articles.index'))->with('message', 'Articolo eliminato con successo'); //aggiunger messaggio nella vista
+        }
     }
     public function category_page(Category $category){
         $articles=$category->articles->where('is_accepted', true);

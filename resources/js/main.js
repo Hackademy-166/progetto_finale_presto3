@@ -1,22 +1,14 @@
-const target = {
-  clicked: 0,
-  currentFollowers: 90,
-  btn: document.querySelector("a.btn"),
-  fw: document.querySelector("span.followers")
-};
+// COUNTER ARTICOLI PUBBLICATI
+document.addEventListener('DOMContentLoaded', () => {
+  const el    = document.querySelector('#article-count');
+  const end  = parseInt(el.dataset.final, 10) || 0;
+  const dur  = 1000;              // durata animazione in ms
+  const step = Math.max(1, Math.floor(dur / end));
+  let  i    = 0;
 
-const follow = () => {
-  target.clicked += 1;
-  target.btn.innerHTML = 'Following <i class="fas fa-user-times"></i>';
-
-  if (target.clicked % 2 === 0) {
-    target.currentFollowers -= 1;
-    target.btn.innerHTML = 'Follow <i class="fas fa-user-plus"></i>';
-  }
-  else {
-    target.currentFollowers += 1;
-  }
-
-  target.fw.textContent = target.currentFollowers;
-  target.btn.classList.toggle("following");
-}
+  const timer = setInterval(() => {
+    i++;
+    el.textContent = i;
+    if (i >= end) clearInterval(timer);
+  }, step);
+});

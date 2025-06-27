@@ -2,14 +2,13 @@
 
 namespace App\Livewire;
 
-use auth;
+
 use App\Models\Profile;
 use Livewire\Component;
 use Livewire\Attributes\Validate;
 
 class CreateProfile extends Component
 {
-        #[Validate('required|string|min:3|max:100')]
         public $user_id;
         #[Validate('required|string|min:3|max:100')]
         public $name;
@@ -43,7 +42,7 @@ class CreateProfile extends Component
 
     public function messages(){
         return [
-            'required' => 'Il campo :attributeè richiesto obbligatoriamente.',
+            'required' => 'Il campo :attribute è richiesto obbligatoriamente.',
             'between' => 'Il campo :attribute deve essere compreso tra :min e :max.',
             'date' => 'Il campo :attribute deve essere una data.',
             'before' => 'Il campo :attribute deve essere una data precedente alla data di oggi.',
@@ -66,7 +65,7 @@ class CreateProfile extends Component
         ]);
             
         session()->flash('message', 'Profilo creato con successo!');
-        $this->reset;
+        $this->reset();
     }
     public function render()
     {
