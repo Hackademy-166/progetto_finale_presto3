@@ -8,6 +8,13 @@
         </div>
     </header>
 
+    {{-- Messaggio di riuscita cancellazione dell'articolo --}}
+    @if(session('message'))
+        <div class="alert alert-success">
+            {{session('message')}}
+        </div>
+    @endif    
+
     
     <section>
         <div class="container vh-auto p-5">

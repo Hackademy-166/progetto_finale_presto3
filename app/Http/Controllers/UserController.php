@@ -14,7 +14,7 @@ class UserController extends Controller
         $user=Auth::user();
         $user->profile()->delete();
         $user->delete(); 
-        return redirect(route('home'))->with('message', 'L \'utente è stato eliminato con successo');
+        return redirect(route('homepage'))->with('message', 'L \'utente è stato eliminato con successo');
     }
     public function dashboard(User $user){
         $user=Auth::user();
