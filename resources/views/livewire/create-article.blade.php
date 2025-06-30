@@ -72,6 +72,7 @@
                         @enderror
                     </div>
                     @if (!empty($images))
+<<<<<<< HEAD
                     <div class="row">
                         <div class="col-12">
                             <p>Photo preview:</p>
@@ -93,6 +94,19 @@
                                     <button type="submit" id="btn_trigger" class="btn bg-button mt-4 ">Inserisci</button>
                                 </div>
                             </div>
+=======
+                    
+                                <p>Photo preview:</p>
+                                <div class="row border border-4 border-success rounded shadow py-4">
+                    @foreach ($images as $key => $image)
+                                    <div class="col d-flex flex-column align-items-center my-3">
+                                        <div class="img-preview mx-auto shadow rounded" style="background-image: url({{ $image->temporaryUrl() }});"></div>
+                                        <button type="button" wire:click="removeImage({{ $key }})" class="btn btn-danger mt-2">Rimuovi</button>
+                                    </div>
+                    @endforeach
+                    @endif
+                                
+>>>>>>> 835ccfac1506b74b113a32c1f4c74bd54a0925d9
                         </div>
                     </div>
                     

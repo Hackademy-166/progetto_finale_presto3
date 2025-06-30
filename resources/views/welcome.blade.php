@@ -69,7 +69,7 @@
         <h1 class="text-center font-title display-1 mt-5">Gli ultimi articoli</h1>
         <div class="container vh-auto p-1">
             <div class="row">
-                @foreach ($articles as $article )
+                @foreach ($articles as $article)
                 <div class="col-12 col-md-4">
                     <x-card-vertical :article="$article" />
                 </div>
