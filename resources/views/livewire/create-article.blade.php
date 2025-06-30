@@ -63,6 +63,7 @@
                     </div>
 
                     <div class="mb-3">
+                        <label for="temporary_images" class="form-label">Immagini</label>
                         <input type="file" wire:model.live="temporary_images" multiple class="form-control shadow @error ('temporary_images.*') is-invalid @enderror" placeholder="Img/">
                         @error ('temporary_images.*')
                         <p class="fst-italic text-danger">{{ $message }}</p>
@@ -72,8 +73,7 @@
                         @enderror
                     </div>
                     @if (!empty($images))
-                        <div class="row">
-                            <div class="col-12">
+                    
                                 <p>Photo preview:</p>
                                 <div class="row border border-4 border-success rounded shadow py-4">
                     @foreach ($images as $key => $image)
@@ -84,8 +84,7 @@
                     @endforeach
                     @endif
                                 </div>
-                            </div>
-                        </div>
+                    @endif     
                     <div class="mb-3">
                         <label for="category" class="form-label">Categoria</label>
                         <select class="form-select" id="category" required wire:model="category">
