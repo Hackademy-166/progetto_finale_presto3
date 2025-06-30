@@ -118,12 +118,12 @@
           <p>
             <a href="{{route('homepage')}}" class="text-reset">HomePage</a>
           </p>
+          @auth
           <p>
             <a href="{{route('contact')}}" class="text-reset">Lavora con Noi</a>
           </p>
-          @auth
             <p>
-              <a href="" class="text-reset">Profilo Personale</a>
+              <a href="{{route('dashboard', Auth::user())}}" class="text-reset">Profilo Personale</a>
             </p>
             <p>
               <a href="" class="text-reset">Zona Revisore</a>

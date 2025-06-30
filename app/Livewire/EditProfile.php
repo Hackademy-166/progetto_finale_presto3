@@ -8,6 +8,7 @@ use Livewire\Attributes\Validate;
 
 class EditProfile extends Component
 {
+    public $profile;
     public $user_id;
     #[Validate('required|string|min:3|max:100')]
     public $name;
@@ -49,9 +50,9 @@ class EditProfile extends Component
         ];
     }
 
-        public function editProfile(Profile $profile){
+    public function editProfile(){
         $this->validate();
-        Profile::update([
+        $this->profile->update([
         'user_id'=>auth()->user()->id,
         'name'=>$this->name,
         'surname'=>$this->surname,  
@@ -66,17 +67,17 @@ class EditProfile extends Component
         $this->reset();
     }
 
-    // public function mount(){
-    //     $this->user_id = auth()->user()->id;
-    //     $this->name = $this->profile->name;
-    //     $this->surname = $this->profile->surname;
-    //     $this->birthdate = $this->profile->birthdate;
-    //     $this->phone_number = $this->profile->phone_number;
-    //     $this->address = $this->profile->address;
-    //     $this->city = $this->profile->city;
-    //     $this->country = $this->profile->country;
-    //     $this->postal_code = $this->profile->postal_code;
-    // }
+    public function mount(){
+        $this->user_id = auth()->user()->id;
+        $this->name = $this->profile->name;
+        $this->surname = $this->profile->surname;
+        $this->birthdate = $this->profile->birthdate;
+        $this->phone_number = $this->profile->phone_number;
+        $this->address = $this->profile->address;
+        $this->city = $this->profile->city;
+        $this->country = $this->profile->country;
+        $this->postal_code = $this->profile->postal_code;
+    }
 
     public function render()
     {

@@ -53,16 +53,17 @@ front-end: Sabrina, Emiliano
 
 
 DA FARE:
-- middleware rotta modifica
-- inserire modale in elimina
-- modifica nome utente ed email
 - rivedere search
 - funzione extra user story 3
 - counter un po’ più lento
 - gestire footer inserendo rotte e nomi sezioni, icone dei social e perché non si vede il primo span
 - gestire pagina categorie con una parte laterale con tutte le categorie per swithchare più facilmente
 
+
+
 EXTR:
 - fare form per newsletter con mail
 - form per assistenza su pubblicazione annuncio con mail
 - gestire error
+- divisione articoli per zona
+- modifica nome utente ed email

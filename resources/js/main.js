@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let  i    = 0;
 
   const timer = setInterval(() => {
-    i++;
     el.textContent = i;
     if (i >= end) clearInterval(timer);
+    i++;
   }, step);
 });

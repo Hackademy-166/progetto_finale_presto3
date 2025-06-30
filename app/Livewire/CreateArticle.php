@@ -6,17 +6,22 @@ use App\Models\Article;
 use Livewire\Component;
 use App\Models\Category;
 use Livewire\Attributes\Validate;
+use Livewire\WithFileUploads;
 
 class CreateArticle extends Component
 {
+    use WithFileUploads;
+    public $article;
     #[Validate('required|string|min:3|max:100')]
     public $title;
     #[Validate('required|string|min:3|max:100')]
     public $description;
     #[Validate('required|string|min:3|max:100')]
     public $price;
-    // #[Validate('required|string|min:3|max:100')]
     public $category;
+    public $images = [];
+    public $temporary_images;
+    
 
 
     public function rules(){
@@ -38,17 +43,45 @@ class CreateArticle extends Component
 
     public function store(){
         $this->validate();
-        Article::create([
+        $this->article= Article::create([
             'title' => $this->title,
             'description' => $this->description,
             'price' => $this->price.'€',
             'category_id' => $this->category,
             'user_id' => auth()->user()->id,
         ]);
+        if (count($this->images) > 0) {
+            foreach ($this->images as $image) {
+            $this->article->images()->create(['path' => $image->store('images', 'public')]);
+            }
+        }
         session()->flash('message', 'Articolo creato con successo!');
         $this->reset();
+    }
 
+    protected function cleanForm(){
+        $this->title = '';
+        $this->description = '';
+        $this->category = '';
+        $this->price = '';
+        $this->images = [];
+    }
 
+    public function updatedTemporaryImages (){
+        if ($this->validate([
+            'temporary_images.*' => 'image|max:2048',
+            'temporary_images'=> 'max:10'
+        ])) {
+        foreach ($this->temporary_images as $image) {
+        $this->images[] = $image;
+        }
+            }
+    }
+
+    public function removeImage($key){
+        if (in_array($key, array_keys($this->images))) {
+        unset ($this->images [$key]);
+        }
     }
 
     public function render()
