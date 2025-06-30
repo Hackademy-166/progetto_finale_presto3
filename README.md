@@ -38,10 +38,6 @@ front-end: Sabrina, Emiliano
 
 *all'esigenza tutti facciamo tutto
 
-pasta al pesto
- 
-prova (sab)
-prova lorenzooooo 
 
 
 
@@ -51,3 +47,23 @@ prova lorenzooooo
          <p class="card-text font-title">Descrizione: <span class="font-text">{{$article->description}}</span> </p>
         <p class="card-text font-title">Prezzi: <span class="font-text">{{$article->price}}</span> </p>
         <a href="" class="link-offset-2 link-underline link-underline-opacity-0 text-color font-title">Categoria: <span class="font-text">{{$article->category->category_name}}</span> </a> -->
+
+
+
+
+
+DA FARE:
+- rivedere search
+- funzione extra user story 3
+- counter un po’ più lento
+- gestire footer inserendo rotte e nomi sezioni, icone dei social e perché non si vede il primo span
+- gestire pagina categorie con una parte laterale con tutte le categorie per swithchare più facilmente
+
+
+
+EXTR:
+- fare form per newsletter con mail
+- form per assistenza su pubblicazione annuncio con mail
+- gestire error
+- divisione articoli per zona
+- modifica nome utente ed email

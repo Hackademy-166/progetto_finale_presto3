@@ -3,67 +3,87 @@
     
     <h1 class="text-dark text-center font-title display-5 pt-3">DETTAGLIO ARTICOLO: {{$article->title}}</h1>
     
-        <section>
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-md-6">
-                        <div id="carouselExample" class="carousel slide">
-                            <div class="carousel-inner ">
-                                <div class="carousel-item active">
-                                <img src="https://picsum.photos/300/200" class="d-block w-100 img-fluid" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                <img src="https://picsum.photos/301/200"  class="d-block w-100 img-fluid" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                <img src="https://picsum.photos/302/200"  class="d-block w-100 img-fluid" alt="...">
-                                </div>
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-    {{-- <div class="container bg-form shadow shadow-2 p-5">
-        <div class="row justify-content-center align-items-center ">
-                <div class="col-12 col-md-4">
-                    <h5 class=" font-extra">Titolo: {{$article->title}}</h5>
-            <p class="font-text">Descrizione: {{$article->description}}</p>
-            <p class=" font-extra">Prezzi: {{$article->price}}</p>
-            <a href="" class="link-offset-2 link-underline link-underline-opacity-0 text-color font-text">Categoria: {{$article->category->category_name}}</a>
-                </div>
-            </div>
-        </div> --}}
-
+    <section>
         <div class="container">
-            <div class="row justify-content-center p-3">
+            <div class="row justify-content-center">
                 <div class="col-12 col-md-6">
-                    <div class="card text-center bg-form">
-                        <div class="card-header font-extra text-color">
-                            {{$article->title}}
+                    <div id="carouselExample" class="carousel slide">
+                        <div class="carousel-inner ">
+                            <div class="carousel-item active">
+                                <img src="https://picsum.photos/300/200" class="d-block w-100 img-fluid" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://picsum.photos/301/200"  class="d-block w-100 img-fluid" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://picsum.photos/302/200"  class="d-block w-100 img-fluid" alt="...">
+                            </div>
                         </div>
-                        <div class="card-body text-color">
-                            <h5 class=" font-extra">Titolo: {{$article->title}}</h5>
-                            <p class="font-text">Descrizione: {{$article->description}}</p>
-                            <p class=" font-extra">Prezzi: {{$article->price}}</p>
-                            <a href="" class="link-offset-2 link-underline link-underline-opacity-0 text-color font-text">Categoria: {{$article->category->category_name}}</a>
-                        </div>
-                        <div class="card-footer text-body-secondary">
-                            <p class=" font-extra text-color">Scritto da: {{$article->user->name}}</p>
-                        </div>
-                        <p class=" font-extra text-color">Inserito il: {{$article->user->created_at->format('d/m/Y')}}</p>
-                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
+    
+    
+    <div class="container">
+        <div class="row justify-content-center p-3">
+            <div class="col-12 col-md-6">
+                <div class="card text-center bg-form">
+                    <div class="card-header font-extra text-color">
+                        {{$article->title}}
+                    </div>
+                    <div class="card-body text-color">
+                        <h5 class=" font-extra">Titolo: {{$article->title}}</h5>
+                        <p class="font-text">Descrizione: {{$article->description}}</p>
+                        <p class=" font-extra">Prezzi: {{$article->price}}</p>
+                        <a href="" class="link-offset-2 link-underline link-underline-opacity-0 text-color font-text">Categoria: {{$article->category->category_name}}</a>
+                    </div>
+                    <div class="card-footer text-body-secondary">
+                        <p class=" font-extra text-color">Scritto da: {{$article->user->name}}</p>
+                    </div>
+                    <p class=" font-extra text-color">Inserito il: {{$article->user->created_at->format('d/m/Y')}}</p>
+                    @auth
+                    <div class="d-flex justify-content-evenly">
+                        <button type="button" class="btn bg-button" data-bs-toggle="modal" data-bs-target="#exampleModal">Elimina</button>
+                        <a href="{{route('articles.edit', $article)}}"class="btn bg-button mb-3"> Modifica</a>
+                    </div>
+                    @endauth                
+                </div>                    
+            </div>
+        </div>
+    </div>
+    
+    {{-- Modale per l'eliminazione --}}
+    
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Elimina articolo {{$article->title}}</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Sei sicuro di voler eliminare l'articolo selezionato?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                    <form action="{{route('articles.destroy', $article)}}" method="POST">
+                        @csrf
+                        @method('DELETE')    
+                        <button type="submit" class="btn btn-danger">Elimina</button>  
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 </x-layout>

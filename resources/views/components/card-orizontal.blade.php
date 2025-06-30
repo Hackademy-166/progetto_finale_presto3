@@ -1,14 +1,26 @@
-  <div class="card mb-3 bg-card  d-flex card-p">
-    <div class="row g-0">
-      <div class="col-md-4 auto-fit">
-        <img src="https://picsum.photos/500/700" class=" rounded-start img-fluid" alt="...">
-      </div>
-      <div class="col-md-8 ">
-        <div class="card-body bg-card">
-          <h5 class="card-title font-title">Titolo: <span class="font-text">{{Str::limit($article->title, 18)}}</span></h5>
-          <p class="card-text font-title">Prezzi: <span class="font-text">{{$article->price}}</span></p>
-          <a href="{{route('articles.show', $article)}}" class="btn bg-button link-offset-2 link-underline link-underline-opacity-0 text-color font-text">Vai al dettaglio</a>
-        </div>
-      </div>
+<article class="card-custom m-5">
+  <img
+    class="card__background"
+    src="https://picsum.photos/300/200"
+    alt="Photo of Cartagena's cathedral at the background and some colonial style houses"
+    width="1920"
+    height="2193"
+  />
+  <div class="card__content | flow">
+    <div class="card__content--container | flow">
+      <h2 class="card__title text-color fw-bold font-text ">{{$article->title}}</h2>
+      <p class="card__description pt-2 text-color fw-bold font-text">
+       Categoria: {{$article->category->category_name}}
+      </p>
+      <p class="text-color fw-bold font-text">
+        Prezzo: {{$article->price}}
+      </p>
     </div>
+    <div class="d-flex justify-content-evenly">
+      <button class="card__button "><a href="{{route('articles.edit', $article)}}" class="btn  link-offset-2 link-underline link-underline-opacity-0 text-color font-text">Modifica</a></button>
+      <button class="card__button "><a href="{{route('articles.destroy', $article)}}" class="btn  link-offset-2 link-underline link-underline-opacity-0 text-color font-text">Elimina</a></button>
+
+    </div>
+
   </div>
+</article>
