@@ -78,7 +78,7 @@
             <h2 class="font-title text-center display-1">I tuoi articoli</h2>
             @forelse ($articles as $article )
             <div class="col-12 col-md-4 col-lg-4">
-                <x-card-vertical :article="$article" />
+                <x-card-orizontal :article="$article" />
             </div>
             @empty
             <div class="col-12 col-md-12 col-lg-12">
