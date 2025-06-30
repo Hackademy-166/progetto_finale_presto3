@@ -64,7 +64,7 @@
 
                     <div class="mb-3">
                         <input type="file" wire:model.live="temporary_images" multiple class="form-control shadow @error ('temporary_images.*') is-invalid @enderror" placeholder="Img/">
-                        @error ('temporary_images.**)
+                        @error ('temporary_images.*')
                         <p class="fst-italic text-danger">{{ $message }}</p>
                         @enderror
                         @error ('temporary_images')
@@ -82,13 +82,14 @@
                                         <button type="button" wire:click="removeImage({{ $key }})" class="btn btn-danger mt-2">Rimuovi</button>
                                     </div>
                     @endforeach
+                    @endif
                                 </div>
                             </div>
                         </div>
                     <div class="mb-3">
                         <label for="category" class="form-label">Categoria</label>
                         <select class="form-select" id="category" required wire:model="category">
-                            @foreach ($categories as $category )
+                            @foreach ($categories as $category)
                                 <option value="{{$category->id}}">{{$category->category_name}}</option>
                             @endforeach
                         </select>

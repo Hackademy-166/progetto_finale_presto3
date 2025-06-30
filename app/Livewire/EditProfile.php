@@ -62,7 +62,7 @@ class EditProfile extends Component
         'city'=>$this->city,
         'country'=>$this->country,
         'postal_code'=>$this->postal_code
-        ]);      
+        ]);    
         session()->flash('message', 'Profilo aggiornato con successo!');
         $this->reset();
     }

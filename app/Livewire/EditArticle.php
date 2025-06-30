@@ -8,6 +8,7 @@ use Livewire\Attributes\Validate;
 
 class EditArticle extends Component
 {
+    public $article;
     #[Validate('required|string|min:3|max:100')]
     public $title;
     #[Validate('required|string|min:3|max:255')]
