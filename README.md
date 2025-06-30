@@ -61,8 +61,11 @@ DA FARE:
 - counter un po’ più lento
 - gestire footer inserendo rotte e nomi sezioni, icone dei social e perché non si vede il primo span
 - gestire pagina categorie con una parte laterale con tutte le categorie per swithchare più facilmente
+- errore pulsante lato front-end dashboard zona revisore
+
 
 EXTR:
 - fare form per newsletter con mail
 - form per assistenza su pubblicazione annuncio con mail
 - gestire error
+- divisione articoli per zona
