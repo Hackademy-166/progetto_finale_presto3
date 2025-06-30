@@ -1,11 +1,10 @@
 <x-layout>
     <x-slot name="title">Homepage</x-slot>
     <header >
-        <div class="container-fluid c1">
-            <div class="row d-flex justify-content-center  ">
-                
-                <div class="col-12 col-md-6 col-lg-4  ">
-                    <img src="/img/Bianco_e_Nero_Minimalista_Life_Coach_Logo__3_-removebg-preview.png" alt="">
+        <div class="container">
+            <div class="row ">
+                <div class="col-12 ">
+                    <img class="" src="/img/erasebg-transformed.png" alt="Logo Presto.it">
                 </div>
             </div>
         </div>
@@ -20,7 +19,7 @@
     
     <!-- ALERT INVIO MAIL DI CONTATTO -->
     @if(session('success'))
-    <div class="alert alert-danger">
+    <div class="alert alert-success">
         {{session('success')}}
     </div>
     @elseif(session('error'))
@@ -29,6 +28,13 @@
     </div>
     @endif
     <!-- FINE ALERT INVIO MAIL DI CONTATTO -->
+    <!-- ALERT UTENTE CANCELLATO -->
+    @if(session('message'))
+        <div class="alert alert-danger">
+            {{session('message')}}
+        </div>
+    @endif
+    <!-- FINE ALERT UTENTE CANCELLATO -->
 
   
     <!--inserisci articolo-->

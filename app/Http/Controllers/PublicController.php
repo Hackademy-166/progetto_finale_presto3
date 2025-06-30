@@ -12,15 +12,15 @@ use Illuminate\Support\Facades\Mail;
 class PublicController extends Controller
 {
     public function home() {
-          
-            $articles= Article::where('is_accepted', true)->orderBy('created_at', 'desc')->take(6)->get();
-            return view('welcome', compact('articles'));
+        
+        $articles= Article::where('is_accepted', true)->orderBy('created_at', 'desc')->take(6)->get();
+        return view('welcome', compact('articles'));
     }
-
+    
     public function contact_us(){
         return view('contactUs');
     }
-
+    
     public function invioForm(Request $req){
         $user= Auth::user();
         $name =$req->name;
@@ -34,10 +34,10 @@ class PublicController extends Controller
             return redirect(route('homepage'))->with('error', 'Si è verificato un errore durante l\'invio del messaggio');   
         }
     }
-
+    
     public function search(Request $req){
         $query=$req->input('query');
         $articles=Article::search($query)->where('is_accepted', true)->paginate(10);
         return view('articles.searched', ['articles'=>$articles , 'query'=>$query]);
-   }
+    }
 }
