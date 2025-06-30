@@ -30,7 +30,7 @@
                     <script>
                         let btn_trigger=document.querySelector('#btn_trigger');
                         let timer_alert=document.querySelector('#timer_alert');
-
+                        
                         btn_trigger.addEventListener('click', function() {
                             timer_alert.classList.add('sparisci');
                         });                        
@@ -61,15 +61,42 @@
                         <span class="fst-italic text-danger">{{$message}}</span>
                         @enderror
                     </div>
+                    
                     <div class="mb-3">
-                        <label for="category" class="form-label">Categoria</label>
-                        <select class="form-select" id="category" required wire:model="category">
-                            @foreach ($categories as $category )
-                            <option value="{{$category->id}}">{{$category->category_name}}</option>
-                            @endforeach
-                        </select>
+                        <input type="file" wire:model.live="temporary_images" multiple class="form-control shadow @error ('temporary_images.*') is-invalid @enderror" placeholder="Img/">
+                        @error ('temporary_images.*')
+                        <p class="fst-italic text-danger">{{ $message }}</p>
+                        @enderror
+                        @error ('temporary_images')
+                        <p class="fst-italic text-danger">({ $message })</p>
+                        @enderror
                     </div>
-                    <button type="submit" id="btn_trigger" class="btn bg-button ">Inserisci</button>
+                    @if (!empty($images))
+                    <div class="row">
+                        <div class="col-12">
+                            <p>Photo preview:</p>
+                            <div class="row border border-4 border-success rounded shadow py-4">
+                                @foreach ($images as $key => $image)
+                                <div class="col d-flex flex-column align-items-center my-3">
+                                    <div class="img-preview mx-auto shadow rounded" style="background-image: url({{ $image->temporaryUrl() }});"></div>
+                                    <button type="button" wire:click="removeImage({{ $key }})" class="btn btn-danger mt-2">Rimuovi</button>
+                                </div>
+                                @endforeach
+                                @endif
+                                <div class="mb-3">
+                                    <label for="category" class="form-label">Categoria</label>
+                                    <select class="form-select" id="category" required wire:model="category">
+                                        @foreach ($categories as $category )
+                                        <option value="{{$category->id}}">{{$category->category_name}}</option>
+                                        @endforeach
+                                    </select>
+                                    <button type="submit" id="btn_trigger" class="btn bg-button mt-4 ">Inserisci</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
                 </form>
             </div>
         </div>

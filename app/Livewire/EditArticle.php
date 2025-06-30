@@ -49,12 +49,12 @@ class EditArticle extends Component
         ];
     }
 
-    // public function mount(){
-    //     $this->title = $this->article->title;
-    //     $this->description = $this->article->description;
-    //     $this->price = $this->article->price;
-    //     $this->category = $this->article->category_id;
-    // }
+    public function mount(){
+        $this->title = $this->article->title;
+        $this->description = $this->article->description;
+        $this->price = $this->article->price;
+        $this->category = $this->article->category_id;
+    }
 
     public function render()
     {

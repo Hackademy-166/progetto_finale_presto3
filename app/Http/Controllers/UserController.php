@@ -19,7 +19,7 @@ class UserController extends Controller
     public function dashboard(User $user){
         $user=Auth::user();
         $profile=  $user->profile;
-        $user = auth()->user() ->loadCount('articles');
+        $user = auth()->user()->loadCount('articles');
         $articles=auth()->user()->articles()->where('is_accepted', true)->get();
         return view('auth.dashboard', compact('user', 'profile', 'articles'));
     }

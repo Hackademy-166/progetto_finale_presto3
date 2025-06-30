@@ -24,7 +24,7 @@
                                 @endif
                                 <br>
                                 <button type="button" class="btn bg-button mt-5 ms-1" data-bs-toggle="modal" data-bs-target="#exampleModal">Elimina</button>
-                                <button class=" mt-5 ms-1 btn bg-button">Modifica</button>
+                                <button class="d-none mt-5 ms-1 btn bg-button">Modifica</button>
                             </div>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                 <div class="card bg-card mt-4">
                     <div class="card-body">
                         <div class="d-flex flex-column align-items-center text-center">
-                            <div class="mt-3">
+                            <div class="">
                                 <h4>Articoli Pubblicati: <strong id="article-count" data-final="{{ $user->articles_count }}">0</strong></h4>
                                 <h4>Annunci Venduti: <span id="soldArticles">0</span></h4>
                             </div>
@@ -79,7 +79,7 @@
             <h2 class="font-title text-center display-1">I tuoi articoli</h2>
             @forelse ($articles as $article )
             <div class="col-12 col-md-4 col-lg-4">
-                <x-card-vertical :article="$article" />
+                <x-card-orizontal :article="$article" />
             </div>
             @empty
             <div class="col-12 col-md-12 col-lg-12">

@@ -1,8 +1,8 @@
 <article class="card-custom m-5">
   <img
     class="card__background"
-    src="https://picsum.photos/300/200"
-    alt="Photo of Cartagena's cathedral at the background and some colonial style houses"
+    src="{{$article->images->isNotEmpty() ? Storage::url($article->images->first()->path) : 'https://picsum.photos/200'}}"
+    alt="{{$article->title}}"
     width="1920"
     height="2193"
   />

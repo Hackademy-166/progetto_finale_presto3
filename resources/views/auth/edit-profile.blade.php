@@ -10,7 +10,6 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-md-6 col-lg-6">
-                
                 <livewire:edit-profile :profile="$profile" />
             </div>
         </div>
