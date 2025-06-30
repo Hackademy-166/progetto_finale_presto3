@@ -82,9 +82,8 @@
                                         <button type="button" wire:click="removeImage({{ $key }})" class="btn btn-danger mt-2">Rimuovi</button>
                                     </div>
                     @endforeach
-                    @endif
-                                
-                        </div>
+                                </div>
+                    @endif     
                     <div class="mb-3">
                         <label for="category" class="form-label">Categoria</label>
                         <select class="form-select" id="category" required wire:model="category">
