@@ -15,7 +15,7 @@
         <div class="mb-3">
             <label for="category" class="form-label font-gen">Categoria</label>
             <select class="form-select" id="category" required wire:model.live="category">
-                @foreach ($categories as $category_id )
+                @foreach ($categories as $category)
                     <option value="{{$category->id}}">{{$category->category_name}}</option>
                 @endforeach
             </select>
