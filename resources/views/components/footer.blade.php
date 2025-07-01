@@ -1,31 +1,31 @@
 <!-- Footer -->
 <footer class="text-center text-lg-start bg-standard text-muted">
   <!-- Section: Social media -->
-  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+  <section class="d-flex justify-content-center  p-4 border-bottom">
     <!-- Left -->
     <div class="me-5 d-none d-lg-block">
-      <span>Seguici su tutti i nostri social:</span>
+      <span>{{ __('ui.footerFollow') }}</span>
     </div>
     <!-- Left -->
 
     <!-- Right -->
-    <div>
-      <a href="" class="me-4 text-reset">
+    <div >
+      <a href="" class="me-4 text-reset text-decoration-none ">
         <i class="fab fa-facebook-f"></i>
       </a>
-      <a href="" class="me-4 text-reset">
+      <a href="" class="me-4 text-reset text-decoration-none">
         <i class="fab fa-twitter"></i>
       </a>
-      <a href="" class="me-4 text-reset">
+      <a href="" class="me-4 text-reset text-decoration-none">
         <i class="fab fa-google"></i>
       </a>
-      <a href="" class="me-4 text-reset">
+      <a href="" class="me-4 text-reset text-decoration-none">
         <i class="fab fa-instagram"></i>
       </a>
-      <a href="" class="me-4 text-reset">
+      <a href="" class="me-4 text-reset text-decoration-none">
         <i class="fab fa-linkedin"></i>
       </a>
-      <a href="" class="me-4 text-reset">
+      <a href="" class="me-4 text-reset text-decoration-none">
         <i class="fab fa-github"></i>
       </a>
     </div>
@@ -40,7 +40,7 @@
           <!--Grid column-->
           <div class="col-auto">
             <p class="pt-5">
-              <strong >Registrati alla newsletter</strong>
+              <strong >{{ __('ui.footerNews') }}</strong>
             </p>
           </div>
           <!--Grid column-->
@@ -50,7 +50,7 @@
             <!-- Email input -->
             <div data-mdb-input-init class="form-outline mt-5">
               <input type="email" id="form5Example24" class="form-control" />
-              <label class="form-label" for="form5Example24">Indirizzo mail</label>
+              <label class="form-label" for="form5Example24">{{ __('ui.footerMail') }}</label>
             </div>
           </div>
           <!--Grid column-->
@@ -59,7 +59,7 @@
           <div class="col-auto">
             <!-- Submit button -->
             <button data-mdb-ripple-init type="submit" class="btn bg-button mt-5">
-              Subscribe
+             {{ __('ui.footerSub') }}
             </button>
           </div>
           <!--Grid column-->
@@ -78,7 +78,7 @@
         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
           <!-- Content -->
           <h6 class="text-uppercase font-title fs-3 mb-4">
-            <i class="fas  fa-gem me-3"></i>Presto.it
+            Presto.it
           </h6>
           <p>
             Qui puoi utilizzare righe e colonne per organizzare il contenuto del footer. 
@@ -90,20 +90,20 @@
         <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
           <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4">
-            Articoli
+            {{ __('ui.footerArticle') }}
           </h6>
           <p>
-            <a href="{{route('articles.index')}}" class="text-reset">I Nostri Articoli</a>
+            <a href="{{route('articles.index')}}" class="text-reset">{{ __('ui.navArticle') }}</a>
           </p>
           <p>
-            <a href="" class="text-reset">Categorie</a>
+            <a href="" class="text-reset">{{ __('ui.navCategorie') }}</a>
           </p>
           <p>
             <a href="#!" class="text-reset">##</a>
           </p>
           @auth
             <p>
-              <a href="{{route('articles.create')}}" class="text-reset">Inserisci Articolo</a>
+              <a href="{{route('articles.create')}}" class="text-reset">{{ __('ui.insertArticle') }}</a>
             </p>
           @endauth
         </div>
@@ -113,20 +113,20 @@
         <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
           <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4">
-            Useful links
+            {{ __('ui.footerLink') }}
           </h6>
           <p>
             <a href="{{route('homepage')}}" class="text-reset">HomePage</a>
           </p>
           @auth
           <p>
-            <a href="{{route('contact')}}" class="text-reset">Lavora con Noi</a>
+            <a href="{{route('contact')}}" class="text-reset">{{ __('ui.navWork') }}</a>
           </p>
             <p>
-              <a href="{{route('dashboard', Auth::user())}}" class="text-reset">Profilo Personale</a>
+              <a href="{{route('dashboard', Auth::user())}}" class="text-reset">{{ __('ui.navProfilo') }}</a>
             </p>
             <p>
-              <a href="" class="text-reset">Zona Revisore</a>
+              <a href="" class="text-reset">{{ __('ui.navRevisor') }}</a>
             </p>
           @endauth
         </div>
@@ -135,7 +135,7 @@
         <!-- Grid column -->
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
           <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">Contatti</h6>
+          <h6 class="text-uppercase fw-bold mb-4">{{ __('ui.footerContact') }}</h6>
           <p><i class="fas fa-home me-3"></i> Milano, MI 20019, IT</p>
           <p>
             <i class="fas fa-envelope me-3"></i>

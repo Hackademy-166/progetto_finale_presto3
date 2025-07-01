@@ -11,17 +11,12 @@
 
 /* font */
 
-.font-title{
-    font-family: "Sansita", sans-serif;
-}
-
-.font-text{
+.font-gen{
     font-family: "Open Sans";
 }
 
-.font-extra{
-    font-family: "Savate", sans-serif;
-}
+
+
 
 /* colori */
 
@@ -48,7 +43,21 @@
 }
 
 .bg-form{
-    background: linear-gradient(rgba(16, 11, 0, 0.301), rgba(181, 196, 84, 0.405));
+    --s: 55px; /* control the size */
+  --b: 15px; /* control the thickness of the curved lines */
+  
+  --_r: calc(1.28*var(--s) + var(--b)/2) at top 50%;
+  --_f: calc(99.5% - var(--b)),#f9f2e787 calc(101% - var(--b)) 99.5%,#0000 101%;
+  --_g0: calc(-.8*var(--s)), #88a65e88 var(--_f);
+  --_g1: calc(-.8*var(--s)), #bfb35a8a var(--_f);
+  --_s: calc(1.8*var(--s) + var(--b));
+  background: 
+    radial-gradient(var(--_r) right var(--_g0)) calc(-1*var(--_s)) var(--s),
+    radial-gradient(var(--_r) left  var(--_g1))         var(--_s)  calc(-1*var(--s)),
+    radial-gradient(var(--_r) right var(--_g1)) calc(var(--_s)/-2) calc(-1*var(--s)),
+    radial-gradient(var(--_r) left  var(--_g0)) calc(var(--_s)/ 2) var(--s),
+    linear-gradient(90deg,#88a65e92 50%,#bfb35a81 0);
+  background-size: var(--_s) calc(4*var(--s));
 }
 
 .text-color{
@@ -133,8 +142,20 @@ nav ul li a:hover {
 
 .dropdown-custom{
   z-index: 10;
-  background-color: rgba(181, 196, 84, 0.812);
+  background-color: rgba(181, 196, 84, 0.9);
  
+}
+
+.dropdown-item:hover{
+
+  /* background-color: black !important; */
+  opacity: 0.8;
+   background-color: rgba(181, 196, 84, 1) !important;
+
+}
+
+.fa-language{
+  font-size: 25px;
 }
 
 /*card show*/
@@ -206,7 +227,7 @@ nav ul li a:hover {
 .card-button::after, card-button::before {
   content: '';
   width: 0%;
-  height: 2px;
+  height: 4px;
   background: var(--color-p);
   display: block;
   transition: 0.5s;
@@ -280,7 +301,7 @@ h1{
 
 
 
-/* CARD NUOVA ----------------------------------------------------------*/
+/* CARD NUOVA COMPONENTE---------------------------------------------------------*/
 
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap");
 
@@ -376,7 +397,9 @@ p {
 
 .card__title {
   position: relative;
+  font-size: 1.125rem;
   width: 100%;
+  padding-bottom: 10%;
   width: -moz-fit-content; /* Prefijo necesario para Firefox  */
 }
 
@@ -391,12 +414,12 @@ p {
 }
 
 .card__button {
-  padding: 0.75em 1.6em;
+  /* padding: 0.75em 1.6em; */
   display: flex;
   justify-content: center;   
   align-items: center;
-  width: fit-content;
-  width: -moz-fit-content; 
+  /* width: fit-content; */
+  /* width: -moz-fit-content;  */
   font-variant: small-caps;
   font-weight: bold;
   border-radius: 0.45em;

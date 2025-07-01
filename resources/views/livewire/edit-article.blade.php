@@ -1,25 +1,25 @@
 <div>
-    <form class="rounded p-5 shadow" wire:submit="editArticle">
+    <form class="rounded bg-form p-5 shadow" wire:submit="editArticle">
         <div class="mb-3">
-            <label for="title" class="form-label">Titolo</label>
+            <label for="title" class="form-label font-gen">Titolo</label>
             <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" wire:model.live="title">
         </div>
         <div class="mb-3">
-            <label for="description" class="form-label">Descrizione</label>
+            <label for="description" class="form-label font-gen">Descrizione</label>
             <textarea type="text" class="form-control @error('description') is-invalid @enderror" id="description" wire:model.live="description"></textarea>
         </div>
         <div class="mb-3">
-            <label for="price" class="form-label">Prezzo</label>
+            <label for="price" class="form-label font-gen">Prezzo</label>
             <input type="text" class="form-control @error('price') is-invalid @enderror" id="price" wire:model.live="price">
         </div>
         <div class="mb-3">
-            <label for="category_id" class="form-label">Categoria</label>
-            <select class="form-select" id="category_id" required wire:model.live="category_id">
-                @foreach ($categories as $category)
+            <label for="category" class="form-label font-gen">Categoria</label>
+            <select class="form-select" id="category" required wire:model.live="category">
+                @foreach ($categories as $category_id )
                     <option value="{{$category->id}}">{{$category->category_name}}</option>
                 @endforeach
             </select>
         </div>
-        <button type="submit" class="btn btn-outline-danger">Modifica</button>
+        <button type="submit" class="btn card-button font-gen">Modifica</button>
     </form>
 </div>
