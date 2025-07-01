@@ -188,7 +188,7 @@
                     @endforeach
                     @endif
                                 </div>
-                    @endif     
+                    {{-- @endif      --}}
                     <div class="mb-3">
                         <label for="category" class="form-label">Categoria</label>
                         <select class="form-select" id="category" required wire:model="category">
