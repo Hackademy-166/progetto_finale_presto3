@@ -4,22 +4,22 @@
             <div class="col-12 col-md-6">
                 
                 {{-- @if(session('message'))
-                <div id="timer_alert" class="alert alert-success" wire:ignore>
-                    {{ session('message') }}
-                </div>
+                    <div id="timer_alert" class="alert alert-success" wire:ignore>
+                        {{ session('message') }}
+                    </div>
                 @endif
                 
                 @push('scripts')
-                <script>
-                    document.addEventListener('DOMContentLoaded', function () {
-                    const alertBox = document.querySelector('#timer_alert');
-                    if (alertBox) {
-                    setTimeout(function () {
-                    alertBox.classList.add('d-none');
-                    }, 3000); // 3 secondi
-                    }
-                    });
-                </script>
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function () {
+                        const alertBox = document.querySelector('#timer_alert');
+                        if (alertBox) {
+                        setTimeout(function () {
+                        alertBox.classList.add('d-none');
+                        }, 3000); // 3 secondi
+                        }
+                        });
+                    </script>
                 @endpush
                 @stack('scripts') --}}
                 
@@ -170,21 +170,21 @@
                     <div class="mb-3">
                         <input type="file" wire:model.live="temporary_images" multiple class="form-control shadow @error ('temporary_images.*') is-invalid @enderror" placeholder="Img/">
                         @error ('temporary_images.*')
-                        <p class="fst-italic text-danger">{{ $message }}</p>
+                            <p class="fst-italic text-danger">{{ $message }}</p>
                         @enderror
                         @error ('temporary_images')
-                        <p class="fst-italic text-danger">({ $message })</p>
+                            <p class="fst-italic text-danger">({ $message })</p>
                         @enderror
                     </div>
                     @if (!empty($images))
                     
-                                <p>Photo preview:</p>
-                                <div class="row border border-4 border-success rounded shadow py-4">
+                        <p>Photo preview:</p>
+                        <div class="row border border-4 border-success rounded shadow py-4">
                     @foreach ($images as $key => $image)
-                                    <div class="col d-flex flex-column align-items-center my-3">
-                                        <div class="img-preview mx-auto shadow rounded" style="background-image: url({{ $image->temporaryUrl() }});"></div>
-                                        <button type="button" wire:click="removeImage({{ $key }})" class="btn btn-danger mt-2">Rimuovi</button>
-                                    </div>
+                            <div class="col d-flex flex-column align-items-center my-3">
+                                <div class="img-preview mx-auto shadow rounded" style="background-image: url({{ $image->temporaryUrl() }});"></div>
+                                <button type="button" wire:click="removeImage({{ $key }})" class="btn btn-danger mt-2">Rimuovi</button>
+                            </div>
                     @endforeach
                     @endif
                                 </div>

@@ -10,7 +10,7 @@
     <!-- ALERT PROFILO CREATO CON SUCCESSO -->
     @if (session('success') )
         <div class="alert alert-success" role="alert">
-            {{session('success')}}
+    {{session('success')}}
         </div>
     @endif
     <!-- FINE ALERT PROFILO CREATO CON SUCCESSO -->
