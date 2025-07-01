@@ -187,12 +187,14 @@
                                     </div>
                     @endforeach
                     @endif
+
                                 
-                        </div>
+                        
+                        
                     <div class="mb-3">
                         <label for="category" class="form-label">Categoria</label>
                         <select class="form-select" id="category" required wire:model="category">
-                            @foreach ($categories as $category )
+                            @foreach ($categories as $category)
                                 <option value="{{$category->id}}">{{$category->category_name}}</option>
                             @endforeach
                         </select>
