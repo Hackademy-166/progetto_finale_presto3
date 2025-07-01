@@ -133,8 +133,20 @@ nav ul li a:hover {
 
 .dropdown-custom{
   z-index: 10;
-  background-color: rgba(181, 196, 84, 0.812);
+  background-color: rgba(181, 196, 84, 0.9);
  
+}
+
+.dropdown-item:hover{
+
+  /* background-color: black !important; */
+  opacity: 0.8;
+   background-color: rgba(181, 196, 84, 1) !important;
+
+}
+
+.fa-language{
+  font-size: 25px;
 }
 
 /*card show*/

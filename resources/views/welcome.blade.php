@@ -42,7 +42,7 @@
         <div class="row align-items-center h-100">
             <div class="col-12 col-md-7">
                 <h2 class="text-center font-title display-1" id="text"> {{ __('ui.insertArticle') }}</h2>
-                <h3 class="text-center font-text">Tramite questo pulsante, accederai alla pagina per l'inserimento di un articolo a tua scelta</h3>
+                <h3 class="text-center font-text">{{ __('ui.insertArticleDesc') }}</h3>
                 
                 
             </div>
@@ -66,7 +66,7 @@
     <!--search bar-->
     
     <section>
-        <h1 class="text-center font-title display-1 mt-5">Gli ultimi articoli</h1>
+        <h1 class="text-center font-title display-1 mt-5">{{ __('ui.lastArticle') }}</h1>
         <div class="container vh-auto p-1">
             <div class="row">
                 @foreach ($articles as $article)

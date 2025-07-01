@@ -1,8 +1,66 @@
 <?php
 
 return[
-    'insertArticle'=>'insert article',
-    'createArticle'=>'create articles'
+    // HOME
+    'insertArticle'=>'Insert article',
+    'createArticle'=>'Create articles',
+    'lastArticle'=>'The last articles',
+    'insertArticleDesc'=>"Through this button you will access the page to insert an article of your election.",
+
+    // NAVBAR
+
+    'navArticle'=>'Our articles',
+    'navCategorie'=>'Categories',
+    'navInsert'=>'Insert an article',
+    'navWork'=>'Work with us',
+    'navRevisor'=>'Reviewer',
+    'navRegister'=>'Register',
+    'navProfilo'=>'Profile',
+
+    //  FOOTER
+
+    'footerFollow'=>'Follow us on all our social media:',
+    'footerNews'=>'Subscribe to our newsletter',
+    'footerMail'=>'Mail adress',
+    'footerArticle'=>'Articles',
+    'footerLink'=>'Useful links',
+    'footerContact'=>'Contact us',
+    'footerSub'=>'Subscribe',
+
+    // REGISTER
+    'registerTitle'=>'Register Now',
+    'registerUser'=>'Username',
+    'registerMail'=>'Mail adress',
+    'registerConferm'=>'Confirm password',
+    'registerButton'=>'Register',
+    'registerQuestion'=>'Do you already have an account?',
+    'registerLogin'=>'Go to login',
+
+    // LOGIN
+
+    'loginTitle'=>'Login',
+    'loginMail'=>'Mail adress',
+    'loginRicordami'=>'Remember me',
+    'loginButton'=>'Login',
+    'loginQuestion'=>'Do you not have an account?',
+    'loginRegister'=>'Go to register',
+
+    // CATEGORIE
+
+    'Elettrodomestici'=>'Appliances',
+    'Abbigliamento'=>'Clothing',
+    'Accessori'=>'Accessories',
+    'Scarpe'=>'Shoes',
+    'Attrezzatura Sportiva'=>'Sport equipment',
+    'Vinili'=>'Vinyl',
+    'Veicoli'=>'Vehicles',
+    'Collezionismo'=>'Collectionism',
+    'Console'=>'Consoles',
+    'Videogiochi'=>'Video games',
+    'Offerte di Lavoro'=>'Job offers',
+    'Mobili'=>'Furniture',
+    
+
 
 ]
 ?>
