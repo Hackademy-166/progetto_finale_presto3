@@ -1,9 +1,9 @@
 <x-layout>
     <x-slot name="title">Creazione Profilo</x-slot> 
-    <div class="container vh-50 my-5">
+    <div class="container vh-50 mt-5">
         <div class="row">
             <div class="col-12 col-md-12 col-lg-12">
-                <h1 class="text-dark text-center fw-bold display-1">Creazione Profilo</h1>
+                <h1 class="text-dark text-center font-title display-1">Creazione Profilo</h1>
             </div>
         </div>
     </div>

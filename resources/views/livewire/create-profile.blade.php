@@ -1,5 +1,5 @@
 <div>
-    <form class=" rounded p-5 shadow" wire:submit="createProfile">
+    <form class=" rounded bg-form p-5 shadow" wire:submit="createProfile">
         <div class="mb-3">
             <label for="name" class="form-label">Nome</label>
             <input type="text" class="form-control" id="name" wire:model.live="name">
