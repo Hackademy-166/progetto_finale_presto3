@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Article;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Image extends Model
 {
