@@ -1,5 +1,5 @@
 <x-layout>
-    
+
     <section>
         <x-slot name="title">Inserisci Articolo</x-slot>
         <header class="container-fluid">
@@ -15,6 +15,6 @@
                 <livewire:create-article />
             </div>
         </div>
-    </div>
+    </section>
     
 </x-layout>
