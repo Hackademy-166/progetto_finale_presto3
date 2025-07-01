@@ -5,20 +5,18 @@
     
     <section>
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-6">
+            <div class="row align-items-center justify-content-evenly pt-3">
+                <div class="col-12 col-md-4 mb-3">
+                    @if ($article->images->count() >0 )
                     <div id="carouselExample" class="carousel slide">
-                        <div class="carousel-inner ">
-                            <div class="carousel-item active">
-                                <img src="https://picsum.photos/300/200" class="d-block w-100 img-fluid" alt="...">
+                        <div class="carousel-inner">
+                            @foreach ($article->images as $key=> $image)
+                            <div class="carousel-item @if ($loop->first) active @endif">
+                                <img src="{{ Storage::url($image->path)}}" class="d-block w-100 rounded shadow" alt="Immagine {($key +1 }} dell'articolo '{{$article->title}}">  
                             </div>
-                            <div class="carousel-item">
-                                <img src="https://picsum.photos/301/200"  class="d-block w-100 img-fluid" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="https://picsum.photos/302/200"  class="d-block w-100 img-fluid" alt="...">
-                            </div>
+                            @endforeach
                         </div>
+                        @if($article->images->count() > 1)
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
@@ -27,40 +25,59 @@
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
+                        @endif
                     </div>
+                    @else
+                    <img src="{{$image->getUrl(300, 300)}}" class="d-block w-100 rounded shadow" alt="Nessuna foto inserita dall'utente">
+                    @endif
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="card-show">
+                            <span class="card__title text-center">{{$article->title}}</span>
+
+                            <p class="card-content">
+                               Descrizione: {{$article->description}}
+                            </p>
+                            <p class="card-content">Prezzo: {{$article->price}}</p>
+                            <p class="card-content">Categoria: {{$article->category->category_name}}</p>
+                            <p class="card-content">Inserito da: {{$article->user->name}}</p>
+                            <p class="card-content">Inserito il: {{$article->user->created_at->format('d/m/Y')}}</p>
+
+                            @auth
+                                <div class="d-flex justify-content-evenly pt-3">
+                                    <button type="button" class="btn card-button" data-bs-toggle="modal" data-bs-target="#exampleModal">Elimina</button>
+                                    <a href="{{route('articles.edit', $article)}}"class="btn card-button mb-3"> Modifica</a>
+                                </div>
+                            @endauth                                    
+                    </div>
+                    {{-- <div class="card text-center bg-form">
+                        <div class="card-header font-extra text-color">
+                            {{$article->title}}
+                        </div>
+                        <div class="card-body text-color">
+                            <h5 class=" font-extra">Titolo: {{$article->title}}</h5>
+                            <p class="font-text">Descrizione: {{$article->description}}</p>
+                            <p class=" font-extra">Prezzi: {{$article->price}}</p>
+                            <a href="" class="link-offset-2 link-underline link-underline-opacity-0 text-color font-text">Categoria: {{$article->category->category_name}}</a>
+                        </div>
+                        <div class="card-footer text-body-secondary">
+                            <p class=" font-extra text-color">Scritto da: {{$article->user->name}}</p>
+                        </div>
+                        <p class=" font-extra text-color">Inserito il: {{$article->user->created_at->format('d/m/Y')}}</p>
+                                    --}}
+                    </div>                    
+                    
                 </div>
             </div>
         </div>
-    </section>
-    
-    
-    <div class="container">
-        <div class="row justify-content-center p-3">
-            <div class="col-12 col-md-6">
-                <div class="card text-center bg-form">
-                    <div class="card-header font-extra text-color">
-                        {{$article->title}}
-                    </div>
-                    <div class="card-body text-color">
-                        <h5 class=" font-extra">Titolo: {{$article->title}}</h5>
-                        <p class="font-text">Descrizione: {{$article->description}}</p>
-                        <p class=" font-extra">Prezzi: {{$article->price}}</p>
-                        <a href="" class="link-offset-2 link-underline link-underline-opacity-0 text-color font-text">Categoria: {{$article->category->category_name}}</a>
-                    </div>
-                    <div class="card-footer text-body-secondary">
-                        <p class=" font-extra text-color">Scritto da: {{$article->user->name}}</p>
-                    </div>
-                    <p class=" font-extra text-color">Inserito il: {{$article->user->created_at->format('d/m/Y')}}</p>
-                    @auth
-                    <div class="d-flex justify-content-evenly">
-                        <button type="button" class="btn bg-button" data-bs-toggle="modal" data-bs-target="#exampleModal">Elimina</button>
-                        <a href="{{route('articles.edit', $article)}}"class="btn bg-button mb-3"> Modifica</a>
-                    </div>
-                    @endauth                
-                </div>                    
-            </div>
-        </div>
     </div>
+    
+    
+</section>
+
+
+<div class="container">
+    
     
     {{-- Modale per l'eliminazione --}}
     

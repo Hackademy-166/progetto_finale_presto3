@@ -1,7 +1,7 @@
 <article class="card-custom m-5">
   <img
     class="card__background"
-    src="{{$article->images->isNotEmpty() ? Storage::url($article->images->first()->path) : 'https://picsum.photos/200'}}"
+    src="{{$article->images->isNotEmpty() ?  $article->images->first()->getUrl(300, 300) : 'https://picsum.photos/200'}}"
     alt="{{$article->title}}"
     width="1920"
     height="2193"

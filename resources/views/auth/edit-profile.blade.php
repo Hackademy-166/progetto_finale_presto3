@@ -7,6 +7,15 @@
             </div>
         </div>
     </div>
+
+{{-- Messaggio di avvenuta modifica del profilo --}}
+    @if(session('message'))
+        <div class="alert alert-success">
+            {{session('message')}}
+        </div>
+    @endif    
+
+
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-md-6 col-lg-6">
