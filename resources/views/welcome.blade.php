@@ -41,7 +41,7 @@
     <section class="container mt-5 py-5 ">
         <div class="row align-items-center h-100">
             <div class="col-12 col-md-7">
-                <h2 class="text-center font-title display-1" id="text">INSERISCI ARTICOLO</h2>
+                <h2 class="text-center font-title display-1" id="text"> {{ __('ui.insertArticle') }}</h2>
                 <h3 class="text-center font-text">Tramite questo pulsante, accederai alla pagina per l'inserimento di un articolo a tua scelta</h3>
                 
                 
@@ -50,7 +50,7 @@
                 <div class=" d-flex justify-content-center">
                     <button class="rounded text-center bg-button p-5 mx-5">
                         <a href="{{route('articles.create')}}" class="text-decoration-none text-dark">
-                            <h4 class="font-title display-5 ">Crea Articolo</h4>
+                            <h4 class="font-title display-5 ">{{ __('ui.createArticle') }}</h4>
                         </a>
                     </button>
                 </div>
