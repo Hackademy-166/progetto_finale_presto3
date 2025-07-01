@@ -1,7 +1,7 @@
 <x-layout>
     <x-slot name="title">{{$article->title}}</x-slot>
     
-    <h1 class="text-dark text-center font-title display-5 pt-3">DETTAGLIO ARTICOLO: {{$article->title}}</h1>
+    <h1 class="text-dark text-center font-gen display-5 pt-3">DETTAGLIO ARTICOLO: {{$article->title}}</h1>
     
     <section>
         <div class="container">
@@ -12,7 +12,7 @@
                         <div class="carousel-inner">
                             @foreach ($article->images as $key=> $image)
                             <div class="carousel-item @if ($loop->first) active @endif">
-                                <img src="{{ Storage::url($image->path)}}" class="d-block w-100 rounded shadow" alt="Immagine {($key +1 }} dell'articolo '{{$article->title}}">  
+                                <img src="{{$image->getUrl(300, 300)}}" class="d-block w-100 rounded shadow" alt="Immagine {{$key +1 }} dell'articolo '{{$article->title}}">  
                             </div>
                             @endforeach
                         </div>
@@ -28,7 +28,7 @@
                         @endif
                     </div>
                     @else
-                    <img src="{{$image->getUrl(300, 300)}}" class="d-block w-100 rounded shadow" alt="Nessuna foto inserita dall'utente">
+                    <img src="#" class="d-block w-100 rounded shadow" alt="Nessuna foto inserita dall'utente">
                     @endif
                 </div>
                 <div class="col-12 col-md-6">
@@ -85,18 +85,18 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Elimina articolo {{$article->title}}</h1>
+                    <h1 class="modal-title font-gen fs-5" id="exampleModalLabel">Elimina articolo {{$article->title}}</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body font-gen">
                     Sei sicuro di voler eliminare l'articolo selezionato?
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                    <button type="button" class="btn btn-secondary font-gen" data-bs-dismiss="modal">Chiudi</button>
                     <form action="{{route('articles.destroy', $article)}}" method="POST">
                         @csrf
                         @method('DELETE')    
-                        <button type="submit" class="btn btn-danger">Elimina</button>  
+                        <button type="submit" class="btn btn-danger font-gen">Elimina</button>  
                     </form>
                 </div>
             </div>

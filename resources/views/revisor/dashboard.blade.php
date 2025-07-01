@@ -3,53 +3,41 @@
     <header class="container vh-auto">
         <div class="row">
             <div class="col-12 col-md-12 col-lg-12">
-                <h1 class="text-dark text-center fw-bold display-1">Dashboard Revisore</h1>
+                <h1 class="text-dark text-center display-2
+                p-3">Dashboard Revisore</h1>
             </div>
         </div>
     </header>
     
     @if(session()->has('message'))
-        <div class="alert alert-succes">
-            {{session('message')}}
-        </div>
+    <div class="alert alert-succes">
+        {{session('message')}}
+    </div>
     @endif
-
+    
     <section class="container-fluid">
         <div class="row">
-            @if($article_to_check && $article_to_check->images->count())
-                @foreach (Sarticle_to_check->images as $key=> $image)
-                    <div class="col-6 col-md-4 mb-4">
-                        <img src="{{$image->getUrl(300, 300)}}" class="img-fluid rounded shadow" alt="Immagine {($key +1 }} dell'articolo '{{$article_to_check->title}}">
-                    </div>
-                @endforeach
-            @else
-                @for ($i = 0; $i < 6; $i++)
-                    <div class="col-12 col-md-3 col-lg-3 mb-4 text-center">
-                        <img src="https://picsum.photos/300" alt="immagine segnaposto" class="img-fluid rounded shadow">
-                    </div>
-                @endfor
-            @endif
-        </div>
-    </section>
-
-    <section class="container">
-        @if ($article_to_check)
-        <div class="row justify-content-center pt-5">
-            <div class="col-md-8">
-                <div class="row justify-content-center">
+            @if($article_to_check)
+                @if( $article_to_check->images->count())
+                
+                    @foreach ($article_to_check->images as $key=> $image)
+                    
+                        <div class="col-6 col-md-4 mb-4">
+                            <img src="{{$image->getUrl(300, 300)}}" class="img-fluid rounded shadow" alt="Immagine {{$key +1 }} dell'articolo '{{$article_to_check->title}}">
+                        </div>
+                    @endforeach
+                @else
                     @for ($i = 0; $i < 6; $i++)
-                    <div class="col-6 col-md-4 mb-4 text-center">
-                        <img src="https://picsum.photos/300"
-                        class="img-fluid rounded shadow " alt="immagine segnaposto">
-                    </div>
+                        <div class="col-12 col-md-3 col-lg-3 mb-4 text-center">
+                            <img src="https://picsum.photos/300" alt="immagine segnaposto" class="img-fluid rounded shadow">
+                        </div>
                     @endfor
-                </div>
-            </div>
-            <div class="col-md-4 ps-4 d-flex flex-column justify-content-between">
+                @endif
+                <div class="col-md-4 ps-4 d-flex flex-column justify-content-between">
                 <div>
                     <h1>{{ $article_to_check->title }}</h1>
                     <h3>Autore: {{ $article_to_check->user->name }} </h3> <h4>{{ $article_to_check->price }}€</h4>
-                    <h4 class="fst-italic text-muted">{{ $article_to_check->category->name }}</h4>
+                    <h4 class="fst-italic text-muted">{{ $article_to_check->category->category_name }}</h4>
                     <p class="h6">{{ $article_to_check->description }}</p>
                 </div>
                 <div class="d-flex pb-4 justify-content-around">
@@ -65,14 +53,10 @@
                     </form>
                 </div>
             </div>
+            @endif
+            
         </div>
-        @else
-        <div class="row justify-content-center align-items-center height-custom text-center">
-            <div class="col-12">
-                <h1 class="fst-italic display-4">Nessun articolo da revisionare</h1>
-            </div>
-        </div>
-        @endif
-        <a href="{{ route('homepage') }}" class="mt-5 btn btn-success"> Torna </a>
-        </section>
-    </x-layout>
+    </section>
+    
+    
+</x-layout>

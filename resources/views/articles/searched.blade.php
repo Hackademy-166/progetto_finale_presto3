@@ -4,7 +4,7 @@
         <div class="container-fluid c1">
             <div class="row d-flex justify-content-center  ">   
                 <div class="col-12 col-md-6 col-lg-4  ">
-                    <h1 class="text-center font-title display-1"> Risultati della ricerca {{$query}}</h1>
+                    <h1 class="text-center font-gen display-1"> Risultati della ricerca {{$query}}</h1>
                 </div>
             </div>
             <div class="row">
@@ -14,7 +14,7 @@
                     </div>
                 @empty
                     <div class="col-12 col-md-12 col-lg-12">
-                        <h3 class="text-center font-title display-1">Nessun articolo trovato</h3>
+                        <h3 class="text-center font-gen display-1">Nessun articolo trovato</h3>
                     </div>
                 @endforelse
             </div>
