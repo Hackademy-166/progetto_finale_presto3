@@ -28,18 +28,13 @@
                         @endif
                     </div>
                     @else
-                    <img src="https://picsum.photos/300" class="d-block w-100 rounded shadow" alt="Nessuna foto inserita dall'utente">
+                    <img src="{{$image->getUrl(300, 300)}}" class="d-block w-100 rounded shadow" alt="Nessuna foto inserita dall'utente">
                     @endif
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="card-show">
                             <span class="card__title text-center">{{$article->title}}</span>
-                             @auth
-                                <div class="d-flex justify-content-evenly pt-3">
-                                    <button type="button" class="btn card-button" data-bs-toggle="modal" data-bs-target="#exampleModal">Elimina</button>
-                                    <a href="{{route('articles.edit', $article)}}"class="btn card-button mb-3"> Modifica</a>
-                                </div>
-                            @endauth    
+
                             <p class="card-content">
                                Descrizione: {{$article->description}}
                             </p>
@@ -48,10 +43,12 @@
                             <p class="card-content">Inserito da: {{$article->user->name}}</p>
                             <p class="card-content">Inserito il: {{$article->user->created_at->format('d/m/Y')}}</p>
 
-
-
-                            
-                    
+                            @auth
+                                <div class="d-flex justify-content-evenly pt-3">
+                                    <button type="button" class="btn card-button" data-bs-toggle="modal" data-bs-target="#exampleModal">Elimina</button>
+                                    <a href="{{route('articles.edit', $article)}}"class="btn card-button mb-3"> Modifica</a>
+                                </div>
+                            @endauth                                    
                     </div>
                     {{-- <div class="card text-center bg-form">
                         <div class="card-header font-extra text-color">
