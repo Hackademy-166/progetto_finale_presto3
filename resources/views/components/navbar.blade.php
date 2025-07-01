@@ -1,6 +1,11 @@
     <nav>
       <ul>
         <li>
+          <x-_locale  lang="it"/>
+          <x-_locale  lang="en"/>
+          <x-_locale  lang="es"/>
+        </li>
+        <li>
           <a class="text-dark"  href="{{route('homepage')}}">Home</a>
         </li>
         <li class="text-dark">
