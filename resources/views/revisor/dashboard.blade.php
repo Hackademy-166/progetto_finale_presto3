@@ -16,18 +16,19 @@
 
     <section class="container-fluid">
         <div class="row">
-        @if($article_to_check && $article_to_check->images->count())
-            @foreach (Sarticle_to_check->images as $key=> $image)
-            <div class="col-6 col-md-4 mb-4">
-                <img src="{{ Storage::url($image->path)}}" class="img-fluid rounded shadow" alt="Immagine {($key +1 }} dell'articolo '{{$article_to_check->title}}">
-            </div>
-            @endforeach
-        @else
-            @for ($i = 0; $i < 6; $i++)
-                <div class="col-12 col-md-3 col-lg-3 mb-4 text-center">
-                    <img src="https://picsum.photos/300" alt="immagine segnaposto" class="img-fluid rounded shadow"></div>
-            @endfor
-        @endif
+            @if($article_to_check && $article_to_check->images->count())
+                @foreach (Sarticle_to_check->images as $key=> $image)
+                    <div class="col-6 col-md-4 mb-4">
+                        <img src="{{$image->getUrl(300, 300)}}" class="img-fluid rounded shadow" alt="Immagine {($key +1 }} dell'articolo '{{$article_to_check->title}}">
+                    </div>
+                @endforeach
+            @else
+                @for ($i = 0; $i < 6; $i++)
+                    <div class="col-12 col-md-3 col-lg-3 mb-4 text-center">
+                        <img src="https://picsum.photos/300" alt="immagine segnaposto" class="img-fluid rounded shadow">
+                    </div>
+                @endfor
+            @endif
         </div>
     </section>
 
