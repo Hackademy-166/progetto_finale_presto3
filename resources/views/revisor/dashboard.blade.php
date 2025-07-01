@@ -53,6 +53,10 @@
                     </form>
                 </div>
             </div>
+            @else
+                <div class="col-12">
+                    <h2 class="text-center">Non ci sono articoli da revisionare</h2>
+                </div>
             @endif
             
         </div>
