@@ -25,7 +25,7 @@ class EditArticle extends Component
             'title' => $this->title,
             'description' => $this->description,
             'price' => $this->price.'€',
-            'category_id' => $this->category,
+            'category_id' => $this->category_id,
             'user_id' => auth()->user()->id,
         ]);
         session()->flash('message', 'Articolo modificato con successo!');  

@@ -20,21 +20,21 @@
                 
                 <form wire:submit="store" class="shadow rounded p-5 bg-form">
                     <div class="mb-3">
-                        <label for="title" class="form-label">Titolo</label>
+                        <label for="title" class="form-label font-gen">Titolo</label>
                         <input type="text" class="form-control " id="title" required wire:model.live="title">
                         @error('title')
                         <span class="fst-italic text-danger">{{$message}}</span>
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="description" class="form-label">Descrizione</label>
+                        <label for="description" class="form-label font-gen">Descrizione</label>
                         <textarea type="text" class="form-control " id="description" required wire:model.live="description"></textarea>
                         @error('description')
                         <span class="fst-italic text-danger">{{$message}}</span>
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="price" class="form-label">Prezzo</label>
+                        <label for="price" class="form-label font-gen">Prezzo</label>
                         <input type="text" class="form-control " id="price" required wire:model.blur="price">
                         @error('price')
                         <span class="fst-italic text-danger">{{$message}}</span>
@@ -42,7 +42,7 @@
                     </div>
                     
                     <div class="mb-3">
-                        <label for="temporary_images" class="form-label">Immagini</label>
+                        <label for="temporary_images" class="form-label font-gen">Immagini</label>
                         <input type="file" wire:model.live="temporary_images" multiple class="form-control shadow @error ('temporary_images.*') is-invalid @enderror" placeholder="Img/">
                         @error ('temporary_images.*')
                         <p class="fst-italic text-danger">{{ $message }}</p>
@@ -57,20 +57,20 @@
                             @foreach ($images as $key => $image)
                             <div class="col d-flex flex-column align-items-center my-3">
                                 <div class="img-preview mx-auto shadow rounded" style="background-image: url({{ $image->temporaryUrl() }});"></div>
-                                <button type="button" wire:click="removeImage({{ $key }})" class="btn btn-danger mt-2">Rimuovi</button>
+                                <button type="button" wire:click="removeImage({{ $key }})" class="btn btn-danger mt-2 font-gen">Rimuovi</button>
                             </div>
                             @endforeach
                         </div>
                     @endif     
                     <div class="mb-3">
-                        <label for="category" class="form-label">Categoria</label>
+                        <label for="category" class="form-label font-gen">Categoria</label>
                         <select class="form-select" id="category" required wire:model="category">
                             @foreach ($categories as $category)
                             <option value="{{$category->id}}">{{$category->category_name}}</option>
                             @endforeach
                         </select>
                     </div>
-                    <button type="submit" id="btn_trigger" class="btn bg-button ">Inserisci</button>
+                    <button type="submit" id="btn_trigger" class="btn card-button">Inserisci</button>
                 </form>
             </div>
         </div>

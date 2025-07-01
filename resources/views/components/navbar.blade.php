@@ -58,7 +58,9 @@
           </li>
           
           @if(Auth::user()->is_revisor)
-          <li><a class="text-dark position-relative " href="{{route('revisor.dashboard')}}">Zona revisore <span class="position-absolute top-0 start-100 translate-middle rounded">{{\App\Models\Article::toBeRevisedCount()}}</span></a></li>
+          <li><a class="text-dark position-relative " href="{{route('revisor.dashboard')}}">Zona revisore 
+            {{-- <span class="position-absolute top-0 start-100 translate-middle rounded">{{\App\Models\Article::toBeRevisedCount()}}</span> --}}
+          </a></li>
           @endif
           
           @endauth

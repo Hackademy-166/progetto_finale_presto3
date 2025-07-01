@@ -3,7 +3,7 @@
     <header class="container-fluid">
         <div class="row">
             <div class="col-12 col-md-12 col-lg-12">
-                <h1 class="text-dark text-center pt-5 display-1 font-title">Register Now</h1>
+                <h1 class="text-dark text-center pt-5 display-1 font-gen">Register Now</h1>
             </div>
         </div>
     </header>
@@ -22,32 +22,32 @@
                 <form class="shadow p-5 rounded  bg-form" method="POST" action="{{route('register')}}">
                     @csrf
                      <div class="mb-3">
-                        <label for="name" class="form-label">Nome utente</label>
+                        <label for="name" class="form-label font-gen">Nome utente</label>
                         <input type="text" class="form-control @error('email') is-invalid @enderror @success('email') is-valid @endsuccess" value="{{old('name')}}" id="name" name="name" required value="{{old('name')}}">
                         @error('name')
                             <span class="fst-italic text-danger">{{$message}}</span>
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="email" class="form-label">Indirizzo Email</label>
+                        <label for="email" class="form-label font-gen">Indirizzo Email</label>
                         <input type="email" class="form-control @error('email') is-invalid @enderror " value="{{old('email')}}" id="email" name="email" aria-describedby="emailHelp" required value="{{old('email')}}">
                         @error('email')
                            <span class="fst-italic text-danger">{{$message}}</span>
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="password" class="form-label">Password</label>
+                        <label for="password" class="form-label font-gen">Password</label>
                         <input type="password" class="form-control " id="password" name="password" required>
                         @error('password')
                            <span class="fst-italic text-danger">{{$message}}</span>
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="confirmation_password" class="form-label">Conferma Password</label>
+                        <label for="confirmation_password" class="form-label font-gen">Conferma Password</label>
                         <input type="password" class="form-control" id="confirmation_password" name="password_confirmation" required>
                     </div>
-                    <button type="submit" class="btn bg-button">Registrati</button>
-                    <p class="mt-3">Sei già registrato? <hr> <a class="text-dark" href="{{route('login')}}">Vai al login</a></p>
+                    <button type="submit" class="btn card-button font-gen">Registrati</button>
+                    <p class="mt-3 font-gen">Sei già registrato? <hr> <a class="text-dark font-gen" href="{{route('login')}}">Vai al login</a></p>
                 </form>
             </div>
         </div>
