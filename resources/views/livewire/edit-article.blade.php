@@ -13,9 +13,9 @@
             <input type="text" class="form-control @error('price') is-invalid @enderror" id="price" wire:model.live="price">
         </div>
         <div class="mb-3">
-            <label for="category" class="form-label">Categoria</label>
-            <select class="form-select" id="category" required wire:model.live="category">
-                @foreach ($categories as $category )
+            <label for="category_id" class="form-label">Categoria</label>
+            <select class="form-select" id="category_id" required wire:model.live="category_id">
+                @foreach ($categories as $category)
                     <option value="{{$category->id}}">{{$category->category_name}}</option>
                 @endforeach
             </select>

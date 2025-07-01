@@ -8,6 +8,12 @@
         </div>
     </header>
 
+    @if(session()->has('message_modify'))
+        <div class="alert alert-success">
+            {{session('message_modify')}}
+        </div>
+    @endif
+        
     <div class="container vh-auto">
         <div class="row">
             <livewire:edit-article :article="$article"/>

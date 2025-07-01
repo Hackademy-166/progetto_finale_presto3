@@ -21,14 +21,14 @@ class EditArticle extends Component
 
     public function editArticle(){
         $this->validate();
-        Article::update([
+        $this->article->update([
             'title' => $this->title,
             'description' => $this->description,
             'price' => $this->price.'€',
-            'category_id' => $this->category,
+            'category_id' => $this->category_id,
             'user_id' => auth()->user()->id,
         ]);
-        session()->flash('message', 'Articolo modificato con successo!');  
+        session()->reflash('message_modify', 'Articolo modificato con successo');  
         $this->reset();
     }
 
@@ -37,7 +37,6 @@ class EditArticle extends Component
             'title' => 'required|string|min:3|max:100',
             'description' => 'required|string|min:3|max:255',
             'price' => 'required|string|min:3|max:100',
-            'category' => 'required|string|min:3|max:100',
         ];
     }
     public function messages(){
@@ -54,7 +53,7 @@ class EditArticle extends Component
         $this->title = $this->article->title;
         $this->description = $this->article->description;
         $this->price = $this->article->price;
-        $this->category = $this->article->category_id;
+        $this->category_id = $this->article->category_id;
     }
 
     public function render()
