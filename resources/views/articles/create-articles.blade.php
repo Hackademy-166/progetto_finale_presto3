@@ -1,6 +1,6 @@
 <x-layout>
     
-    <div>
+    <section>
         <x-slot name="title">Inserisci Articolo</x-slot>
         <header class="container-fluid">
             <div class="row">
