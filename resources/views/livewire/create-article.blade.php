@@ -82,7 +82,7 @@
                                         <button type="button" wire:click="removeImage({{ $key }})" class="btn btn-danger mt-2">Rimuovi</button>
                                     </div>
                     @endforeach
-                    @endif
+                    {{-- @endif --}}
                                 </div>
                     @endif     
                     <div class="mb-3">
