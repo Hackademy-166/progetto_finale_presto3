@@ -3,19 +3,19 @@
         <div class="row justify-content-center">
             <div class="col-12 col-md-6">
                 @if(session('message'))
-                <div id="timer_alert" class="alert alert-success">
-                    {{session('message')}}
-                    
-                    <script>
-                        let btn_trigger=document.querySelector('#btn_trigger');
-                        let timer_alert=document.querySelector('#timer_alert');
+                    <div id="timer_alert" class="alert alert-success">
+                        {{session('message')}}
                         
-                        btn_trigger.addEventListener('click', function() {
-                            timer_alert.classList.add('sparisci');
-                        });                        
-                    </script>                
-                    
-                </div> 
+                        <script>
+                            let btn_trigger=document.querySelector('#btn_trigger');
+                            let timer_alert=document.querySelector('#timer_alert');
+
+                            btn_trigger.addEventListener('click', function() {
+                                timer_alert.classList.add('sparisci');
+                            });                        
+                        </script>                
+                        
+                    </div> 
                 @endif
                 
                 <form wire:submit="store" class="shadow rounded p-5 bg-form">
