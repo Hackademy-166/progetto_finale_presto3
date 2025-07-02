@@ -10,7 +10,7 @@
     </header>
     
     @if(session()->has('message'))
-    <div class="alert alert-succes">
+    <div class="alert alert-success">
         {{session('message')}}
     </div>
     @endif
