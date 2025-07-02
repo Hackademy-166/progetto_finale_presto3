@@ -26,6 +26,7 @@ return[
     'footerLink'=>'Enlaces de utilidad',
     'footerContact'=>'Contactos',
     'footerSub'=>'Suscribete',
+    'footerDescr'=>'Aqui podras comprar y vender todo lo que siempre has querido!',
 
      // REGISTER
     'registerTitle'=>'Registrate',

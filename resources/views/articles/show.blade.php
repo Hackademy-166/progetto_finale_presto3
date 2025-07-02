@@ -46,7 +46,7 @@
                             @auth
                                 <div class="d-flex justify-content-evenly pt-3">
                                     <button type="button" class="btn card-button" data-bs-toggle="modal" data-bs-target="#exampleModal">Elimina</button>
-                                    <a href="{{route('articles.edit', $article)}}"class="btn card-button mb-3"> Modifica</a>
+                                    <a href="{{route('articles.edit', $article)}}"class="btn card-button"> Modifica</a>
                                 </div>
                             @endauth                                    
                     </div>
