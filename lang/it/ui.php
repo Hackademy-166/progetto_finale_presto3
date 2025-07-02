@@ -44,8 +44,8 @@ return[
     'loginMail'=>'Indirizzo mail',
     'loginRicordami'=>'Ricordami',
     'loginButton'=>'Login',
-    'loginQuestion'=>'Do you not have an account?',
-    'loginRegister'=>'Go to register',
+    'loginQuestion'=>'Non hai ancora un account?',
+    'loginRegister'=>'Registrati',
 
     // CATEGORIE
 

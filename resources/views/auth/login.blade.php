@@ -4,7 +4,7 @@
     <header class="container-fluid">
         <div class="row">
             <div class="col-12 col-md-12 col-lg-12">
-                <h1 class="text-dark text-center pt-5 display-1 font-title">{{ __('ui.loginTitle') }}</h1>
+                <h1 class="text-dark text-center pt-5 display-1 font-gen">{{ __('ui.loginTitle') }}</h1>
             </div>
         </div>
     </header>
@@ -36,7 +36,7 @@
                         <input type="checkbox" class="form-check-input" id="exampleCheck1" name="remember">
                         <label class="form-check-label" for="exampleCheck1" >{{ __('ui.loginRicordami') }}</label>
                     </div>
-                    <button type="submit" class="btn bg-button ">Log-In</button>
+                    <button type="submit" class="btn card-button ">Log-In</button>
                     <p class="mt-3">{{ __('ui.loginQuestion') }}<hr> <a class="text-dark" href="{{route('register')}}">{{ __('ui.loginRegister') }}</a></p>
                 </form>
                 
