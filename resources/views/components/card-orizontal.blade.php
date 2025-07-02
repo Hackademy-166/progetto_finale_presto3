@@ -19,7 +19,7 @@
     <div class="d-flex justify-content-evenly">
       <button class="card__button "><a href="{{route('articles.show', $article)}}" class="btn  link-offset-2 link-underline link-underline-opacity-0 text-color font-gen">Vai al dettaglio</a></button>
       <button class="card__button "><a href="{{route('articles.edit', $article)}}" class="btn  link-offset-2 link-underline link-underline-opacity-0 text-color font-gen">Modifica</a></button>
-      <button class="card__button "><a href="{{route('articles.destroy', $article)}}" class="btn  link-offset-2 link-underline link-underline-opacity-0 text-color font-gen">Elimina</a></button>
+      {{-- <button class="card__button "><a href="{{route('articles.destroy', $article)}}" class="btn  link-offset-2 link-underline link-underline-opacity-0 text-color font-gen">Elimina</a></button> --}}
 
     </div>
 

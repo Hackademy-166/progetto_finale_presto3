@@ -13,7 +13,7 @@
                 </div>
 
                 <div class="col-12 col-md-3 col-lg-2">
-                    <a class="btn bg-button font-gen p-2 fs-4" href="{{route('homepage')}}">Torna alla home</a>
+                    <a class="btn card-button font-gen p-2 fs-4" href="{{route('homepage')}}">Torna alla home</a>
     
                 </div>
             @endforelse

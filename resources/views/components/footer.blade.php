@@ -81,7 +81,7 @@
             Presto.it
           </h6>
           <p>
-            Qui puoi utilizzare righe e colonne per organizzare il contenuto del footer. 
+            {{__('ui.footerDescr')}}
           </p>
         </div>
         <!-- Grid column -->
