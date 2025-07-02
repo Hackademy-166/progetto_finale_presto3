@@ -60,6 +60,23 @@ return[
     'Videogiochi'=>'Video games',
     'Offerte di Lavoro'=>'Job offers',
     'Mobili'=>'Furniture',
+
+    // CARD
+
+    'cardDettaglio'=>'Details',
+
+    'cardCategory'=>'Categories',
+    'cardPrice'=>'Price',
+    'cardDescr'=>'Description',
+    'cardInsert'=>'Added by',
+    'cardInsertWhen'=>'Added on',
+    'cardDelete'=>'Delete',
+    'cardUpdate'=>'Update',
+    'cardBuy'=>'Compra',
+
+    // ARTICOLI
+
+    'articleTit'=>'Articles',
     
 
 

@@ -19,7 +19,7 @@
     <section class="container  mt-5 mb-5">
         <div class="row justify-content-center">
             <div class="col-12 col-md-6">
-                <form class="shadow p-5 rounded  bg-form" method="POST" action="{{route('register')}}">
+                <form class="shadow p-5   bg-form" method="POST" action="{{route('register')}}">
                     @csrf
                      <div class="mb-3">
                         <label for="name" class="form-label">{{ __('ui.registerUser') }}</label>

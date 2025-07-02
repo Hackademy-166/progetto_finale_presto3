@@ -1,6 +1,9 @@
     <nav>
+     
+      
       <ul>
-        <li class="dropdown ">
+        
+        <li class="">
           <a class=" dropdown-toggle  text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="fa-solid  fa-language"></i>
           </a>          
@@ -13,11 +16,6 @@
             <li class="dropdown-item m-0 p-0"><a class="m-0 p-1 text-dark text-center" href=""><x-_locale  lang="es"/></a></li>
           </ul>
         </li>
-      </ul>
-      
-      
-      <ul>
-        
         
         <li>
           <a class="text-dark"  href="{{route('homepage')}}">Home</a>
@@ -93,7 +91,7 @@
           @endguest
           
           <li>
-            <div class="container-Search">
+            <div class="container-Search animate__animated animate__fadeInRight">
               <form action="{{route('search')}}" method="GET" role="search" >
                 
                 

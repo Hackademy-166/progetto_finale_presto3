@@ -3,7 +3,7 @@
     <header class="container-fluid">
         <div class="row">
             <div class="col-12 col-md-12 col-lg-12">
-                <h1 class="text-dark text-center font-gen p-5 display-1">Articoli</h1>
+                <h1 class="text-dark text-center font-gen p-5 display-1">{{ __('ui.navArticle') }}</h1>
             </div>
         </div>
     </header>

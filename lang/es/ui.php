@@ -60,5 +60,22 @@ return[
     'Videogiochi'=>'Video Juegos',
     'Offerte di Lavoro'=>'Ofertas de empleo',
     'Mobili'=>'Móvil',
+
+    // CARD
+
+    'cardDettaglio'=>'Detalle de',
+
+    'cardCategory'=>'Categorias',
+    'cardPrice'=>'Precio',
+    'cardDescr'=>'Descripcion',
+    'cardInsert'=>'Publicado por',
+    'cardInsertWhen'=>'Publicado el',
+    'cardDelete'=>'Borrar',
+    'cardUpdate'=>'Editar',
+    'cardBuy'=>'Compra',
+
+    // ARTICOLI
+
+    'articleTit'=>'Articulos',
 ]
 ?>

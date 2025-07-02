@@ -19,7 +19,7 @@
       <a href="" class="me-4 text-reset text-decoration-none">
         <i class="fab fa-google"></i>
       </a>
-      <a href="" class="me-4 text-reset text-decoration-none">
+      <a href="https://www.instagram.com/bigboidelvo?igsh=czR3aXNuYnV3cHMz" class="me-4 text-reset text-decoration-none">
         <i class="fab fa-instagram"></i>
       </a>
       <a href="" class="me-4 text-reset text-decoration-none">
@@ -58,7 +58,7 @@
           <!--Grid column-->
           <div class="col-auto">
             <!-- Submit button -->
-            <button data-mdb-ripple-init type="submit" class="btn bg-button mt-5">
+            <button data-mdb-ripple-init type="submit" class="btn card-button2 mt-5">
              {{ __('ui.footerSub') }}
             </button>
           </div>

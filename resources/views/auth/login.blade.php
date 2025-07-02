@@ -16,7 +16,7 @@
 
 
 
-                <form class="shadow p-5 rounded mt-5 bg-form" method="POST" action="{{route('login')}}">
+                <form class="shadow p-5  mt-5 bg-form" method="POST" action="{{route('login')}}">
                     @csrf
                     <div class="mb-3">
                         <label for="email" class="form-label">{{ __('ui.loginMail') }}</label>

@@ -9,10 +9,10 @@
             </div>
         </div>
     </header>
-    <section class="container mt-5 ">
+    <section class="container mt-4 ">
         <div class="row justify-content-between">
             <div class="col-12 col-md-4 col-lg-4">
-                <div class="card bg-form">
+                <div class="card bg-form" data-aos="fade-right"  data-aos-duration="1000">
                     <div class="card-body">
                         <div class="d-flex flex-column align-items-center text-center">
                             <img src=""  class="rounded-circle" width="150">
@@ -32,9 +32,9 @@
             </div>
             @if(isset($profile) && $profile->user_id === auth()->id())
             <div class="col-12 col-md-8 col-lg-8">
-                <div class="card bg-form">
+                <div class="card bg-form"  data-aos="fade-left"  data-aos-duration="1000">
                     <div class="card-body">
-                        <div class="row">
+                        <div class="row justify-content-center">
                             <div class="col-md-12">
                                 <ul class="list-gorup font-gen list-group-flush">
                                     <li class="d-flex justify-content-between"><h6>Nome e Cognome: {{$profile->name}} {{$profile->surname}}</h6></li> 
@@ -51,16 +51,28 @@
                 </div>
             </div>
             @else
-            <div class="col-12 col-md-3 col-lg-3">
-                <h4 class="font-gen">Non hai ancora inserito il tuo profilo</h4>
-                <a class="text-dark" href="{{route('profile.create')}}"><h7 class=" text-center font-gen">Aggiungi il tuo profilo</h7></a>
+            
+            
+            <div class="col-12 col-md-8 col-lg-8">
+                <div class="card bg-form bg-profile" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="card-body mt-5" >
+                        <div class="row justify-content-center">
+                            <div class="col-md-12">
+                                <h4 class="font-gen text-center">Non hai ancora inserito il tuo profilo</h4>
+                                <div class="d-flex justify-content-center">
+                                <a class="text-dark btn card-button mt-4" href="{{route('profile.create')}}"><h7 class="font-gen">Aggiungi il tuo profilo</h7></a>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             @endif
         </div>
         <div class="row">
             <div class="col-12 col-md-4 col-lg-4 "></div>
             <div class="col-12 col-md-4 col-lg-4">
-                <div class="card bg-form mt-4">
+                <div class="card bg-form mt-4" data-aos="fade-up"  data-aos-duration="1000">
                     <div class="card-body">
                         <div class="d-flex flex-column align-items-center text-center">
                             <div class="">
@@ -84,7 +96,10 @@
             @empty
             <div class="col-12 col-md-12 col-lg-12">
                 <h3 class="text-center font-gen display-1">Nessun articolo trovato</h3>
-                <a href="{{route('articles.create')}}" class="btn card-button">Inserisci Articolo</a>
+                <div class="d-flex justify-content-center ">
+                    <a href="{{route('articles.create')}}" class=" mb-5  btn card-button2">Inserisci Articolo</a>
+
+                </div>
             </div>
             @endforelse
         </div>
@@ -92,28 +107,28 @@
     
 </section>
 
-    {{-- Modale per l'eliminazione --}}
-    
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Elimina account</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    {{$user->name}} sei sicuro di voler eliminare il tuo account?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
-                    <form action="{{route('user.destroy', $user)}}" method="POST">
-                        @csrf
-                        @method('DELETE')    
-                        <button type="submit" class="btn btn-danger">Elimina</button>  
-                    </form>
-                </div>
+{{-- Modale per l'eliminazione --}}
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Elimina account</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                {{$user->name}} sei sicuro di voler eliminare il tuo account?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                <form action="{{route('user.destroy', $user)}}" method="POST">
+                    @csrf
+                    @method('DELETE')    
+                    <button type="submit" class="btn btn-danger">Elimina</button>  
+                </form>
             </div>
         </div>
     </div>
+</div>
 
 </x-layout>

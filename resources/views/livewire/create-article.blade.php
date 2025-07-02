@@ -18,23 +18,23 @@
                     </div> 
                 @endif
                 
-                <form wire:submit="store" class="shadow rounded p-5 bg-form">
+                <form wire:submit="store" class="shadow p-5 bg-form">
                     <div class="mb-3">
-                        <label for="title" class="form-label font-gen">Titolo</label>
+                        <label for="title" class="form-label font-taglia font-gen">Titolo</label>
                         <input type="text" class="form-control " id="title" required wire:model.live="title">
                         @error('title')
                         <span class="fst-italic text-danger">{{$message}}</span>
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="description" class="form-label font-gen">Descrizione</label>
+                        <label for="description" class="form-label font-taglia font-gen">Descrizione</label>
                         <textarea type="text" class="form-control " id="description" required wire:model.live="description"></textarea>
                         @error('description')
                         <span class="fst-italic text-danger">{{$message}}</span>
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="price" class="form-label font-gen">Prezzo</label>
+                        <label for="price" class="form-label font-taglia font-gen">Prezzo</label>
                         <input type="text" class="form-control " id="price" required wire:model.blur="price">
                         @error('price')
                         <span class="fst-italic text-danger">{{$message}}</span>
@@ -42,7 +42,7 @@
                     </div>
                     
                     <div class="mb-3">
-                        <label for="temporary_images" class="form-label font-gen">Immagini</label>
+                        <label for="temporary_images" class="form-label font-taglia font-gen">Immagini</label>
                         <input type="file" wire:model.live="temporary_images" multiple class="form-control shadow @error ('temporary_images.*') is-invalid @enderror" placeholder="Img/">
                         @error ('temporary_images.*')
                         <p class="fst-italic text-danger">{{ $message }}</p>
@@ -63,7 +63,7 @@
                     </div>
                     @endif     
                     <div class="mb-3">
-                        <label for="category" class="form-label font-gen">Categoria</label>
+                        <label for="category" class="form-label font-taglia font-gen">Categoria</label>
                         <select class="form-select" id="category" required wire:model="category">
                             @foreach ($categories as $category)
                             <option value="{{$category->id}}">{{$category->category_name}}</option>
