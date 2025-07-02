@@ -33,4 +33,15 @@ class RevisorController extends Controller
         return redirect()->back();
     }
 
+    public function changeStatus (Article $article) {
+            if ($article->is_accepted) {
+                $article->is_accepted = false;
+                $article->save();
+            } elseif (!$article->is_accepted) {
+                $article->is_accepted = true;
+                $article->save();
+            }
+        return redirect()->back()->with('message', 'Hai cambiato lo stato dell\'articolo');
+    }
+
 }
