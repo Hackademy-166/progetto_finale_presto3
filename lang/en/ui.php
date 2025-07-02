@@ -4,7 +4,7 @@ return[
     // HOME
     'insertArticle'=>'Insert article',
     'createArticle'=>'Create articles',
-    'lastArticle'=>'The last articles',
+    'lastArticle'=>'The latest articles',
     'insertArticleDesc'=>"Through this button you will access the page to insert an article of your election.",
 
     // NAVBAR
