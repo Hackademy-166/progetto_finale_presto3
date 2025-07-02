@@ -31,8 +31,10 @@ Route::delete('/user/delete/{user}', [UserController::class, 'destroy'])->name('
 // ROTTE REVISORI
 Route::get('/make/revisor/{user}', [RevisorController::class, 'makeRevisor'])->name('make-revisor');
 Route::get('/revisor/dashboard', [RevisorController::class, 'index'])->name('revisor.dashboard')->middleware('isRevisor'); // ??rotta paremtrica o no?
-Route::patch('/accept/{article}', [RevisorController::class, 'accept'])->name('accept');
-Route::patch('/reject/{article}', [RevisorController::class, 'reject'])->name('reject');
+Route::patch('/accept/{article}', [RevisorController::class, 'accept'])->name('accept')->middleware('isRevisor');
+Route::patch('/reject/{article}', [RevisorController::class, 'reject'])->name('reject')->middleware('isRevisor');
+Route::patch('/change/{article}', [RevisorController::class, 'changeStatus'])->middleware('isRevisor')->name('change');
+
 
 // ROTTE LINGUE
 Route::post('/lingua/{lang}', [PublicController::class, 'setLanguage'])->name('setLocale');
