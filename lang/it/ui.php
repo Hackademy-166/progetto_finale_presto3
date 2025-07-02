@@ -27,6 +27,7 @@ return[
     'footerLink'=>'Link utili',
     'footerContact'=>'Contatti',
     'footerSub'=>'Iscriviti',
+    'footerDescr'=>'Qui puoi vendere e comprare tutto ciò che hai sempre desiderato!',
 
       // REGISTER
     'registerTitle'=>'Registrati',
@@ -43,8 +44,8 @@ return[
     'loginMail'=>'Indirizzo mail',
     'loginRicordami'=>'Ricordami',
     'loginButton'=>'Login',
-    'loginQuestion'=>'Do you not have an account?',
-    'loginRegister'=>'Go to register',
+    'loginQuestion'=>'Non hai ancora un account?',
+    'loginRegister'=>'Registrati',
 
     // CATEGORIE
 
