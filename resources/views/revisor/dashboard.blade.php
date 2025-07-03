@@ -24,13 +24,13 @@
                         </div>
                     </div>
                 </div>
-                @endif               
                 @endforeach
                 
-                {{-- @if($article)
-                <div>
+                @else
+                <div class="vh-100 jus">
                     <h4 class="text-center font-gen">Non ci sono articoli da revisionare</h4>
-                </div>   --}}
+                </div>  
+                @endif               
                 
             </div>
         </div>
