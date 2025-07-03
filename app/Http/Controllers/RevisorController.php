@@ -18,16 +18,12 @@ class RevisorController extends Controller
     
     public function accept(Article $article){
         $article->setAccepted(true);
-        return redirect()
-        ->back()
-        ->with('message', "Hai accettato l'articolo $article->title");
+        return redirect('revisor.dashboard')->with('message', "Hai accettato l'articolo $article->title");
     }
     
     public function reject(Article $article){
         $article->setAccepted(false);
-        return redirect()
-        ->back()
-        ->with('message', "Hai rifiutato l'articolo $article->title");
+        return redirect(route('revisor.dashboard'))->with('message', "Hai rifiutato l'articolo $article->title");
     }  
     
     public function makeRevisor(User $user){
@@ -48,7 +44,7 @@ class RevisorController extends Controller
             $article->is_accepted = true;
             $article->save();
         }
-        return redirect()->back()->with('message', 'Hai cambiato lo stato dell\'articolo');
+        return redirect(route('revisor.dashboard'))->with('message', 'Hai cambiato lo stato dell\'articolo');
     }
     
     public function revisorShow($article) {
