@@ -5,7 +5,7 @@
         
         <li class="">
           <a class=" dropdown-toggle  text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="fa-solid  fa-language"></i>
+            <i class="bi font-icon bi-globe2"></i>
           </a>          
           <ul class="dropdown-menu dropdown-custom">
             

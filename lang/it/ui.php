@@ -79,6 +79,22 @@ return[
 
     'articleTit'=>'Articoli',
 
+    // DASHBOARD
+
+    'dashRev'=>'Revisore',
+    'dashNameSur'=>'Nome e Cognome',
+    'dashPhone'=>'Telefono',
+    'dashAddress'=>'Indirizzo',
+    'dashEdit'=>'Modifica Profilo',
+    'dashDelete'=>'Elimina',
+    'dashLogout'=>'Logout',
+    'dashMiss'=>'Non hai ancora inserito il tuo profilo',
+    'dashAdd'=>'Aggiungi il tuo profilo',
+    'dashArticle'=>'Articoli pubblicati',
+    'dashSold'=>'Articoli venduti',
+    'dashYour'=>'I tuoi articoli',
+    'dashNot'=>'Nessun articolo trovato'
+
 
 ]
 ?>

@@ -694,6 +694,10 @@ right: 10px;
 	box-sizing: border-box;
 }
 
+.font-icon{
+  font-size: 1.7rem;
+}
+
 .body-img {
 	font-family: "Open Sans", sans-serif;
 	min-height: 100vh;

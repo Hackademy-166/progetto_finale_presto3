@@ -88,7 +88,7 @@
         
         
         <div class="col-12 col-md-4">
-            <div class="card-show" data-aos="flip-right" data-aos-duration="500">
+            <div class="card-show mb-4" data-aos="flip-right" data-aos-duration="500">
                 <span class="cardtitle text-center">{{$article_to_check->title}}</span>
                 
                 <p class="card-content">

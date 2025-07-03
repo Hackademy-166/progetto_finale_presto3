@@ -77,5 +77,21 @@ return[
     // ARTICOLI
 
     'articleTit'=>'Articulos',
+
+    // DASHBOARD
+
+    'dashRev'=>'Crítico',
+    'dashNameSur'=>'Nombre y Apellidos',
+    'dashPhone'=>'Teléfono',
+    'dashAddress'=>'Indirizzo',
+    'dashEdit'=>'Modifica Profilo',
+    'dashDelete'=>'Elimina',
+    'dashLogout'=>'Logout',
+    'dashMiss'=>'Non hai ancora inserito il tuo profilo',
+    'dashAdd'=>'Aggiungi il tuo profilo',
+    'dashArticle'=>'Articoli pubblicati',
+    'dashSold'=>'Articoli venduti',
+    'dashYour'=>'I tuoi articoli',
+    'dashNot'=>'Nessun articolo trovato'
 ]
 ?>

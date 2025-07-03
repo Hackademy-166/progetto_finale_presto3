@@ -20,11 +20,11 @@
                                 <h4 class="font-gen">{{Auth::user()->name}}</h4>
                                 <p class="font-gen">{{Auth::user()->email}}</p>
                                 @if(Auth::user()->is_revisor)
-                                <a href="{{route('revisor.dashboard')}}" class="btn card-button font-gen">Revisore</a>
+                                <a href="{{route('revisor.dashboard')}}" class="btn card-button font-gen">{{ __('ui.dashRev') }}</a>
                                 @endif
                                 <br>
-                                <button type="button" class="btn card-button mt-5 ms-1" data-bs-toggle="modal" data-bs-target="#exampleModal">Elimina</button>
-                                <button class="d-none mt-5 ms-1 btn card-button">Modifica</button>
+                                <button type="button" class="btn card-button mt-5 ms-1" data-bs-toggle="modal" data-bs-target="#exampleModal">{{ __('ui.dashDelete') }}</button>
+                                <button class="d-none mt-5 ms-1 btn card-button">{{ __('ui.dashEdit') }}</button>
                             </div>
                         </div>
                     </div>
@@ -37,14 +37,14 @@
                         <div class="row justify-content-center">
                             <div class="col-md-12">
                                 <ul class="list-gorup font-gen list-group-flush">
-                                    <li class="d-flex justify-content-between"><h6>Nome e Cognome: {{$profile->name}} {{$profile->surname}}</h6></li> 
+                                    <li class="d-flex justify-content-between"><h6>{{ __('ui.dashNameSur') }}: {{$profile->name}} {{$profile->surname}}</h6></li> 
                                     <hr>
-                                    <li class="d-flex justify-content-between"><h6>Telefono: {{$profile->phone_number}}</h6></li> 
+                                    <li class="d-flex justify-content-between"><h6>{{ __('ui.dashPhone') }}: {{$profile->phone_number}}</h6></li> 
                                     <hr>
-                                    <li class="d-flex justify-content-between"><h6>Indirizzo: {{$profile->address}}, {{$profile->city}}, {{$profile->country}}, {{$profile->postal_code}}</h6></li>
+                                    <li class="d-flex justify-content-between"><h6>{{ __('ui.dashAddress') }}: {{$profile->address}}, {{$profile->city}}, {{$profile->country}}, {{$profile->postal_code}}</h6></li>
                                     {{-- <li class="list-unstyled"></li> --}}
                                 </ul>
-                                <a href="{{route('profile.edit', $profile)}}" class="btn card-button ms-4 mt-1"> Modifica Profilo</a>
+                                <a href="{{route('profile.edit', $profile)}}" class="btn card-button ms-4 mt-1"> {{ __('ui.dashEdit') }}</a>
                             </div>
                         </div>
                     </div>
@@ -58,9 +58,9 @@
                     <div class="card-body mt-5" >
                         <div class="row justify-content-center">
                             <div class="col-md-12">
-                                <h4 class="font-gen text-center">Non hai ancora inserito il tuo profilo</h4>
+                                <h4 class="font-gen text-center">{{ __('ui.dashMiss') }}</h4>
                                 <div class="d-flex justify-content-center">
-                                    <a class="text-dark btn card-button mt-4" href="{{route('profile.create')}}"><h7 class="font-gen">Aggiungi il tuo profilo</h7></a>
+                                    <a class="text-dark btn card-button mt-4" href="{{route('profile.create')}}"><h7 class="font-gen">{{ __('ui.dashAdd') }}</h7></a>
                                 </div>
                             </div>
                         </div>
@@ -76,8 +76,8 @@
                     <div class="card-body">
                         <div class="d-flex flex-column align-items-center text-center">
                             <div class="">
-                                <h4 class="font-gen">Articoli Pubblicati: <strong id="article-count" data-final="{{ $user->articles_count }}">0</strong></h4>
-                                <h4 class="font-gen">Annunci Venduti: <span id="soldArticles">0</span></h4>
+                                <h4 class="font-gen">{{ __('ui.dashArticle') }}: <strong id="article-count" data-final="{{ $user->articles_count }}">0</strong></h4>
+                                <h4 class="font-gen">{{ __('ui.dashSold') }}: <span id="soldArticles">0</span></h4>
                             </div>
                         </div>
                     </div>
@@ -88,16 +88,16 @@
     
     <section class="container mt-3">
         <div class="row">
-            <h2 class="font-gen text-center display-1">I tuoi articoli</h2>
+            <h2 class="font-gen text-center display-1">{{ __('ui.dashYour') }}</h2>
             @forelse ($articles as $article )
             <div class="col-12 col-md-4 col-lg-4">
                 <x-card-orizontal :article="$article" />
             </div>
             @empty
             <div class="col-12 col-md-12 col-lg-12">
-                <h3 class="text-center font-gen display-1">Nessun articolo trovato</h3>
+                <h3 class="text-center font-gen display-1">{{ __('ui.dashNot') }}</h3>
                 <div class="d-flex justify-content-center ">
-                    <a href="{{route('articles.create')}}" class=" mb-5  btn card-button2">Inserisci Articolo</a>
+                    <a href="{{route('articles.create')}}" class=" mb-5  btn card-button2">{{ __('ui.insertArticle') }}</a>
                     
                 </div>
             </div>
