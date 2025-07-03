@@ -77,7 +77,7 @@
         <!-- Grid column -->
         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
           <!-- Content -->
-          <h6 class="text-uppercase font-title fs-3 mb-4">
+          <h6 class="text-uppercase font-gen fs-3 mb-4">
             Presto.it
           </h6>
           <p>

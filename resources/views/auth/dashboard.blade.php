@@ -90,22 +90,50 @@
         <div class="row">
             <h2 class="font-gen text-center display-1">I tuoi articoli</h2>
             @forelse ($articles as $article )
-            <div class="col-12 col-md-4 col-lg-4">
-                <x-card-orizontal :article="$article" />
-            </div>
-            @empty
-            <div class="col-12 col-md-12 col-lg-12">
-                <h3 class="text-center font-gen display-1">Nessun articolo trovato</h3>
-                <div class="d-flex justify-content-center ">
-                    <a href="{{route('articles.create')}}" class=" mb-5  btn card-button2">Inserisci Articolo</a>
-
+                <div class="col-12 col-md-4 col-lg-4">
+                    <x-card-orizontal :article="$article" />
                 </div>
-            </div>
+            @empty
+                <div class="col-12 col-md-12 col-lg-12">
+                    <h3 class="text-center font-gen display-1">Nessun articolo trovato</h3>
+                    <div class="d-flex justify-content-center ">
+                        <a href="{{route('articles.create')}}" class=" mb-5  btn card-button2">Inserisci Articolo</a>
+
+                    </div>
+                </div>
             @endforelse
         </div>
-    </div>
-    
-</section>
+    </section>
+
+    @if(Auth::user()->is_revisor)
+        <section class="container mt-3">
+            <div class="row">
+                @if($article->is_accpted == null)
+                    <h2 class="font-gen text-center display-1">Articoli da revisionare</h2>
+                        @foreach($articles as $article)
+                            <a href="{{route('revisor.show', $article)}}">
+                                <div class="col-12 col-md-6 col-lg-6">
+                                    <div class="card-show">
+                                        <span class="card__title text-center">{{$article->title}}</span>
+                                        <p class="card-content">{{ __('ui.cardDescr') }}: {{$article->description}}</p>
+                                        <p class="card-content">{{ __('ui.cardPrice') }}: {{$article->price}}</p>
+                                        <p class="card-content">{{ __('ui.cardCategory') }}: {{$article->category->category_name}}</p>
+                                        <p class="card-content">{{ __('ui.cardInsert') }}: {{$article->user->name}}</p>
+                                        <p class="card-content">{{ __('ui.cardInsertWhen') }}: {{$article->user->created_at->format('d/m/Y')}}</p>
+                                    </div>
+                                </div>
+                            </a>
+                        @endforeach    
+                @else    
+                    <div class="col-12 col-md-12 col-lg-12">
+                        <h3 class="text-center font-gen display-1">Nessun articolo da revisionare trovato</h3>
+                    </div>
+                @endif
+                
+            </div>
+        </section>
+    @endif
+
 
 {{-- Modale per l'eliminazione --}}
 

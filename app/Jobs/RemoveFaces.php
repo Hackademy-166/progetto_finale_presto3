@@ -54,7 +54,7 @@ class RemoveFaces implements ShouldQueue
             $h=$bounds[2][1]-$bounds[0][1];
             $image=SpatieImage::load($srcPath);
             $image->watermark(
-                base_path('public/img/CoverPage2.png'), //?????? definire immagine
+                base_path('public/img/vecteezy_gradient-blur-background_20911347.png'), 
                 AlignPosition::TopLeft,
                 paddingX: $bounds[0][0],
                 paddingY: $bounds[0][1],
