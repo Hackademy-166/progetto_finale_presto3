@@ -20,56 +20,56 @@
         <div class="row" style="flex-direction:row">
             
             @if($article_to_check)
-            @if($article_to_check->images->count())
+                @if($article_to_check->images->count())
             
             
-            @foreach ($article_to_check->images as $key=> $image)
-            <div class="col-12 col-md-4">        
-                <article class="cta body-img mb-5" data-aos="flip-left" data-aos-duration="500">
-                    <img src="{{$image->getUrl(300, 300)}}" class="img-card img-fluid rounded shadow" alt="Immagine {{$key +1 }} dell'articolo '{{$article_to_check->title}}">
-                    <div class="cta__text-column">
-                        <h5 class="font-taglia fw-bold">Labels</h5>
-                        @if ($image->labels)
-                        @foreach ($image->labels as $label)
-                        <span class="font-taglia">#{{ $label }},</span>
-                        @endforeach
-                        @else
-                        <p>Nessuna etichetta</p>
-                        @endif    
-                        <h5 class="font-taglia fw-bold">Ratings</h5>
-                        <div class="row justify-content-start">
-                            <div class="col-2">
-                                <div class="mx-auto {{ $image->adult }}"></div>
-                            </div>
-                            <div class="col-10 font-taglia">adult</div>
+                @foreach ($article_to_check->images as $key=> $image)
+                    <div class="col-12 col-md-4">        
+                        <article class="cta body-img mb-5" data-aos="flip-left" data-aos-duration="500">
+                                <img src="{{$image->getUrl(300, 300)}}" class="img-card img-fluid rounded shadow" alt="Immagine {{$key +1 }} dell'articolo '{{$article_to_check->title}}">
+                                <div class="cta__text-column">
+                                    <h5 class="font-taglia fw-bold">Labels</h5>
+                                    @if ($image->labels)
+                                    @foreach ($image->labels as $label)
+                                    <span class="font-taglia">#{{ $label }},</span>
+                                    @endforeach
+                                    @else
+                                    <p>Nessuna etichetta</p>
+                                    @endif    
+                                    <h5 class="font-taglia fw-bold">Ratings</h5>
+                                    <div class="row justify-content-start">
+                                        <div class="col-2">
+                                            <div class="mx-auto {{ $image->adult }}"></div>
+                                        </div>
+                                        <div class="col-10 font-taglia">adult</div>
+                                    </div>
+                                    <div class="row justify-content-center">
+                                        <div class="col-2">
+                                            <div class="mx-auto {{ $image->violence }}"></div>
+                                        </div>
+                                        <div class="col-10 font-taglia">violence</div>
+                                    </div>
+                                    <div class="row justify-content-center">
+                                        <div class="col-2">
+                                            <div class="mx-auto {{ $image->spoof }}"> </div>
+                                        </div>
+                                        <div class="col-10 font-taglia">spoof</div>
+                                    </div>
+                                    <div class="row justify-content-center">
+                                        <div class="col-2">
+                                            <div class="mx-auto {{ $image->racy }}"> </div>
+                                        </div>
+                                        <div class="col-10 font-taglia">racy</div>
+                                    </div>
+                                    <div class="row justify-content-center">
+                                        <div class="col-2">
+                                            <div class="  mx-auto {{ $image->medical }}"> </div>
+                                        </div>
+                                        <div class="col-10 font-taglia">medical</div>
+                                    </div>
+                                </div>
+                            </article>
                         </div>
-                        <div class="row justify-content-center">
-                            <div class="col-2">
-                                <div class="mx-auto {{ $image->violence }}"></div>
-                            </div>
-                            <div class="col-10 font-taglia">violence</div>
-                        </div>
-                        <div class="row justify-content-center">
-                            <div class="col-2">
-                                <div class="mx-auto {{ $image->spoof }}"> </div>
-                            </div>
-                            <div class="col-10 font-taglia">spoof</div>
-                        </div>
-                        <div class="row justify-content-center">
-                            <div class="col-2">
-                                <div class="mx-auto {{ $image->racy }}"> </div>
-                            </div>
-                            <div class="col-10 font-taglia">racy</div>
-                        </div>
-                        <div class="row justify-content-center">
-                            <div class="col-2">
-                                <div class="  mx-auto {{ $image->medical }}"> </div>
-                            </div>
-                            <div class="col-10 font-taglia">medical</div>
-                        </div>
-                    </div>
-                </article>
-            </div>
             @endforeach
             @else
             @for ($i = 0; $i < 6; $i++)
@@ -83,11 +83,8 @@
             <div class="col-12">
                 <h2 class="text-center">Non ci sono articoli da revisionare</h2>
             </div>
-            @endif
-            
-            
+            @endif    
         </div>
-        
         
         
         <div class="col-12 col-md-4">
@@ -126,8 +123,7 @@
                     
                 </div>
                 @endauth
-            </div>
-            
+            </div>  
         </div>
     </div>
 </div>
