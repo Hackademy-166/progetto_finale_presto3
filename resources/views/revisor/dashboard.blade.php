@@ -1,109 +1,38 @@
 <x-layout>
-    <x-slot name="title">Dashboard Revisore</x-slot>
-    <header class="container vh-auto">
+    <h1 class="font-gen text-center display-1">Dashboard Revisore</h1>
+    <div class="container">
         <div class="row">
-            <div class="col-12 col-md-12 col-lg-12">
-                <h1 class="text-dark text-center display-2
-                p-3">Dashboard Revisore</h1>
-            </div>
-        </div>
-    </header>
-    
-    @if(session()->has('message'))
-    <div class="alert alert-success">
-        {{session('message')}}
-    </div>
-    @endif
-    
-    <section class="container-fluid">
-        <div class="row">
-            @if($article_to_check)
-                @if( $article_to_check->images->count())
+            <div class="col-12">
                 
-                    @foreach ($article_to_check->images as $key=> $image)
-                    
-                        <div class="col-6 col-md-4 mb-4">
-                            <img src="{{$image->getUrl(300, 300)}}" class="img-fluid rounded shadow" alt="Immagine {{$key +1 }} dell'articolo '{{$article_to_check->title}}">
-                        </div>
-                        <div class="col-md-8 ps-3">
-                            <div class="card-body">
-                                <h5>Labels</h5>
-                                @if ($image->labels)
-                                    @foreach ($image->labels as $label)
-                                    #{{ $label }},
-                                    @endforeach
-                                @else
-                                    <p>Nessuna etichetta</p>
-                                @endif    
-                                <h5 class="">Ratings</h5>
-                                <div class="row justify-content-center">
-                                    <div class="col-2">
-                                        <div class="text-center mx-auto {{ $image->adult }}"></div>
-                                    </div>
-                                    <div class="col-10">adult</div>
-                                </div>
-                                <div class="row justify-content-center">
-                                    <div class="col-2">
-                                        <div class=" text-center mx-auto {{ $image->violence }}"></div>
-                                    </div>
-                                    <div class="col-10">violence</div>
-                                </div>
-                                <div class="row justify-content-center">
-                                    <div class="col-2">
-                                        <div class=" text-center mx-auto {{ $image->spoof }}"> </div>
-                                    </div>
-                                    <div class="col-10">spoof</div>
-                                </div>
-                                <div class="row justify-content-center">
-                                    <div class="col-2">
-                                        <div class=" text-center mx-auto {{ $image->racy }}"> </div>
-                                    </div>
-                                    <div class="col-10">racy</div>
-                                </div>
-                                <div class="row justify-content-center">
-                                    <div class="col-2">
-                                        <div class=" text-center mx-auto {{ $image->medical }}"> </div>
-                                    </div>
-                                    <div class="col-10">medical</div>
-                                </div>
+                @foreach($articles as $article)                
+                @if($article->is_accepted === null)
+                <div class="accordion" id="accordionExample">   
+                    <div class="accordion-item bg-form">
+                        <h2 class="accordion-header rounded">
+                            <button class="font-taglia accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{$article->id}}" aria-expanded="false" aria-controls="collapse{{$article->id}}">
+                                {{$article->title}}
+                            </button>
+                        </h2>
+                        <div id="collapse{{$article->id}}" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body rounded">
+                                <p class="font-taglia">{{$article->description}}</p>
+                                <p class="font-taglia"><small>Inserito il: {{$article->created_at->format('d/m/Y')}}</small></p>
+                                <p class="font-taglia"><small>Inserito da: {{$article->user->name}}</small></p>
+                                <a href="{{route('revisor.show', $article)}}" class="btn card-button">Dettaglio</a>
+                                {{-- <a href="{{route('revisor.show', $article_to_check)}}" class="btn card-button">Dettaglio</a> --}}
                             </div>
                         </div>
-                    @endforeach
-                @else
-                    @for ($i = 0; $i < 6; $i++)
-                        <div class="col-12 col-md-3 col-lg-3 mb-4 text-center">
-                            <img src="https://picsum.photos/300" alt="immagine segnaposto" class="img-fluid rounded shadow">
-                        </div>
-                    @endfor
-                @endif
-                <div class="col-md-4 ps-4 d-flex flex-column justify-content-between">
+                    </div>
+                </div>
+                @endif               
+                @endforeach
+                
+                {{-- @if($article)
                 <div>
-                    <h1>{{ $article_to_check->title }}</h1>
-                    <h3>Autore: {{ $article_to_check->user->name }} </h3> <h4>{{ $article_to_check->price }}€</h4>
-                    <h4 class="fst-italic text-muted">{{ $article_to_check->category->category_name }}</h4>
-                    <p class="h6">{{ $article_to_check->description }}</p>
-                </div>
-                <div class="d-flex pb-4 justify-content-around">
-                    <form action="{{route('reject', ['article'=> $article_to_check])}}" method="POST">
-                        @csrf
-                        @method('PATCH')
-                        <button class="btn card-button py-2 px-5 fw-bold">Rifiuta</button>
-                    </form>
-                    <form action="{{route('accept', ['article'=> $article_to_check])}}" method="POST">
-                        @csrf
-                        @method('PATCH')
-                        <button class="btn card-button py-2 px-5 fw-bold">Accetta</button>
-                    </form>
-                </div>
+                    <h4 class="text-center font-gen">Non ci sono articoli da revisionare</h4>
+                </div>   --}}
+                
             </div>
-            @else
-                <div class="col-12">
-                    <h2 class="text-center">Non ci sono articoli da revisionare</h2>
-                </div>
-            @endif
-            
         </div>
-    </section>
-    
-    
-</x-layout>
+    </div>
+</x-layout>    

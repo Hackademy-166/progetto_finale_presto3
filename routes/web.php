@@ -34,6 +34,7 @@ Route::get('/revisor/dashboard', [RevisorController::class, 'index'])->name('rev
 Route::patch('/accept/{article}', [RevisorController::class, 'accept'])->name('accept')->middleware('isRevisor');
 Route::patch('/reject/{article}', [RevisorController::class, 'reject'])->name('reject')->middleware('isRevisor');
 Route::patch('/change/{article}', [RevisorController::class, 'changeStatus'])->middleware('isRevisor')->name('change');
+Route::get('/revisor/revisor-show/{article}', [RevisorController::class, 'revisorShow'])->name('revisor.show')->middleware('isRevisor'); 
 
 
 // ROTTE LINGUE
