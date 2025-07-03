@@ -60,8 +60,8 @@
                             <div class="col-md-12">
                                 <h4 class="font-gen text-center">Non hai ancora inserito il tuo profilo</h4>
                                 <div class="d-flex justify-content-center">
-                                <a class="text-dark btn card-button mt-4" href="{{route('profile.create')}}"><h7 class="font-gen">Aggiungi il tuo profilo</h7></a>
-                            </div>
+                                    <a class="text-dark btn card-button mt-4" href="{{route('profile.create')}}"><h7 class="font-gen">Aggiungi il tuo profilo</h7></a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -90,73 +90,73 @@
         <div class="row">
             <h2 class="font-gen text-center display-1">I tuoi articoli</h2>
             @forelse ($articles as $article )
-                <div class="col-12 col-md-4 col-lg-4">
-                    <x-card-orizontal :article="$article" />
-                </div>
+            <div class="col-12 col-md-4 col-lg-4">
+                <x-card-orizontal :article="$article" />
+            </div>
             @empty
-                <div class="col-12 col-md-12 col-lg-12">
-                    <h3 class="text-center font-gen display-1">Nessun articolo trovato</h3>
-                    <div class="d-flex justify-content-center ">
-                        <a href="{{route('articles.create')}}" class=" mb-5  btn card-button2">Inserisci Articolo</a>
-
-                    </div>
+            <div class="col-12 col-md-12 col-lg-12">
+                <h3 class="text-center font-gen display-1">Nessun articolo trovato</h3>
+                <div class="d-flex justify-content-center ">
+                    <a href="{{route('articles.create')}}" class=" mb-5  btn card-button2">Inserisci Articolo</a>
+                    
                 </div>
+            </div>
             @endforelse
         </div>
     </section>
-
+    
     @if(Auth::user()->is_revisor)
-        <section class="container mt-3">
-            <div class="row">
-                @if($article->is_accpted == null)
-                    <h2 class="font-gen text-center display-1">Articoli da revisionare</h2>
-                        @foreach($articles as $article)
-                            <a href="{{route('revisor.show', $article)}}">
-                                <div class="col-12 col-md-6 col-lg-6">
-                                    <div class="card-show">
-                                        <span class="card__title text-center">{{$article->title}}</span>
-                                        <p class="card-content">{{ __('ui.cardDescr') }}: {{$article->description}}</p>
-                                        <p class="card-content">{{ __('ui.cardPrice') }}: {{$article->price}}</p>
-                                        <p class="card-content">{{ __('ui.cardCategory') }}: {{$article->category->category_name}}</p>
-                                        <p class="card-content">{{ __('ui.cardInsert') }}: {{$article->user->name}}</p>
-                                        <p class="card-content">{{ __('ui.cardInsertWhen') }}: {{$article->user->created_at->format('d/m/Y')}}</p>
-                                    </div>
-                                </div>
-                            </a>
-                        @endforeach    
-                @else    
-                    <div class="col-12 col-md-12 col-lg-12">
-                        <h3 class="text-center font-gen display-1">Nessun articolo da revisionare trovato</h3>
+    <section class="container-fluid mt-3">
+        @if($not_accepted_articles->count() > 0)
+        <h2 class="font-gen text-center display-1">Articoli da revisionare</h2>
+        <div class="row justify-content-around">
+            @foreach($not_accepted_articles as $article)
+            <div class="col-12 col-md-5 col-lg-5">
+                <a class="text-decoration-none" href="{{route('revisor.show', $article)}}">
+                    <div class="card-show my-4">
+                        <span class="card__title text-center">{{$article->title}}</span>
+                        <p class="card-content">{{ __('ui.cardDescr') }}: {{$article->description}}</p>
+                        <p class="card-content">{{ __('ui.cardPrice') }}: {{$article->price}}</p>
+                        <p class="card-content">{{ __('ui.cardCategory') }}: {{$article->category->category_name}}</p>
+                        <p class="card-content">{{ __('ui.cardInsert') }}: {{$article->user->name}}</p>
+                        <p class="card-content">{{ __('ui.cardInsertWhen') }}: {{$article->user->created_at->format('d/m/Y')}}</p>
                     </div>
-                @endif
-                
+                </a>
             </div>
-        </section>
+            @endforeach    
+        </div>
+        @else    
+        <div class="col-12 col-md-12 col-lg-12">
+            <h3 class="text-center font-gen display-1">Nessun articolo da revisionare trovato</h3>
+        </div>
+        @endif
+        
+    </section>
     @endif
-
-
-{{-- Modale per l'eliminazione --}}
-
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Elimina account</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                {{$user->name}} sei sicuro di voler eliminare il tuo account?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
-                <form action="{{route('user.destroy', $user)}}" method="POST">
-                    @csrf
-                    @method('DELETE')    
-                    <button type="submit" class="btn btn-danger">Elimina</button>  
-                </form>
+    
+    
+    {{-- Modale per l'eliminazione --}}
+    
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Elimina account</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    {{$user->name}} sei sicuro di voler eliminare il tuo account?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                    <form action="{{route('user.destroy', $user)}}" method="POST">
+                        @csrf
+                        @method('DELETE')    
+                        <button type="submit" class="btn btn-danger">Elimina</button>  
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
-
+    
 </x-layout>

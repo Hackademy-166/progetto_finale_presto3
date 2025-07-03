@@ -20,8 +20,9 @@ class UserController extends Controller
         $user=Auth::user();
         $profile=  $user->profile;
         $user = auth()->user()->loadCount('articles');
-        $articles=auth()->user()->articles()->where('is_accepted', true)->get();
-        return view('auth.dashboard', compact('user', 'profile', 'articles'));
+        $accepted_articles=auth()->user()->articles()->where('is_accepted', true)->get();
+        $not_accepted_articles=auth()->user()->articles()->where('is_accepted', null)->get();
+        return view('auth.dashboard', compact('user', 'profile', 'accepted_articles', 'not_accepted_articles'));
     }
 
         public function create(){        
