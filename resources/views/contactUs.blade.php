@@ -15,12 +15,8 @@
                 <form class="p-5 bg-form shadow" method="POST" action="{{route('submit')}}">
                         @csrf
                         <div class="mb-3">
-                            <label for="name" class="form-label w-100 text-dark font-taglia font-gen">Nome</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Nome" required value="{{Auth::user()->profile->name}}">
-                        </div>
-                        <div class="mb-3">
-                            <label for="surname" class="form-label w-100 text-dark font-taglia font-gen">Cognome</label>
-                            <input type="text" class="form-control" id="surname" name="surname" placeholder="Cognome" required value="{{Auth::user()->profile->surname}}">
+                            <label for="name" class="form-label w-100 text-dark font-taglia font-gen">Nome Utente</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Nome" required value="{{Auth::user()->name}}">
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label w-100 text-dark font-taglia font-gen">Email</label>
