@@ -115,6 +115,14 @@
                         @method('PATCH')
                         <button class="btn card-button py-2 px-5 fw-bold">Accetta</button>
                     </form>
+                   <div class="modal-footer justify-content-between">
+                        <span class="stato-badge {{ $article->is_accepted ? 'stato-accettato' : 'stato-rifiutato' }}">Stato: {{ $article->is_accepted ? 'Accettato' : 'Rifiutato' }}</span>
+                        <form action="{{ route('change', $article) }}" method="POST">
+                        @csrf
+                        @method('PATCH')
+                            <button type="submit" class="btn-modifica">Cambia stato</button>
+                        </form>
+                    </div>
                     
                 </div>
                 @endauth
