@@ -26,9 +26,15 @@
                             <label for="message" class="form-label w-100 text-dark font-taglia font-gen">Lascia il tuo messaggio</label>
                             <textarea class="form-control" name="user_message" id="message" cols="30" rows="10" placeholder="Raccontaci perché vuoi lavorare con noi." required></textarea>
                         </div>
-                        <div class="d-flex justify-content-center">   
-                            <button type="submit" class="btn card-button">Invia</button>
-                        </div>
+                        @if(! Auth::user()->is_revisor)
+                            <div class="d-flex justify-content-center">   
+                                <button type="submit" class="btn card-button">Invia</button>
+                            </div>
+                        @else
+                            <div class="d-flex justify-content-center">   
+                                <span class="font-gen btn card-button disabled" disabled>Sei già un revisore</span>
+                            </div>
+                        @endif
                 </form>
             </div>
         </div>

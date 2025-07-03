@@ -37,13 +37,13 @@ class CreateArticle extends Component
         ];
     }
 
-        public function messages(){
-            return [
-                'required' => 'Il campo :attribute è richiesto obbligatoriamente.',
-                'min' => 'Il campo :attribute deve contenere almeno :min caratteri.',
-                'max' => 'Il campo :attribute non può superare :max caratteri.',
-                'string' => 'Il campo :attribute deve essere un testo.',
-            ];
+    public function messages(){
+        return [
+            'required' => 'Il campo :attribute è richiesto obbligatoriamente.',
+            'min' => 'Il campo :attribute deve contenere almeno :min caratteri.',
+            'max' => 'Il campo :attribute non può superare :max caratteri.',
+            'string' => 'Il campo :attribute deve essere un testo.',
+        ];
     }
 
     public function store(){
