@@ -1,10 +1,9 @@
 <x-layout>
     <x-slot name="title">Dashboard Revisore</x-slot>
-    <header class="container vh-auto">
+    <header class="container vh-auto mt-5">
         <div class="row">
             <div class="col-12 col-md-12 col-lg-12">
-                <h1 class="text-dark text-center display-2
-                p-3">Dashboard Revisore</h1>
+                <h1 class="text-dark text-center font-gen display-1">Dashboard Revisore</h1>
             </div>
         </div>
     </header>
