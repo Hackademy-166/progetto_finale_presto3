@@ -10,8 +10,10 @@ use Illuminate\Support\Facades\Artisan;
 class RevisorController extends Controller
 {
     public function index(){
-        $article_to_check= Article::where('is_accepted', null)->get();
-        return view('revisor.dashboard', compact('article_to_check'));
+        $article_to_check= Article::where('is_accepted', null)->orderby('created_at', 'asc')->get();
+        $accepted_articles= Article::where('is_accepted', true)->get();
+        $rejected_articles= Article::where('is_accepted', false)->get();
+        return view('revisor.dashboard', compact('article_to_check', 'accepted_articles', 'rejected_articles'));
     }
     
     public function accept(Article $article){
