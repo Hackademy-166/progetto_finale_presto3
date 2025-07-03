@@ -80,7 +80,7 @@ return[
     'articleTit'=>'Articoli',
 
     // DASHBOARD
-
+    'dashProf'=>'Profilo Utente',
     'dashRev'=>'Revisore',
     'dashNameSur'=>'Nome e Cognome',
     'dashPhone'=>'Telefono',
@@ -93,7 +93,16 @@ return[
     'dashArticle'=>'Articoli pubblicati',
     'dashSold'=>'Articoli venduti',
     'dashYour'=>'I tuoi articoli',
-    'dashNot'=>'Nessun articolo trovato'
+    'dashNot'=>'Nessun articolo trovato',
+
+    // INSERIESCI ARTICOLO
+    'insertTitle'=>'Inserisci il tuo articolo',
+    'insertTitle'=>'Titolo',
+    'insertDescr'=>'Descrizione',
+    'insertPrice'=>'Prezzo',
+    'insertCategory'=>'Categoria',
+    'insertImage'=>'Immagine',
+    'insertButton'=>'Inserisci',
 
 
 ]

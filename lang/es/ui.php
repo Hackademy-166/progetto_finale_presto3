@@ -79,19 +79,19 @@ return[
     'articleTit'=>'Articulos',
 
     // DASHBOARD
-
+    'dashProf'=>'Perfil de usuario',
     'dashRev'=>'Crítico',
     'dashNameSur'=>'Nombre y Apellidos',
     'dashPhone'=>'Teléfono',
-    'dashAddress'=>'Indirizzo',
-    'dashEdit'=>'Modifica Profilo',
-    'dashDelete'=>'Elimina',
+    'dashAddress'=>'Dirección',
+    'dashEdit'=>'Editar perfil',
+    'dashDelete'=>'Borrar',
     'dashLogout'=>'Logout',
-    'dashMiss'=>'Non hai ancora inserito il tuo profilo',
-    'dashAdd'=>'Aggiungi il tuo profilo',
+    'dashMiss'=>'Aún no has añadido tu perfil',
+    'dashAdd'=>'Añade tu perfil',
     'dashArticle'=>'Articoli pubblicati',
-    'dashSold'=>'Articoli venduti',
-    'dashYour'=>'I tuoi articoli',
-    'dashNot'=>'Nessun articolo trovato'
+    'dashSold'=>'Artículos publicados',
+    'dashYour'=>'Tus artículos',
+    'dashNot'=>'No se encontraron artículos'
 ]
 ?>
