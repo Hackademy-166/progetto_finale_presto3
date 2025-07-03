@@ -33,6 +33,7 @@ class AppServiceProvider extends ServiceProvider
         if(Schema::hasTable('users')){
             View::share('users', User::all());
         }
+
         
     }
 }

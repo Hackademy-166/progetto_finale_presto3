@@ -33,6 +33,11 @@ class RevisorController extends Controller
         return redirect()->back();
     }
 
+    public function rejectRevisor(User $user){
+        Artisan::call('app:reject-user-revisor', ['email' => $user -> email]);
+        return redirect()->back();
+    }
+
     public function changeStatus (Article $article) {
             if ($article->is_accepted) {
                 $article->is_accepted = false;
