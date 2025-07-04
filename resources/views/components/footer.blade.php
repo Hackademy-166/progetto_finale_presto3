@@ -3,7 +3,7 @@
   <!-- Section: Social media -->
   <section class="d-flex justify-content-center  p-4 border-bottom">
     <!-- Left -->
-    <div class="me-5 d-none d-lg-block">
+    <div class="me-4 d-none d-lg-block">
       <span>{{ __('ui.footerFollow') }}</span>
     </div>
     <!-- Left -->
@@ -11,22 +11,22 @@
     <!-- Right -->
     <div >
       <a href="" class="me-4 text-reset text-decoration-none ">
-        <i class="fab fa-facebook-f"></i>
+        <i class="bi bi-facebook"></i>
       </a>
       <a href="" class="me-4 text-reset text-decoration-none">
-        <i class="fab fa-twitter"></i>
+        <i class="bi bi-threads"></i>
       </a>
       <a href="" class="me-4 text-reset text-decoration-none">
-        <i class="fab fa-google"></i>
+        <i class="bi bi-twitter-x"></i>
       </a>
       <a href="https://www.instagram.com/bigboidelvo?igsh=czR3aXNuYnV3cHMz" class="me-4 text-reset text-decoration-none">
-        <i class="fab fa-instagram"></i>
+        <i class="bi bi-instagram"></i>
       </a>
       <a href="" class="me-4 text-reset text-decoration-none">
-        <i class="fab fa-linkedin"></i>
+        <i class="bi bi-linkedin"></i>
       </a>
       <a href="" class="me-4 text-reset text-decoration-none">
-        <i class="fab fa-github"></i>
+        <i class="bi bi-github"></i>
       </a>
     </div>
     <!-- Right -->
