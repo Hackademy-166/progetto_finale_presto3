@@ -34,6 +34,7 @@ class CreateArticle extends Component
             'title' => 'required|string|min:3|max:100',
             'description' => 'required|string|min:3|max:100',
             'price' => 'required|string|min:3|max:100',
+            
         ];
     }
 
@@ -43,6 +44,7 @@ class CreateArticle extends Component
             'min' => 'Il campo :attribute deve contenere almeno :min caratteri.',
             'max' => 'Il campo :attribute non può superare :max caratteri.',
             'string' => 'Il campo :attribute deve essere un testo.',
+            
         ];
     }
 

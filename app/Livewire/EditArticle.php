@@ -4,10 +4,16 @@ namespace App\Livewire;
 
 use App\Models\Article;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 use Livewire\Attributes\Validate;
+
+
+
+
 
 class EditArticle extends Component
 {
+    use WithFileUploads;
     public $article;
     #[Validate('required|string|min:3|max:100')]
     public $title;
@@ -18,7 +24,7 @@ class EditArticle extends Component
     public $category_id;
     public $user_id;
     public $is_accepted;
-
+    
     public function editArticle(){
         $this->validate();
         $this->article->update([
@@ -28,6 +34,7 @@ class EditArticle extends Component
             'category_id' => $this->category_id,
             'user_id' => auth()->user()->id,
         ]);
+    
         session()->reflash('message_modify', 'Articolo modificato con successo');  
         $this->reset();
     }
@@ -37,6 +44,7 @@ class EditArticle extends Component
             'title' => 'required|string|min:3|max:100',
             'description' => 'required|string|min:3|max:255',
             'price' => 'required|string|min:3|max:100',
+            
         ];
     }
     public function messages(){
@@ -46,6 +54,7 @@ class EditArticle extends Component
             'date' => 'Il campo :attribute deve essere una data.',
             'before' => 'Il campo :attribute deve essere una data precedente alla data di oggi.',
             'string' => 'Il campo :attribute deve essere un testo.',
+           
         ];
     }
 
@@ -54,6 +63,8 @@ class EditArticle extends Component
         $this->description = $this->article->description;
         $this->price = $this->article->price;
         $this->category_id = $this->article->category_id;
+        // $this->existing_images = $this->article->images->map(fn($images)=> ['id'   => $images->id,'path' => $images->path,])->toArray();
+        
     }
 
     public function render()
