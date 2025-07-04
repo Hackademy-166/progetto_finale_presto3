@@ -1,4 +1,13 @@
 <x-layout>
+
+
+    <!-- ALERT PER ACCETTAZIONE, RIFIUTO E CAMBIO DI STATO ARTICOLO -->     
+    @if(session()->has('message'))
+        <div class="alert alert-success">
+            {{session('message')}}
+        </div>
+    @endif
+    <!-- FINE ALERT PER ACCETTAZIONE, RIFIUTO E CAMBIO DI STATO ARTICOLO -->
     <header>
         <h1 class="font-gen text-center display-1">Dashboard Revisore</h1>
             <div class="container">

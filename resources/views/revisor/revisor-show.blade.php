@@ -9,13 +9,6 @@
         </div>
     </header>
     
-    @if(session()->has('message'))
-    <div class="alert alert-success">
-        {{session('message')}}
-    </div>
-    @endif
-    
-    
     <div class="container justify-content-center">
         <div class="row" style="flex-direction:row">
             
@@ -112,9 +105,9 @@
                         @method('PATCH')
                         <button class="btn card-button py-2 px-5 fw-bold">Accetta</button>
                     </form>
-                   <div class="justify-content-between">
-                        <span class="stato-badge {{ $article_to_check->is_accepted ? 'stato-accettato' : 'stato-rifiutato' }}">Stato: {{ $article_to_check->is_accepted ? 'Accettato' : 'Rifiutato' }}</span>
-                        <form action="{{ route('change', ['article'=> $article_to_check]) }}" method="POST">
+                   <div class="modal-footer justify-content-between">
+                        <span class="stato-badge {{ $article->is_accepted ? 'stato-accettato' : 'stato-rifiutato' }}">Stato: {{ $article->is_accepted ? 'Accettato' : 'Rifiutato' }}</span>
+                        <form action="{{ route('change', $article) }}" method="POST">
                         @csrf
                         @method('PATCH')
                             <button type="submit" class="btn-modifica">Cambia stato</button>
