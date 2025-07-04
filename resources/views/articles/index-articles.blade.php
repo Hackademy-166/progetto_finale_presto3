@@ -23,7 +23,7 @@
                 <div class="col-12 col-md-4">
                     <x-card-vertical :article="$article" />
                 </div>
-                {{$articles->links()}}
+                
                 @empty
 
                 <h1 class="text-dark text-center font-gen p-5 display-1">Nessun articolo caricato</h1>
@@ -33,4 +33,12 @@
         </div>
         
     </section>
+    <div class="container mb-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-12">
+                {{$articles->links()}}
+
+            </div>
+        </div>
+    </div>
 </x-layout>
