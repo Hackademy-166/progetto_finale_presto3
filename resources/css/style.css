@@ -582,24 +582,14 @@ margin-top: var(--flow-space, 1em);
   transition: all 0.3s ease;
 }
 
-/* .prova{
-position: absolute;
 
-} */
-
-/* .prova:checked{
-right: 50px;
-position: absolute;
-} */
 
 .checkbox:focus {
   border: none;
   outline: none;
 }
 
-/* .checkbox:checked {
-right: 10px;
-} */
+
 
 .checkbox:checked ~ .mainbox {
   width: 50px;
@@ -771,3 +761,10 @@ right: 10px;
   transform: translate(-5px, -5px);
   box-shadow: 17px 17px 0 var(--color-s);
 }
+
+
+
+
+/* PAGINATE------------------------------------------------------- */
+
+

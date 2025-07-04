@@ -17,10 +17,10 @@
                         <div class="d-flex flex-column align-items-center text-center">
                             <img src=""  class="rounded-circle" width="150">
                             <div class="mt-3">
-                                <h4 class="font-gen">{{Auth::user()->name}}</h4>
-                                <p class="font-gen">{{Auth::user()->email}}</p>
+                                <h3 class="font-gen">{{Auth::user()->name}}</h3>
+                                <h5 class="font-gen">{{Auth::user()->email}}</h5>
                                 @if(Auth::user()->is_revisor)
-                                <a href="{{route('revisor.dashboard')}}" class="btn card-button font-gen">{{ __('ui.dashRev') }}</a>
+                                <a href="{{route('revisor.dashboard')}}" class="btn card-button ">{{ __('ui.dashRev') }}</a>
                                 @endif
                                 <br>
                                 <button type="button" class="btn card-button mt-5 ms-1" data-bs-toggle="modal" data-bs-target="#exampleModal">{{ __('ui.dashDelete') }}</button>
@@ -37,11 +37,11 @@
                         <div class="row justify-content-center">
                             <div class="col-md-12">
                                 <ul class="list-gorup font-gen list-group-flush">
-                                    <li class="d-flex justify-content-between"><h6>{{ __('ui.dashNameSur') }}: {{$profile->name}} {{$profile->surname}}</h6></li> 
+                                    <li class="d-flex justify-content-between "><h6 class="font-taglia">{{ __('ui.dashNameSur') }}: {{$profile->name}} {{$profile->surname}}</h6></li> 
                                     <hr>
-                                    <li class="d-flex justify-content-between"><h6>{{ __('ui.dashPhone') }}: {{$profile->phone_number}}</h6></li> 
+                                    <li class="d-flex justify-content-between"><h6 class="font-taglia">{{ __('ui.dashPhone') }}: {{$profile->phone_number}}</h6></li> 
                                     <hr>
-                                    <li class="d-flex justify-content-between"><h6>{{ __('ui.dashAddress') }}: {{$profile->address}}, {{$profile->city}}, {{$profile->country}}, {{$profile->postal_code}}</h6></li>
+                                    <li class="d-flex justify-content-between"><h6 class="font-taglia">{{ __('ui.dashAddress') }}: {{$profile->address}}, {{$profile->city}}, {{$profile->country}}, {{$profile->postal_code}}</h6></li>
                                     {{-- <li class="list-unstyled"></li> --}}
                                 </ul>
                                 <a href="{{route('profile.edit', $profile)}}" class="btn card-button ms-4 mt-1"> {{ __('ui.dashEdit') }}</a>

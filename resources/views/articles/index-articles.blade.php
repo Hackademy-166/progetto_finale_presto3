@@ -7,14 +7,14 @@
             </div>
         </div>
     </header>
-
+    
     {{-- Messaggio di riuscita cancellazione dell'articolo --}}
     @if(session('message'))
-        <div class="alert alert-success">
-            {{session('message')}}
-        </div>
+    <div class="alert alert-success">
+        {{session('message')}}
+    </div>
     @endif    
-
+    
     
     <section>
         <div class="container vh-auto p-5">
@@ -25,20 +25,22 @@
                 </div>
                 
                 @empty
-
+                
                 <h1 class="text-dark text-center font-gen p-5 display-1">Nessun articolo caricato</h1>
-               
+                
                 @endforelse
             </div>
         </div>
         
     </section>
+    <navbar class="paginate">
     <div class="container mb-5">
         <div class="row justify-content-center">
-            <div class="col-12 col-md-12">
+            <div class="col-12 col-md-6">
+                
                 {{$articles->links()}}
-
             </div>
         </div>
     </div>
+    </navbar>
 </x-layout>
