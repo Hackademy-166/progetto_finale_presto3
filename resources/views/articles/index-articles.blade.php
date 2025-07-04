@@ -17,8 +17,8 @@
     
     
     <section>
-        <div class="container vh-auto p-5">
-            <div class="row">
+        <div class="container-fluid vh-auto p-5">
+            <div class="row justify-content-center">
                 @forelse ($articles as $article)
                 <div class="col-12 col-md-4">
                     <x-card-vertical :article="$article" />
@@ -29,18 +29,30 @@
                 <h1 class="text-dark text-center font-gen p-5 display-1">Nessun articolo caricato</h1>
                 
                 @endforelse
+
+                <div class="d-flex justify-content-center ">
+                     <div>
+                         {{ $articles->links() }}
+
+                     </div>
+                    
+                </div>
+                
+                {{-- <div class="d-flex justify-content-center ">
+                    <div>
+                        {{$articles->links()}}
+                        
+                    </div>
+                </div> --}}
+                
+                
+                
             </div>
         </div>
         
     </section>
-    <navbar class="paginate">
-    <div class="container mb-5">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-6">
-                
-                {{$articles->links()}}
-            </div>
-        </div>
-    </div>
-    </navbar>
+    
+    
+    
+    
 </x-layout>

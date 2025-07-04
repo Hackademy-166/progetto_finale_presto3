@@ -104,6 +104,19 @@ return[
     'insertImage'=>'Immagine',
     'insertButton'=>'Inserisci',
 
-
+    // REVISORE
+    'workTitle'=>'Lavora con noi',
+    'workName'=>'Nome Utente',
+    'workMail'=>'Email',
+    'workMess'=>'Lascia il tuo messaggio',
+    'workReason'=>'Raccontaci perché vuoi lavorare con noi',
+    'workAlready'=>'Sei già un revisore',
+    'workDash'=>'Dashboard Revisore',
+    'workArticle'=>'Articoli Accettati',
+    'workNot'=>'Articoli Rifiutati',
+    'workNone'=>'Non ci sono articoli da revisionare',
+    'workBy'=>'Inserito da:',
+    'workInsert'=>'Inserito il:',
+    'workDetail'=>'Vai al dettaglio'
 ]
 ?>

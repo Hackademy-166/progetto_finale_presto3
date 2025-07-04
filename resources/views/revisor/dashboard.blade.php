@@ -9,7 +9,7 @@
     @endif
     <!-- FINE ALERT PER ACCETTAZIONE, RIFIUTO E CAMBIO DI STATO ARTICOLO -->
     <header>
-        <h1 class="font-gen text-center display-1">Dashboard Revisore</h1>
+        <h1 class="font-gen text-center display-1">{{ __('ui.workDash') }}</h1>
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -26,9 +26,9 @@
                                         <div id="collapse{{$article->id}}" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                             <div class="accordion-body rounded">
                                                 <p class="font-taglia">{{$article->description}}</p>
-                                                <p class="font-taglia"><small>Inserito il: {{$article->created_at->format('d/m/Y')}}</small></p>
-                                                <p class="font-taglia"><small>Inserito da: {{$article->user->name}}</small></p>
-                                                <a href="{{route('revisor.show', $article)}}" class="btn card-button">Dettaglio</a>
+                                                <p class="font-taglia"><small>{{ __('ui.workInsert') }} {{$article->created_at->format('d/m/Y')}}</small></p>
+                                                <p class="font-taglia"><small>{{ __('ui.workBy') }} {{$article->user->name}}</small></p>
+                                                <a href="{{route('revisor.show', $article)}}" class="btn card-button">{{ __('ui.workDetail') }}</a>
                                                 {{-- <a href="{{route('revisor.show', $article_to_check)}}" class="btn card-button">Dettaglio</a> --}}
                                             </div>
                                         </div>
@@ -37,7 +37,7 @@
                                 @endif               
                         @empty
                                 <div class="vh-auto justify-content-center align-items-center">
-                                    <h4 class="text-center font-gen">Non ci sono articoli da revisionare</h4>
+                                    <h4 class="text-center font-gen">{{ __('ui.workNone') }}</h4>
                                 </div>
                         @endforelse              
                     </div>
@@ -48,7 +48,7 @@
     <section>
         <div class="container">
             <div class="row">
-                <h2 class="text-dark text-title text-center font-gen display-1">Articoli Accettati</h2>
+                <h2 class="text-dark text-title text-center font-gen display-1">{{ __('ui.workArticle') }}</h2>
                 @forelse($accepted_articles as $article)
                     <div class="col-12 col-md-5 col-lg-5">
                         <a class="text-decoration-none" href="{{route('revisor.show', $article)}}">
@@ -64,12 +64,12 @@
                     </div>
                 @empty
                     <div class="vh-auto justify-content-center align-items-center">
-                        <h4 class="text-center font-gen">Non ci sono articoli da revisionare</h4>
+                        <h4 class="text-center font-gen">{{ __('ui.workNone') }}</h4>
                     </div>
                 @endforelse
             </div>
             <div class="row">
-                <h2 class="text-dark text-title text-center font-gen display-1">Articoli Rifiutati</h2>
+                <h2 class="text-dark text-title text-center font-gen display-1">{{ __('ui.workNot') }}</h2>
                 @forelse($rejected_articles as $article)
                     <div class="col-12 col-md-5 col-lg-5">
                         <a class="text-decoration-none" href="{{route('revisor.show', $article)}}">
@@ -85,7 +85,7 @@
                     </div>
                 @empty
                     <div class="vh-auto justify-content-center align-items-center">
-                        <h4 class="text-center font-gen">Non ci sono articoli da revisionare</h4>
+                        <h4 class="text-center font-gen">{{ __('ui.workNone') }}</h4>
                     </div>
                 @endforelse
             </div>

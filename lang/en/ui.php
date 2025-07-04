@@ -106,6 +106,21 @@ return[
     'insertRem'=>'Remove',
     
     
+    // REVISORE
+    'workTitle'=>'Work with us',
+    'workName'=>'Username',
+    'workMail'=>'Email',
+    'workMess'=>'Leave your message',
+    'workReason'=>'Tell us why you want to work with us',
+    'workAlready'=>'You are already a reviewer',
+    'workDash'=>'Reviewer Dashboard',
+    'workArticle'=>'Accepted Articles',
+    'workNot'=>'Rejected Articles',
+    'workNone'=>'There are no articles to review',
+    'workBy' => 'Inserted by:',
+    'workInsert' => 'Inserted on:',
+    'workDetail' => 'Read more'
+    
     
     
     
