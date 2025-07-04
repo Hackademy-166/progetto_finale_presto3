@@ -13,56 +13,56 @@
         <div class="row" style="flex-direction:row">
             
             @if($article_to_check)
-                @if($article_to_check->images->count())
+            @if($article_to_check->images->count())
             
             
-                @foreach ($article_to_check->images as $key=> $image)
-                    <div class="col-12 col-md-4">        
-                        <article class="cta body-img mb-5" data-aos="flip-left" data-aos-duration="500">
-                                <img src="{{$image->getUrl(300, 300)}}" class="img-card img-fluid rounded shadow" alt="Immagine {{$key +1 }} dell'articolo '{{$article_to_check->title}}">
-                                <div class="cta__text-column">
-                                    <h5 class="font-taglia fw-bold">Labels</h5>
-                                    @if ($image->labels)
-                                    @foreach ($image->labels as $label)
-                                    <span class="font-taglia">#{{ $label }},</span>
-                                    @endforeach
-                                    @else
-                                    <p>Nessuna etichetta</p>
-                                    @endif    
-                                    <h5 class="font-taglia fw-bold">Ratings</h5>
-                                    <div class="row justify-content-start">
-                                        <div class="col-2">
-                                            <div class="mx-auto {{ $image->adult }}"></div>
-                                        </div>
-                                        <div class="col-10 font-taglia">adult</div>
-                                    </div>
-                                    <div class="row justify-content-center">
-                                        <div class="col-2">
-                                            <div class="mx-auto {{ $image->violence }}"></div>
-                                        </div>
-                                        <div class="col-10 font-taglia">violence</div>
-                                    </div>
-                                    <div class="row justify-content-center">
-                                        <div class="col-2">
-                                            <div class="mx-auto {{ $image->spoof }}"> </div>
-                                        </div>
-                                        <div class="col-10 font-taglia">spoof</div>
-                                    </div>
-                                    <div class="row justify-content-center">
-                                        <div class="col-2">
-                                            <div class="mx-auto {{ $image->racy }}"> </div>
-                                        </div>
-                                        <div class="col-10 font-taglia">racy</div>
-                                    </div>
-                                    <div class="row justify-content-center">
-                                        <div class="col-2">
-                                            <div class="  mx-auto {{ $image->medical }}"> </div>
-                                        </div>
-                                        <div class="col-10 font-taglia">medical</div>
-                                    </div>
-                                </div>
-                            </article>
+            @foreach ($article_to_check->images as $key=> $image)
+            <div class="col-12 col-md-4">        
+                <article class="cta body-img mb-5" data-aos="flip-left" data-aos-duration="500">
+                    <img src="{{$image->getUrl(300, 300)}}" class="img-card img-fluid rounded shadow" alt="Immagine {{$key +1 }} dell'articolo '{{$article_to_check->title}}">
+                    <div class="cta__text-column">
+                        <h5 class="font-taglia fw-bold">Labels</h5>
+                        @if ($image->labels)
+                        @foreach ($image->labels as $label)
+                        <span class="font-taglia">#{{ $label }},</span>
+                        @endforeach
+                        @else
+                        <p>Nessuna etichetta</p>
+                        @endif    
+                        <h5 class="font-taglia fw-bold">Ratings</h5>
+                        <div class="row justify-content-start">
+                            <div class="col-2">
+                                <div class="mx-auto {{ $image->adult }}"></div>
+                            </div>
+                            <div class="col-10 font-taglia">adult</div>
                         </div>
+                        <div class="row justify-content-center">
+                            <div class="col-2">
+                                <div class="mx-auto {{ $image->violence }}"></div>
+                            </div>
+                            <div class="col-10 font-taglia">violence</div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-2">
+                                <div class="mx-auto {{ $image->spoof }}"> </div>
+                            </div>
+                            <div class="col-10 font-taglia">spoof</div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-2">
+                                <div class="mx-auto {{ $image->racy }}"> </div>
+                            </div>
+                            <div class="col-10 font-taglia">racy</div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-2">
+                                <div class="  mx-auto {{ $image->medical }}"> </div>
+                            </div>
+                            <div class="col-10 font-taglia">medical</div>
+                        </div>
+                    </div>
+                </article>
+            </div>
             @endforeach
             @else
             @for ($i = 0; $i < 6; $i++)
@@ -93,32 +93,43 @@
                 <p class="card-content">{{ __('ui.cardInsertWhen') }}: {{$article_to_check->user->created_at->format('d/m/Y')}}</p>
                 
                 @auth
-                <div class="d-flex justify-content-evenly pt-3">
-                    
-                    <form action="{{route('reject', ['article'=> $article_to_check])}}" method="POST">
-                        @csrf
-                        @method('PATCH')
-                        <button class="btn card-button py-2 px-5 fw-bold">Rifiuta</button>
-                    </form>
-                    <form action="{{route('accept', ['article'=> $article_to_check])}}" method="POST">
-                        @csrf
-                        @method('PATCH')
-                        <button class="btn card-button py-2 px-5 fw-bold">Accetta</button>
-                    </form>
-                   <div class="modal-footer justify-content-between">
-                        <span class="stato-badge {{ $article->is_accepted ? 'stato-accettato' : 'stato-rifiutato' }}">Stato: {{ $article->is_accepted ? 'Accettato' : 'Rifiutato' }}</span>
-                        <form action="{{ route('change', $article) }}" method="POST">
-                        @csrf
-                        @method('PATCH')
-                            <button type="submit" class="btn-modifica">Cambia stato</button>
+                <div class="col-12 col-md-12">
+                    <div class="d-flex justify-content-between pt-3">
+                        
+                        <form action="{{route('reject', ['article'=> $article_to_check])}}" method="POST">
+                            @csrf
+                            @method('PATCH')
+                            <button class="btn card-button  px-5 fw-bold">Rifiuta</button>
+                        </form>
+                        <form action="{{route('accept', ['article'=> $article_to_check])}}" method="POST">
+                            @csrf
+                            @method('PATCH')
+                            <button class="btn card-button  px-5 fw-bold">Accetta</button>
                         </form>
                     </div>
-                    
                 </div>
-                @endauth
-            </div>  
+                
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-12 mt-2 ">
+                        <div class="text-center"><span class="stato-badge {{ $article_to_check->is_accepted ? 'stato-accettato' : 'stato-rifiutato' }} font-taglia " >Stato: {{ $article_to_check->is_accepted ? 'Accettato' : 'Rifiutato' }}</span></div>
+                        
+                        <div class="d-flex flex-column align-items-center text-center">
+                            
+                            <form action="{{ route('change',['article'=> $article_to_check]) }}" method="POST">
+                                @csrf
+                                @method('PATCH')
+                                <button type="submit" class="card-button mt-2">Cambia stato</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
         </div>
-    </div>
+        @endauth
+    </div>  
+</div>
+</div>
 </div>
 
 </section>

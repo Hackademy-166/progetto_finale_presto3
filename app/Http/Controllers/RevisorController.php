@@ -11,14 +11,15 @@ class RevisorController extends Controller
 {
     public function index(){
         $article_to_check= Article::where('is_accepted', null)->orderby('created_at', 'asc')->get();
-        $accepted_articles= Article::where('is_accepted', true)->get();
-        $rejected_articles= Article::where('is_accepted', false)->get();
+        $accepted_articles=Article::where('is_accepted', true)->get();
+        $rejected_articles=Article::where('is_accepted', false)->get();
+        // dd($accepted_articles, $rejected_articles);
         return view('revisor.dashboard', compact('article_to_check', 'accepted_articles', 'rejected_articles'));
     }
     
     public function accept(Article $article){
         $article->setAccepted(true);
-        return redirect('revisor.dashboard')->with('message', "Hai accettato l'articolo $article->title");
+        return redirect(route ('revisor.dashboard'))->with('message', "Hai accettato l'articolo $article->title");
     }
     
     public function reject(Article $article){

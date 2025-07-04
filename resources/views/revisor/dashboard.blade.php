@@ -49,7 +49,7 @@
         <div class="container">
             <div class="row">
                 <h2 class="text-dark text-title text-center font-gen display-1">Articoli Accettati</h2>
-                @foreach($accepted_articles as $accepted_article)
+                @forelse($accepted_articles as $article)
                     <div class="col-12 col-md-5 col-lg-5">
                         <a class="text-decoration-none" href="{{route('revisor.show', $article)}}">
                             <div class="card-show my-4">
@@ -62,14 +62,18 @@
                             </div>
                         </a>
                     </div>
-                @endforeach
+                @empty
+                    <div class="vh-auto justify-content-center align-items-center">
+                        <h4 class="text-center font-gen">Non ci sono articoli da revisionare</h4>
+                    </div>
+                @endforelse
             </div>
             <div class="row">
                 <h2 class="text-dark text-title text-center font-gen display-1">Articoli Rifiutati</h2>
-                @foreach($rejected_articles as $rejected_article)
+                @forelse($rejected_articles as $article)
                     <div class="col-12 col-md-5 col-lg-5">
                         <a class="text-decoration-none" href="{{route('revisor.show', $article)}}">
-                            <div class="card-show my-4">
+                            <div class="card-show mb-5">
                                 <span class="card__title text-center">{{$article->title}}</span>
                                 <p class="card-content">{{ __('ui.cardDescr') }}: {{$article->description}}</p>
                                 <p class="card-content">{{ __('ui.cardPrice') }}: {{$article->price}}</p>
@@ -79,7 +83,11 @@
                             </div>
                         </a>
                     </div>
-                @endforeach
+                @empty
+                    <div class="vh-auto justify-content-center align-items-center">
+                        <h4 class="text-center font-gen">Non ci sono articoli da revisionare</h4>
+                    </div>
+                @endforelse
             </div>
         </div>
     </section>
