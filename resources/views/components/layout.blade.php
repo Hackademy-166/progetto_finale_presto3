@@ -21,6 +21,12 @@
     
     <div class="min-vh-100 layout-div z-1">
         
+        @if(session('message'))
+        <div class="alert alert-success">
+            {{session('message')}}
+        </div>
+        @endif  
+        
         {{$slot}}
         
     </div>

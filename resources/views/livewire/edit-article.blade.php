@@ -16,7 +16,7 @@
                         <input type="text" class="form-control @error('price') is-invalid @enderror" id="price" wire:model.live="price">
                     </div>
         
-        <div class="mb-3">
+        {{-- <div class="mb-3">
             <label for="temporary_images" class="form-label font-taglia font-gen">{{ __('ui.insertImage') }}</label>
             <input type="file" wire:model.live="temporary_images" multiple class="form-control shadow @error ('temporary_images.*') is-invalid @enderror" placeholder="Img/">
             @error ('temporary_images.*')
@@ -36,7 +36,7 @@
             </div>
             @endforeach
         </div>
-        @endif
+        @endif --}}
         
                     <div class="mb-3">
                         <label for="category" class="form-label font-taglia font-gen">Categoria</label>

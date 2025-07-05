@@ -8,13 +8,6 @@
         </div>
     </header>
     
-    {{-- Messaggio di riuscita cancellazione dell'articolo --}}
-    @if(session('message'))
-    <div class="alert alert-success">
-        {{session('message')}}
-    </div>
-    @endif    
-    
     
     <section>
         <div class="container-fluid vh-auto p-5">
@@ -29,11 +22,11 @@
                 <h1 class="text-dark text-center font-gen p-5 display-1">Nessun articolo caricato</h1>
                 
                 @endforelse
-                                
-                    <div>
-                        {{$articles->links()}}
-                        
-                    </div>
+                
+                <div>
+                    {{$articles->links()}}
+                    
+                </div>
                 
                 
                 
