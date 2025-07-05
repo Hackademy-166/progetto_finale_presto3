@@ -9,7 +9,7 @@
             @foreach($categories as $cat)
                 @if($cat->id === $category->id)
                     <span>
-                        <h3 class=" text-start font-gen block text-decoration-underline"> {{ $cat->category_name }} </h3>
+                        <h3 class="text-start font-gen block text-decoration-underline"> {{ $cat->category_name }} </h3>
                     </span>
                 @else
                     <a href="{{route('categories-index', $cat)}}" class="{{ $cat->id === $category->id ? 'font-bold:underline' : 'hover:underline' }} link-offset-2">
