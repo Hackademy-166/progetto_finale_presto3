@@ -58,7 +58,7 @@
                                 <p class="card-content">{{ __('ui.cardPrice') }}: {{$article->price}}</p>
                                 <p class="card-content">{{ __('ui.cardCategory') }}: {{$article->category->category_name}}</p>
                                 <p class="card-content">{{ __('ui.cardInsert') }}: {{$article->user->name}}</p>
-                                <p class="card-content">{{ __('ui.cardInsertWhen') }}: {{$article->user->created_at->format('d/m/Y')}}</p>
+                                <p class="card-content">{{ __('ui.cardInsertWhen') }}: {{$article->created_at->format('d/m/Y')}}</p>
                             </div>
                         </a>
                     </div>
@@ -79,7 +79,7 @@
                                 <p class="card-content">{{ __('ui.cardPrice') }}: {{$article->price}}</p>
                                 <p class="card-content">{{ __('ui.cardCategory') }}: {{$article->category->category_name}}</p>
                                 <p class="card-content">{{ __('ui.cardInsert') }}: {{$article->user->name}}</p>
-                                <p class="card-content">{{ __('ui.cardInsertWhen') }}: {{$article->user->created_at->format('d/m/Y')}}</p>
+                                <p class="card-content">{{ __('ui.cardInsertWhen') }}: {{$article->created_at->format('d/m/Y')}}</p>
                             </div>
                         </a>
                     </div>

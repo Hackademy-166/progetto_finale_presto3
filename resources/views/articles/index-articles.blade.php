@@ -29,21 +29,12 @@
                 <h1 class="text-dark text-center font-gen p-5 display-1">Nessun articolo caricato</h1>
                 
                 @endforelse
-
-                <div class="d-flex justify-content-center ">
-                     <div>
-                         {{ $articles->links() }}
-
-                     </div>
-                    
-                </div>
-                
-                {{-- <div class="d-flex justify-content-center ">
+                                
                     <div>
                         {{$articles->links()}}
                         
                     </div>
-                </div> --}}
+                
                 
                 
                 

@@ -767,4 +767,42 @@ margin-top: var(--flow-space, 1em);
 
 /* PAGINATE------------------------------------------------------- */
 
+/* SERVE PER SISTEMARE LA POSIZIONE DEI BOTTONI */
+.pagination{
+  display: flex;
+  background-color: transparent;
+  justify-content: center;
+  align-items: end;
+}
+
+/* CLASSE CHE AGISCE SUL BOTTONE ATTIVO */
+.page-item.active .page-link{
+  border: none;
+  cursor: pointer;
+  color: var(--color-s);
+  background-color: transparent;
+}
+
+/* CLASSE CHE AGISCE SULLA FRECCIA  DISABILITATA */
+.page-item.disabled .page-link{
+  border: none;
+  cursor: pointer;
+  color: var(--color-s);
+  background-color: transparent;
+
+}
+/* CLASSE CHE AGISCE SUI BOTTONI NON ATTIVI */
+.page-link{
+  color: var(--color-s);
+  background-color: transparent;
+}
+/* agisce sull hover dei bottoni */
+.page-link:hover{
+  border: none;
+  cursor: pointer;
+  color: var(--color-s);
+  background-color: transparent;
+}
+
+
 
