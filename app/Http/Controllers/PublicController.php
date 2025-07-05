@@ -18,7 +18,8 @@ class PublicController extends Controller
     }
     
     public function contact_us(){
-        return view('contactUs');
+        $users=Auth::user();
+        return view('contactUs', compact('users'));
     }
     
     public function invioForm(Request $req){

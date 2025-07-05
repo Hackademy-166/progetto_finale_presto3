@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row ">
                 <div class="col-12 ">
-                    <img class="" src="/img/erasebg-transformed.png" alt="Logo Presto.it">
+                    <img data-aos="fade-down" data-aos-duration="1500"  src="/img/erasebg-transformed.png" alt="Logo Presto.it"> 
                 </div>
             </div>
         </div>
@@ -39,18 +39,20 @@
   
     <!--inserisci articolo-->
     <section class="container mt-5 py-5 ">
-        <div class="row align-items-center h-100">
+        <div class="row align-items-center h-100 " data-aos="fade-up-right" 
+            data-aos-duration="1000">
             <div class="col-12 col-md-7">
-                <h2 class="text-center font-title display-1" id="text"> {{ __('ui.insertArticle') }}</h2>
-                <h3 class="text-center font-text">{{ __('ui.insertArticleDesc') }}</h3>
+                <h2 class="text-center font-gen display-1" id="text"> {{ __('ui.insertArticle') }}</h2>
+                <h3 class="text-center font-gen">{{ __('ui.insertArticleDesc') }}</h3>
                 
                 
             </div>
             <div class="col-12 col-md-5 ">
-                <div class=" d-flex justify-content-center">
-                    <button class="rounded text-center card-button p-5 mx-5">
+                <div class=" d-flex justify-content-center" data-aos="fade-up-left"
+            data-aos-duration="1000">
+                    <button class="text-center card-button2 p-5 mx-5">
                         <a href="{{route('articles.create')}}" class="text-decoration-none text-dark">
-                            <h4 class="font-title display-5 ">{{ __('ui.createArticle') }}</h4>
+                            <h4 class="font-gen display-5 ">{{ __('ui.createArticle') }}</h4>
                         </a>
                     </button>
                 </div>
@@ -66,7 +68,7 @@
     <!--search bar-->
     
     <section>
-        <h1 class="text-center font-title display-1 mt-5">{{ __('ui.lastArticle') }}</h1>
+        <h1 class="text-center font-gen display-1 mt-5">{{ __('ui.lastArticle') }}</h1>
         <div class="container vh-auto p-1">
             <div class="row">
                 @foreach ($articles as $article)

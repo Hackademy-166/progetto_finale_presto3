@@ -1,14 +1,14 @@
 <x-layout>
     <x-slot name="title">{{$article->title}}</x-slot>
     
-    <h1 class="text-dark text-center font-gen display-5 pt-3">DETTAGLIO ARTICOLO: {{$article->title}}</h1>
+    <h1 class="text-dark text-center font-gen display-5 pt-3">{{ __('ui.cardDettaglio') }}: {{$article->title}}</h1>
     
     <section>
         <div class="container">
             <div class="row align-items-center justify-content-evenly pt-3">
                 <div class="col-12 col-md-4 mb-3">
                     @if ($article->images->count() >0 )
-                    <div id="carouselExample" class="carousel slide">
+                    <div id="carouselExample" class="carousel slide"  data-aos="fade-right" data-aos-duration="1500">
                         <div class="carousel-inner">
                             @foreach ($article->images as $key=> $image)
                             <div class="carousel-item @if ($loop->first) active @endif">
@@ -32,21 +32,21 @@
                     @endif
                 </div>
                 <div class="col-12 col-md-6">
-                    <div class="card-show">
+                    <div class="card-show" data-aos="flip-right" data-aos-duration="500">
                             <span class="card__title text-center">{{$article->title}}</span>
 
                             <p class="card-content">
-                               Descrizione: {{$article->description}}
+                              {{ __('ui.cardDescr') }}: {{$article->description}}
                             </p>
-                            <p class="card-content">Prezzo: {{$article->price}}</p>
-                            <p class="card-content">Categoria: {{$article->category->category_name}}</p>
-                            <p class="card-content">Inserito da: {{$article->user->name}}</p>
-                            <p class="card-content">Inserito il: {{$article->user->created_at->format('d/m/Y')}}</p>
+                            <p class="card-content">{{ __('ui.cardPrice') }}: {{$article->price}}</p>
+                            <p class="card-content">{{ __('ui.cardCategory') }}: {{$article->category->category_name}}</p>
+                            <p class="card-content">{{ __('ui.cardInsert') }}: {{$article->user->name}}</p>
+                            <p class="card-content">{{ __('ui.cardInsertWhen') }}: {{$article->user->created_at->format('d/m/Y')}}</p>
 
                             @auth
                                 <div class="d-flex justify-content-evenly pt-3">
-                                    <button type="button" class="btn card-button" data-bs-toggle="modal" data-bs-target="#exampleModal">Elimina</button>
-                                    <a href="{{route('articles.edit', $article)}}"class="btn card-button"> Modifica</a>
+                                    <button type="button" class="btn card-button" data-bs-toggle="modal" data-bs-target="#exampleModal">{{ __('ui.cardDelete') }}</button>
+                                    <a href="{{route('articles.edit', $article)}}"class="btn card-button">{{ __('ui.cardUpdate') }}</a>
                                 </div>
                             @endauth                                    
                     </div>

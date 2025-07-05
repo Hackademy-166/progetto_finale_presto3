@@ -5,9 +5,12 @@ namespace App\Livewire;
 use App\Models\Article;
 use Livewire\Component;
 use App\Models\Category;
+use App\Jobs\RemoveFaces;
 use App\Jobs\ResizeImage;
 use Livewire\WithFileUploads;
 use Livewire\Attributes\Validate;
+use App\Jobs\GoogleVisionLabelImage;
+use App\Jobs\GoogleVisionSafeSearch;
 use Illuminate\Support\Facades\File;
 
 class CreateArticle extends Component
@@ -31,16 +34,18 @@ class CreateArticle extends Component
             'title' => 'required|string|min:3|max:100',
             'description' => 'required|string|min:3|max:100',
             'price' => 'required|string|min:3|max:100',
+            
         ];
     }
 
-        public function messages(){
-            return [
-                'required' => 'Il campo :attribute è richiesto obbligatoriamente.',
-                'min' => 'Il campo :attribute deve contenere almeno :min caratteri.',
-                'max' => 'Il campo :attribute non può superare :max caratteri.',
-                'string' => 'Il campo :attribute deve essere un testo.',
-            ];
+    public function messages(){
+        return [
+            'required' => 'Il campo :attribute è richiesto obbligatoriamente.',
+            'min' => 'Il campo :attribute deve contenere almeno :min caratteri.',
+            'max' => 'Il campo :attribute non può superare :max caratteri.',
+            'string' => 'Il campo :attribute deve essere un testo.',
+            
+        ];
     }
 
     public function store(){
@@ -56,9 +61,16 @@ class CreateArticle extends Component
             foreach ($this->images as $image) {
                 $newFileName = "articles/{$this->article->id}";
                 $newImage = $this->article->images()->create([
-                    'path' => $image->store($newFileName, 'public')
-                ]);
-                dispatch(new ResizeImage($newImage->path, 300, 300));
+                    'path' => $image->store($newFileName, 'public')]);
+                // dispatch(new ResizeImage($newImage->path, 300, 300));
+                // dispatch(new GoogleVisionSafeSearch($newImage->id));
+                // dispatch(new GoogleVisionLabelImage($newImage->id));
+
+                RemoveFaces::withChain([
+                    new ResizeImage($newImage->path, 300, 300),
+                    new GoogleVisionSafeSearch($newImage->id),
+                    new GoogleVisionLabelImage($newImage->id),
+                ])->dispatch($newImage->id);
             }
         File::deleteDirectory(storage_path('/app/livewire-tmp'));
         }

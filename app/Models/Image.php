@@ -29,4 +29,11 @@ class Image extends Model
     public function article(){
         return $this->belongsTo(Article::class);
     }
+
+    protected function casts(): array
+    {
+        return [
+            'labels' => 'array',
+        ];
+    }
 }

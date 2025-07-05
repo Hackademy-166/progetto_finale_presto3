@@ -61,5 +61,62 @@ return[
     'Videogiochi'=>'Videogiochi',
     'Offerte di Lavoro'=>'Offerte di Lavoro',
     'Mobili'=>'Mobili',
+
+    // CARD
+
+    'cardDettaglio'=>'Dettaglio Articolo',
+
+    'cardCategory'=>'Categoria',
+    'cardPrice'=>'Prezzo',
+    'cardDescr'=>'Descrizione',
+    'cardInsert'=>'Inserito da',
+    'cardInsertWhen'=>'Inserito il',
+    'cardDelete'=>'Elimina',
+    'cardUpdate'=>'Modifica',
+    'cardBuy'=>'Compra',
+
+    // ARTICOLI
+
+    'articleTit'=>'Articoli',
+
+    // DASHBOARD
+    'dashProf'=>'Profilo Utente',
+    'dashRev'=>'Revisore',
+    'dashNameSur'=>'Nome e Cognome',
+    'dashPhone'=>'Telefono',
+    'dashAddress'=>'Indirizzo',
+    'dashEdit'=>'Modifica Profilo',
+    'dashDelete'=>'Elimina',
+    'dashLogout'=>'Logout',
+    'dashMiss'=>'Non hai ancora inserito il tuo profilo',
+    'dashAdd'=>'Aggiungi il tuo profilo',
+    'dashArticle'=>'Articoli pubblicati',
+    'dashSold'=>'Articoli venduti',
+    'dashYour'=>'I tuoi articoli',
+    'dashNot'=>'Nessun articolo trovato',
+
+    // INSERIESCI ARTICOLO
+    'insertTitle'=>'Inserisci il tuo articolo',
+    'insertTitle'=>'Titolo',
+    'insertDescr'=>'Descrizione',
+    'insertPrice'=>'Prezzo',
+    'insertCategory'=>'Categoria',
+    'insertImage'=>'Immagine',
+    'insertButton'=>'Inserisci',
+
+    // REVISORE
+    'workTitle'=>'Lavora con noi',
+    'workName'=>'Nome Utente',
+    'workMail'=>'Email',
+    'workMess'=>'Lascia il tuo messaggio',
+    'workReason'=>'Raccontaci perché vuoi lavorare con noi',
+    'workAlready'=>'Sei già un revisore',
+    'workDash'=>'Dashboard Revisore',
+    'workArticle'=>'Articoli Accettati',
+    'workNot'=>'Articoli Rifiutati',
+    'workNone'=>'Non ci sono articoli da revisionare',
+    'workBy'=>'Inserito da:',
+    'workInsert'=>'Inserito il:',
+    'workDetail'=>'Vai al dettaglio'
 ]
 ?>

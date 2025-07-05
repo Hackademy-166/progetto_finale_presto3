@@ -9,7 +9,8 @@
     <h1>Nuova richiesta di diventare revisero ricevuta da: <br> {{$email}}</h1>
     <p>L'utente {{$name}} {{$surname}} ha compilato il form richiedendo le seguenti informazioni: <br> {{$user_message}}</p>
     <p>Se vuoi autorizzarlo a diventare un revisore clicca qui:</p>
-    <a href="{{route('make-revisor', compact('user'))}}">Rendi Revisore</a>
+    <a href="{{route('make-revisor', compact('user'))}}" class="bg-button">Rendi Revisore</a>
+    <a href="{{route('reject-revisor', compact('user'))}}" class="bg-button">Rifiuta Richiesta</a>
 
 </body>
 </html>
