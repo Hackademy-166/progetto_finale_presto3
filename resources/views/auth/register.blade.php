@@ -22,32 +22,32 @@
                 <form class="shadow p-5   bg-form" method="POST" action="{{route('register')}}">
                     @csrf
                      <div class="mb-3">
-                        <label for="name" class="form-label">{{ __('ui.registerUser') }}</label>
+                        <label for="name" class="form-label font-taglia">{{ __('ui.registerUser') }}</label>
                         <input type="text" class="form-control @error('email') is-invalid @enderror" value="{{old('name')}}" id="name" name="name" required value="{{old('name')}}">
                         @error('name')
                             <span class="fst-italic text-danger">{{$message}}</span>
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="email" class="form-label">{{ __('ui.registerMail') }}</label>
+                        <label for="email" class="form-label font-taglia">{{ __('ui.registerMail') }}</label>
                         <input type="email" class="form-control @error('email') is-invalid @enderror " value="{{old('email')}}" id="email" name="email" aria-describedby="emailHelp" required value="{{old('email')}}">
                         @error('email')
                            <span class="fst-italic text-danger">{{$message}}</span>
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="password" class="form-label font-gen">Password</label>
+                        <label for="password" class="form-label font-taglia ">Password</label>
                         <input type="password" class="form-control " id="password" name="password" required>
                         @error('password')
                            <span class="fst-italic text-danger">{{$message}}</span>
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="confirmation_password" class="form-label">{{ __('ui.registerConferm') }}</label>
+                        <label for="confirmation_password" class="form-label font-taglia">{{ __('ui.registerConferm') }}</label>
                         <input type="password" class="form-control" id="confirmation_password" name="password_confirmation" required>
                     </div>
                     <button type="submit" class="btn card-button">{{ __('ui.registerButton') }}</button>
-                    <p class="mt-3">{{ __('ui.registerQuestion') }} <hr> <a class="text-dark" href="{{route('login')}}">{{ __('ui.registerLogin') }}</a></p>
+                    <p class="mt-3">{{ __('ui.registerQuestion') }} <hr> <a class="font-taglia text-dark" href="{{route('login')}}">{{ __('ui.registerLogin') }}</a></p>
                 </form>
             </div>
         </div>

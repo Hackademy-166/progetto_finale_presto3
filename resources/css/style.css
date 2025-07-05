@@ -582,24 +582,14 @@ margin-top: var(--flow-space, 1em);
   transition: all 0.3s ease;
 }
 
-/* .prova{
-position: absolute;
 
-} */
-
-/* .prova:checked{
-right: 50px;
-position: absolute;
-} */
 
 .checkbox:focus {
   border: none;
   outline: none;
 }
 
-/* .checkbox:checked {
-right: 10px;
-} */
+
 
 .checkbox:checked ~ .mainbox {
   width: 50px;
@@ -771,3 +761,60 @@ right: 10px;
   transform: translate(-5px, -5px);
   box-shadow: 17px 17px 0 var(--color-s);
 }
+
+.sidebar {
+  position: sticky;
+  top: 100px; /* regola in base all’altezza del navbar */
+}
+.sidebar a {
+  color: #333;            /* o il colore che preferisci */
+  text-decoration: none;  /* toglie la sottolineatura */
+}
+
+.sidebar a:hover {
+  text-decoration: underline;  /* opzionale: sottolinea al passaggio del mouse */
+  color: #000;                 /* puoi anche cambiare colore on-hover */
+}
+
+
+/* PAGINATE------------------------------------------------------- */
+
+/* SERVE PER SISTEMARE LA POSIZIONE DEI BOTTONI */
+.pagination{
+  display: flex;
+  background-color: transparent;
+  justify-content: center;
+  align-items: end;
+}
+
+/* CLASSE CHE AGISCE SUL BOTTONE ATTIVO */
+.page-item.active .page-link{
+  border: none;
+  cursor: pointer;
+  color: var(--color-s);
+  background-color: transparent;
+}
+
+/* CLASSE CHE AGISCE SULLA FRECCIA  DISABILITATA */
+.page-item.disabled .page-link{
+  border: none;
+  cursor: pointer;
+  color: var(--color-s);
+  background-color: transparent;
+
+}
+/* CLASSE CHE AGISCE SUI BOTTONI NON ATTIVI */
+.page-link{
+  color: var(--color-s);
+  background-color: transparent;
+}
+/* agisce sull hover dei bottoni */
+.page-link:hover{
+  border: none;
+  cursor: pointer;
+  color: var(--color-s);
+  background-color: transparent;
+}
+
+
+
