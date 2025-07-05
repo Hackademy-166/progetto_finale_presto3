@@ -762,7 +762,19 @@ margin-top: var(--flow-space, 1em);
   box-shadow: 17px 17px 0 var(--color-s);
 }
 
+.sidebar {
+  position: sticky;
+  top: 100px; /* regola in base all’altezza del navbar */
+}
+.sidebar a {
+  color: #333;            /* o il colore che preferisci */
+  text-decoration: none;  /* toglie la sottolineatura */
+}
 
+.sidebar a:hover {
+  text-decoration: underline;  /* opzionale: sottolinea al passaggio del mouse */
+  color: #000;                 /* puoi anche cambiare colore on-hover */
+}
 
 
 /* PAGINATE------------------------------------------------------- */

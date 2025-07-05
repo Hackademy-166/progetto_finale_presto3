@@ -3,20 +3,43 @@
     <h1 class="text-center font-gen p-5 display-1" >Articoli della categoria: {{$category->category_name}}</h1>
     <div class="container">
         <div class="row justify-content-center">
-            @forelse ($category->articles as $article)
-                <div class="col-12 col-md-4">
-                    <x-card-vertical :article="$article" />
-                </div>
-            @empty
-                <div class="col-12">
-                    <h3 class="font-gen text-center p-5 display-4" >Nessun articolo nella categoria di: {{$category->category_name}}</h3>
-                </div>
+            <!-- SIDEBAR: elenco categorie  -->
+      <div class="col-12 col-md-3 sidebar">
+        <nav class="list-group mb-4">
+            @foreach($categories as $cat)
+                @if($cat->id === $category->id)
+                    <span>
+                        <h3 class=" text-start font-gen block text-decoration-underline"> {{ $cat->category_name }} </h3>
+                    </span>
+                @else
+                    <a href="{{route('categories-index', $cat)}}" class="{{ $cat->id === $category->id ? 'font-bold:underline' : 'hover:underline' }} link-offset-2">
+                    <h3 class="font-gen">{{__("ui.$cat->category_name")}}</h3>
+                    </a>
+                @endif
+            @endforeach
+          
+        </nav>
+      </div>
 
-                <div class="col-12 col-md-3 col-lg-2">
-                    <a class="btn card-button2 font-gen p-3 fs-4" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom"  data-aos-duration="1000" href="{{route('homepage')}}">Torna alla home</a>
-    
-                </div>
-            @endforelse
+       <!-- MAIN CONTENT: articoli della categoria selezionata  -->
+      <div class="col-12 col-md-9">
+        <div class="row justify-content-center">
+          @forelse($category->articles as $article)
+            <div class="col-12 col-md-4 mb-4 mx-4">
+              <x-card-vertical :article="$article" />
+            </div>
+          @empty
+            <div class="col-12 text-center p-5">
+              <h3 class="font-gen text-center display-4">
+                Nessun articolo nella categoria di: {{ $category->category_name }}
+              </h3>
+              <a href="{{ route('homepage') }}" class="btn card-button2 mt-4">
+                Torna alla home
+              </a>
+            </div>
+          @endforelse
+        </div>
+      </div>
         </div>
     </div>
 </x-layout>

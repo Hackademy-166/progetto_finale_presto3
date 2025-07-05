@@ -68,7 +68,8 @@ class ArticleController extends Controller
         }
     }
     public function category_page(Category $category){
+        $categories = Category::all();
         $articles=$category->articles->where('is_accepted', true);
-        return view('articles.categories-index', compact('articles', 'category'));
+        return view('articles.categories-index', compact('articles', 'category', 'categories'));
     }
 }
