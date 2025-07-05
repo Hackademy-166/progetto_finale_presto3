@@ -96,7 +96,7 @@ return[
     'dashNot'=>'Nessun articolo trovato',
 
     // INSERIESCI ARTICOLO
-    'insertTitle'=>'Inserisci il tuo articolo',
+    'insertArt'=>'Inserisci il tuo articolo',
     'insertTitle'=>'Titolo',
     'insertDescr'=>'Descrizione',
     'insertPrice'=>'Prezzo',
