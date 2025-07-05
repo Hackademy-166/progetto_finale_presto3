@@ -53,7 +53,7 @@ class ArticleController extends Controller
             
             return view('articles.edit-article', compact('article')); 
         }
-        return redirect(route('home'))->with('access_denied', 'Accesso Negato'); // messaggni nella vista
+        return redirect(route('homepage'))->with('access_denied', 'Accesso Negato'); // messaggni nella vista
     }
     
     
