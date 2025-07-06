@@ -111,7 +111,11 @@
                 
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-12 mt-2 ">
+                        @if(!$article_to_check === null)
                         <div class="text-center"><span class="stato-badge {{ $article_to_check->is_accepted ? 'stato-accettato' : 'stato-rifiutato' }} font-taglia " >Stato: {{ $article_to_check->is_accepted ? 'Accettato' : 'Rifiutato' }}</span></div>
+                        @else
+                        <div class="text-center"><span class="stato-badge">Stato: In sospeso</span></div>
+                        @endif
                         
                         <div class="d-flex flex-column align-items-center text-center">
                             

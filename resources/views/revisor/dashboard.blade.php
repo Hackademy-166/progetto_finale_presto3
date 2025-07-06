@@ -1,12 +1,6 @@
 <x-layout>
 
 
-    <!-- ALERT PER ACCETTAZIONE, RIFIUTO E CAMBIO DI STATO ARTICOLO -->     
-    @if(session()->has('message'))
-        <div class="alert alert-success">
-            {{session('message')}}
-        </div>
-    @endif
     <!-- FINE ALERT PER ACCETTAZIONE, RIFIUTO E CAMBIO DI STATO ARTICOLO -->
     <header>
         <h1 class="font-gen text-center display-1">{{ __('ui.workDash') }}</h1>
@@ -47,8 +41,8 @@
     </header>
 
     <section>
-        <div class="container-fluid">
-            <div class="row">
+        <div class="container mt-2">
+            <div class="row justify-content-between">
                 <h2 class="text-dark text-title text-center font-gen display-1">{{ __('ui.workArticle') }}</h2>
                 @forelse($accepted_articles as $article)
                     <div class="col-12 col-md-5 col-lg-5">
@@ -69,7 +63,7 @@
                     </div>
                 @endforelse
             </div>
-            <div class="row">
+            <div class="row justify-content-between">
                 <h2 class="text-dark text-title text-center font-gen display-1">{{ __('ui.workNot') }}</h2>
                 @forelse($rejected_articles as $article)
                     <div class="col-12 col-md-5 col-lg-5">

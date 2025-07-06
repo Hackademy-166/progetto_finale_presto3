@@ -38,30 +38,30 @@
         <!--Grid row-->
         <div class="row d-flex justify-content-center">
           <!--Grid column-->
-          <div class="col-auto">
+          {{-- <div class="col-auto">
             <p class="pt-5">
               <strong >{{ __('ui.footerNews') }}</strong>
             </p>
-          </div>
+          </div> --}}
           <!--Grid column-->
 
           <!--Grid column-->
-          <div class="col-md-5 col-12">
+          {{-- <div class="col-md-5 col-12">
             <!-- Email input -->
             <div data-mdb-input-init class="form-outline mt-5">
               <input type="email" id="form5Example24" class="form-control" />
               <label class="form-label" for="form5Example24">{{ __('ui.footerMail') }}</label>
             </div>
-          </div>
+          </div> --}}
           <!--Grid column-->
 
           <!--Grid column-->
-          <div class="col-auto">
+          {{-- <div class="col-auto">
             <!-- Submit button -->
             <button data-mdb-ripple-init type="submit" class="btn card-button2 mt-5">
              {{ __('ui.footerSub') }}
             </button>
-          </div>
+          </div> --}}
           <!--Grid column-->
         </div>
         <!--Grid row-->
@@ -97,9 +97,6 @@
           </p>
           <p>
             <a href="" class="text-reset">{{ __('ui.navCategorie') }}</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">##</a>
           </p>
           @auth
             <p>
@@ -142,7 +139,6 @@
             info@prest.com
           </p>
           <p><i class="fas fa-phone me-3"></i> + 39 234 567 88</p>
-          <p><i class="fas fa-print me-3"></i> + 39 234 567 89</p>
         </div>
         <!-- Grid column -->
       </div>
