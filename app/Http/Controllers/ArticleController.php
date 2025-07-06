@@ -69,7 +69,7 @@ class ArticleController extends Controller
     }
     public function category_page(Category $category){
         $categories = Category::all();
-        $articles=$category->articles->where('is_accepted', true);
+        $articles=$category->articles()->where('is_accepted', true)->paginate(4);
         return view('articles.categories-index', compact('articles', 'category', 'categories'));
     }
 }

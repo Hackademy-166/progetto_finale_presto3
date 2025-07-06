@@ -20,7 +20,7 @@
           <h3 class="text-auto font-gen block text-decoration-underline"> {{ $cat->category_name }} </h3>
         </span>
         @else
-        <a href="{{route('categories-index', $cat)}}" class="{{ $cat->id === $category->id ? 'font-bold:underline' : 'hover:underline' }} link-offset-2">
+        <a href="{{route('categories-index', $cat)}}" class="link-offset-2">
           <h3 class="font-gen">{{__("ui.$cat->category_name")}}</h3>
         </a>
         @endif
@@ -32,7 +32,7 @@
     <!-- MAIN CONTENT: articoli della categoria selezionata  -->
     <div class="col-12 col-md-9 order-md-2">
       <div class="row justify-content-center">
-          @forelse($category->articles->where('is_accepted', true) as $article)
+          @forelse($articles as $article)
           <div class="col-12 col-md-4 mb-4 mx-4">
             <x-card-vertical :article="$article" />
           </div>
@@ -46,8 +46,11 @@
             </a>
           </div>
           @endforelse 
+          <div>
+            {{$articles->links()}}                  
+          </div> 
       </div>
     </div>
+  </div>             
   </div>
-</div>
 </x-layout>
