@@ -43,28 +43,13 @@
                             <p class="card-content">{{ __('ui.cardInsert') }}: {{$article->user->name}}</p>
                             <p class="card-content">{{ __('ui.cardInsertWhen') }}: {{$article->user->created_at->format('d/m/Y')}}</p>
 
-                            @auth
+                            @if(Auth::user() && Auth::user()->id == $article->user_id)
                                 <div class="d-flex justify-content-evenly pt-3">
                                     <button type="button" class="btn card-button" data-bs-toggle="modal" data-bs-target="#exampleModal">{{ __('ui.cardDelete') }}</button>
                                     <a href="{{route('articles.edit', $article)}}"class="btn card-button">{{ __('ui.cardUpdate') }}</a>
                                 </div>
-                            @endauth                                    
+                            @endif                         
                     </div>
-                    {{-- <div class="card text-center bg-form">
-                        <div class="card-header font-extra text-color">
-                            {{$article->title}}
-                        </div>
-                        <div class="card-body text-color">
-                            <h5 class=" font-extra">Titolo: {{$article->title}}</h5>
-                            <p class="font-text">Descrizione: {{$article->description}}</p>
-                            <p class=" font-extra">Prezzi: {{$article->price}}</p>
-                            <a href="" class="link-offset-2 link-underline link-underline-opacity-0 text-color font-text">Categoria: {{$article->category->category_name}}</a>
-                        </div>
-                        <div class="card-footer text-body-secondary">
-                            <p class=" font-extra text-color">Scritto da: {{$article->user->name}}</p>
-                        </div>
-                        <p class=" font-extra text-color">Inserito il: {{$article->user->created_at->format('d/m/Y')}}</p>
-                                    --}}
                     </div>                    
                     
                 </div>
