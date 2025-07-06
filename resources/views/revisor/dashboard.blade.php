@@ -13,6 +13,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
+                        <h2 class="font-gent text-center">Nuovi articoli da revisionare</h2>
                         
                         @forelse($articles as $article)                
                             @if($article->is_accepted === null)
@@ -46,7 +47,7 @@
     </header>
 
     <section>
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <h2 class="text-dark text-title text-center font-gen display-1">{{ __('ui.workArticle') }}</h2>
                 @forelse($accepted_articles as $article)

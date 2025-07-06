@@ -1,7 +1,7 @@
 <x-layout>
     <x-slot name="title">Categorie</x-slot>
     <h1 class="text-center font-gen p-5 display-1" >Articoli della categoria: {{$category->category_name}}</h1>
-    <div class="container">
+    <div class="container mb-5">
         <div class="row justify-content-center">
             <!-- SIDEBAR: elenco categorie  -->
       <div class="col-12 col-md-3 sidebar">
