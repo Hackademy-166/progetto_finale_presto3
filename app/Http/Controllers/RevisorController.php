@@ -11,8 +11,8 @@ class RevisorController extends Controller
 {
     public function index(){
         $article_to_check= Article::where('is_accepted', null)->orderby('created_at', 'asc')->get();
-        $accepted_articles=Article::where('is_accepted', true)->get();
-        $rejected_articles=Article::where('is_accepted', false)->get();
+        $accepted_articles=Article::where('is_accepted', true)->paginate(6, ['*'], 'accepted_articles');
+        $rejected_articles=Article::where('is_accepted', false)->paginate(6, ['*'], 'rejected_articles');
         // dd($accepted_articles, $rejected_articles);
         return view('revisor.dashboard', compact('article_to_check', 'accepted_articles', 'rejected_articles'));
     }

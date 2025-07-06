@@ -62,6 +62,7 @@
                         <h4 class="text-center font-gen">{{ __('ui.workNone') }}</h4>
                     </div>
                 @endforelse
+                {{ $accepted_articles->links() }}
             </div>
             <div class="row justify-content-between">
                 <h2 class="text-dark text-title text-center font-gen display-1">{{ __('ui.workNot') }}</h2>
@@ -83,7 +84,9 @@
                         <h4 class="text-center font-gen">{{ __('ui.workNone') }}</h4>
                     </div>
                 @endforelse
+                {{ $rejected_articles->links() }}
             </div>
+ 
         </div>
     </section>
 

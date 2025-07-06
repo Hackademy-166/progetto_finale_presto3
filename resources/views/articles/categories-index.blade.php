@@ -46,11 +46,11 @@
             </a>
           </div>
           @endforelse 
-          <div>
-            {{$articles->links()}}                  
-          </div> 
       </div>
     </div>
-  </div>             
+  </div>
+    <div>
+      {{$articles->links()}}                  
+    </div>              
   </div>
 </x-layout>
