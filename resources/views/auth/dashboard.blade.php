@@ -89,7 +89,7 @@
     <section class="container mt-3">
         <div class="row">
             <h2 class="font-gen text-center display-1">{{ __('ui.dashYour') }}</h2>
-            @forelse ($articles as $article )
+            @forelse (Auth::user()->articles as $article )
             <div class="col-12 col-md-4 col-lg-4">
                 <x-card-orizontal :article="$article" />
             </div>
