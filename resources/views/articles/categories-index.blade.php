@@ -32,20 +32,20 @@
     <!-- MAIN CONTENT: articoli della categoria selezionata  -->
     <div class="col-12 col-md-9 order-md-2">
       <div class="row justify-content-center">
-        @forelse($category->articles as $article)
-        <div class="col-12 col-md-4 mb-4 mx-4">
-          <x-card-vertical :article="$article" />
-        </div>
-        @empty
-        <div class="col-12 text-center p-5">
-          <h3 class="font-gen text-center display-4">
-            Nessun articolo nella categoria di: {{ $category->category_name }}
-          </h3>
-          <a href="{{ route('homepage') }}" class="btn card-button2 mt-4">
-            Torna alla home
-          </a>
-        </div>
-        @endforelse
+          @forelse($category->articles->where('is_accepted', true) as $article)
+          <div class="col-12 col-md-4 mb-4 mx-4">
+            <x-card-vertical :article="$article" />
+          </div>
+          @empty
+          <div class="col-12 text-center p-5">
+            <h3 class="font-gen text-center display-4">
+              Nessun articolo nella categoria di: {{ $category->category_name }}
+            </h3>
+            <a href="{{ route('homepage') }}" class="btn card-button2 mt-4">
+              Torna alla home
+            </a>
+          </div>
+          @endforelse 
       </div>
     </div>
   </div>

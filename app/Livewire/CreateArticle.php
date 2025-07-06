@@ -19,7 +19,7 @@ class CreateArticle extends Component
     public $article;
     #[Validate('required|string|min:3|max:100')]
     public $title;
-    #[Validate('required|string|min:3|max:100')]
+    #[Validate('required|string|min:3|max:1000')]
     public $description;
     #[Validate('required|string|min:3|max:100')]
     public $price;
@@ -29,9 +29,9 @@ class CreateArticle extends Component
     
     public function rules(){
         return [
-            'title' => 'required|string|min:3|max:100',
-            'description' => 'required|string|min:3|max:100',
-            'price' => 'required|string|min:3|max:100',
+            'title' => 'required|string|min:2|max:100',
+            'description' => 'required|string|min:3|max:1000',
+            'price' => 'required|string|min:1|max:100',
             
         ];
     }
