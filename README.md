@@ -30,7 +30,7 @@ FONT:
   font-weight: 400;
   font-style: normal;
  } --titolo
-prova
+
 PREFERENZE DI LAVORO:
 
 back-end: Lorenzo, Luca, Adriano
