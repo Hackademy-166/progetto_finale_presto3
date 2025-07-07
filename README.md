@@ -637,4 +637,4 @@ git fetch
 
  --- bottone cambia stato solo se ha gia uno stato se null non si vede
   --- classi titolo primo h2 dashboard revisore
-  ---- responsive categorie con sidebar a menu hamburger
+  ---- responsive categorie con sidebar a menu hamburger# Progetto_finale_di_gruppo
